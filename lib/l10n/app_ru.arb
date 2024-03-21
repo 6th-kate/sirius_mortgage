@@ -1,0 +1,13 @@
+{
+  "currency": "RUB",
+  "mortageCalculator" : "Ипотечный калькулятор",
+  "calculateMortage" : "Рассчитать ипотеку",
+  "loanAmount" : "Стоимость имущества",
+  "downpayment" : "Первоначальный взнос",
+  "loanTerm" : "Срок (месяцев)",
+  "rate" : "Ставка в год",
+  "paymentsType" : "Тип ежемесячных платежей",
+  "annuity" : "Аннуитетные",
+  "differentiated" : "Дифференцированные",
+  "calculate" : "Рассчитать"
+}

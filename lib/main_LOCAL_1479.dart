@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'core/main/ui/main_screen.dart';
 
 void main() {
@@ -16,3 +18,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

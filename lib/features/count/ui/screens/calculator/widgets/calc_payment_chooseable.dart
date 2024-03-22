@@ -44,7 +44,7 @@ class CalcPayments extends StatelessWidget {
         children: [
           const Padding(
             padding:  EdgeInsets.all(4.0),
-            child: Text("fnjkdjk"),
+            child: Text("vhddbvd"),
           ),
           CalculatorPaymentChooseable(
             paymentType: PaymentType(paymentName: "fmnd"),

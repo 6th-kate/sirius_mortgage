@@ -1,15 +1,20 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class CalcButton extends StatefulWidget {
-  const CalcButton({super.key});
+class MainButtonTemplate extends StatefulWidget {
+  final String title;
+  final String subtitle;
+  final String? image;
+
+  const MainButtonTemplate({super.key,
+    required this.title,
+    required this.subtitle,
+    this.image});
 
   @override
-  State<CalcButton> createState() => _CalcButtonState();
+  State<MainButtonTemplate> createState() => _MainButtonTemplateState();
 }
 
-class _CalcButtonState extends State<CalcButton> {
+class _MainButtonTemplateState extends State<MainButtonTemplate> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -25,11 +30,9 @@ class _CalcButtonState extends State<CalcButton> {
             end: Alignment.bottomRight,
           ),
         ),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: (){},
-            child: const Row(
+        child: Stack(
+          children: [
+            Row(
               children: <Widget>[
                 Expanded(
                   flex: 8,
@@ -38,21 +41,22 @@ class _CalcButtonState extends State<CalcButton> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 25, top: 20),
+                        padding: const EdgeInsets.only(left: 25, top: 20),
                         child: Text(
-                          'Рассчитать вашу ипотеку',
-                          style: TextStyle(
+                          widget.title,
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 25, bottom: 20),
+                        padding: const EdgeInsets.only(
+                            left: 25, bottom: 20),
                         child: Text(
-                            'Фича',
-                          style: TextStyle(
-                            color: Colors.black54
+                          widget.subtitle,
+                          style: const TextStyle(
+                              color: Colors.black54
                           ),
                         ),
                       ),
@@ -68,14 +72,27 @@ class _CalcButtonState extends State<CalcButton> {
                       SizedBox(
                         height: 90,
                         width: 90,
-                        child: Placeholder(),
+                        child: Image.asset(widget.image!),
                       ),
                     ],
                   ),
                 )
               ],
             ),
-          ),
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              top: 0,
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  splashColor: Colors.white24,
+                  onTap: () {},
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

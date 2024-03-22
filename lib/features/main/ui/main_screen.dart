@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/main/ui/widgets/calc_button_widget.dart';
 import 'package:sirius_mortgage/features/main/ui/widgets/compare_button_widget.dart';
+import 'package:sirius_mortgage/features/main/ui/widgets/settings_button_widget.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -17,17 +18,7 @@ class _MainScreenState extends State<MainScreen> {
         title: const Text('Ипотечный калькулятор'),
         centerTitle: true,
         backgroundColor: Colors.transparent,
-        actions: [
-          Container(
-            child: IconButton(
-              icon: const Icon(
-                Icons.more_vert,
-                size: 30,
-              ),
-              onPressed: () {},
-            ),
-          )
-        ],
+        actions: const [SettingButton()],
       ),
       backgroundColor: Colors.white,
       body: const Column(

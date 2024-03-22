@@ -3,14 +3,9 @@ import 'package:sirius_mortgage/features/main/ui/widgets/calc_button_widget.dart
 import 'package:sirius_mortgage/features/main/ui/widgets/compare_button_widget.dart';
 import 'package:sirius_mortgage/features/main/ui/widgets/settings_button_widget.dart';
 
-class MainScreen extends StatefulWidget {
+class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +15,6 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: Colors.transparent,
         actions: const [SettingButton()],
       ),
-      backgroundColor: Colors.white,
       body: const Column(
         children: [
           Padding(

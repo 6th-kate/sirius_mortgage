@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sirius_mortgage/core/main/ui/widgets/calc_button_widget.dart';
-import 'package:sirius_mortgage/core/main/ui/widgets/compare_button_widget.dart';
+import 'package:sirius_mortgage/features/main/ui/widgets/calc_button_widget.dart';
+import 'package:sirius_mortgage/features/main/ui/widgets/compare_button_widget.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

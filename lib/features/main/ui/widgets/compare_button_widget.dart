@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sirius_mortgage/core/main/ui/widgets/main_screen_button_template.dart';
+import 'main_screen_button_template.dart';
 
 class CompareButton extends StatefulWidget {
   const CompareButton({super.key});

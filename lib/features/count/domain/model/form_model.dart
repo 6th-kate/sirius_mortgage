@@ -1,17 +1,22 @@
-final class FormModel {
-  final String cost;
-  final String contribution;
-  final String term;
-  final String bet;
+import 'package:equatable/equatable.dart';
+
+class FormModel with EquatableMixin {
+  final String? cost;
+  final String? contribution;
+  final String? term;
+  final String? bet;
   final bool isAnnuityPaymentType;
 
-  const FormModel({
-    required this.cost,
-    required this.contribution,
-    required this.term,
-    required this.bet,
-    required this.isAnnuityPaymentType,
+  FormModel({
+    this.cost,
+    this.contribution,
+    this.term,
+    this.bet,
+    this.isAnnuityPaymentType = true,
   });
+
+  bool get isFullyFilled =>
+      cost != null && contribution != null && term != null && bet != null;
 
   const FormModel.empty()
       : cost = '',
@@ -35,4 +40,8 @@ final class FormModel {
       isAnnuityPaymentType: isAnnuityPaymentType ?? this.isAnnuityPaymentType,
     );
   }
+
+  @override
+  List<Object?> get props =>
+      [cost, contribution, term, bet, isAnnuityPaymentType];
 }

@@ -7,7 +7,7 @@ part 'form_event.dart';
 part 'form_state.dart';
 
 class FormBloc extends Bloc<FormEvent, FormState> {
-  FormBloc() : super(const FormState.notValid(FormModel.empty())) {
+  FormBloc() : super(FormState.notValid(FormModel(), 'Заполнены не все поля')) {
     on<FormEvent>(
       (event, emit) => switch (event) {
         CostChangedEvent() => _costChangedEvent(event, emit),
@@ -22,41 +22,73 @@ class FormBloc extends Bloc<FormEvent, FormState> {
     );
   }
 
-  FormState stateFromModel(FormModel model) {
-    // todo logic validation
-    return FormState.notValid(model);
+  void fullyFilledCheck(FormModel model, Emitter emit) {
+    final isFilled = model.isFullyFilled;
+
+    if (!isFilled) {
+      emit(FormState.notValid(model, 'Введены не все данные'));
+      return;
+    }
+
+    emit(FormState.valid(model));
   }
 
-  Future<void> _costChangedEvent(CostChangedEvent event, Emitter emit) async {
-    final value = event.cost;
-    final model = state.model.copyWith(cost: value);
-    final next = stateFromModel(model);
-    emit(next);
+  void _costChangedEvent(CostChangedEvent event, Emitter emit) {
+    final value = int.tryParse(event.cost);
+    if (value == null || value <= 0) {
+      emit(
+          FormState.notValid(state.model, 'Некорректные данные суммы кредита'));
+      return;
+    }
+    final model = state.model.copyWith(cost: event.cost);
+    fullyFilledCheck(model, emit);
   }
 
-  Future<void> _contributionChangedEvent(
-      ContributionChangedEvent event, Emitter emit) async {
-    //
+  void _contributionChangedEvent(ContributionChangedEvent event, Emitter emit) {
+    final value = int.tryParse(event.contribution);
+    if (value == null || value <= 0) {
+      emit(FormState.notValid(
+          state.model, 'Некорректные данные начального взноса'));
+      return;
+    }
+    final model = state.model.copyWith(contribution: event.contribution);
+    fullyFilledCheck(model, emit);
   }
 
-  Future<void> _termChangedEvent(TermChangedEvent event, Emitter emit) async {
-    //
+  void _termChangedEvent(TermChangedEvent event, Emitter emit) {
+    final value = int.tryParse(event.term);
+    if (value == null || value <= 0 || value >= 80) {
+      emit(
+          FormState.notValid(state.model, 'Некорректные данные срока кредита'));
+      return;
+    }
+    final model = state.model.copyWith(term: event.term);
+    fullyFilledCheck(model, emit);
   }
 
-  Future<void> _betChangedEvent(BetChangedEvent event, Emitter emit) async {
-    //
+  void _betChangedEvent(BetChangedEvent event, Emitter emit) {
+    final value = int.tryParse(event.bet);
+    if (value == null || value <= 0 || value > 100) {
+      emit(FormState.notValid(
+          state.model, 'Некорректные данные процентной ставки'));
+      return;
+    }
+    final model = state.model.copyWith(bet: event.bet);
+    fullyFilledCheck(model, emit);
   }
 
-  Future<void> _annuityPaymentTypeChangeEvent(
-      AnnuityPaymentTypeChangeEvent event, Emitter emit) async {
-    //
+  void _annuityPaymentTypeChangeEvent(
+      AnnuityPaymentTypeChangeEvent event, Emitter emit) {
+    final model =
+        state.model.copyWith(isAnnuityPaymentType: event.isAnnuityPaymentType);
+    fullyFilledCheck(model, emit);
   }
 
-  Future<void> _successEvent(SuccessEvent event, Emitter emit) async {
-    //
+  void _successEvent(SuccessEvent event, Emitter emit) {
+    // TODO
   }
 
-  Future<void> _errorEvent(ErrorEvent event, Emitter emit) async {
-    //
+  void _errorEvent(ErrorEvent event, Emitter emit) {
+    // TODO
   }
 }

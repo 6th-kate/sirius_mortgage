@@ -6,7 +6,10 @@ sealed class FormState {
 
   const factory FormState.valid(FormModel model) = ValidFormState;
 
-  const factory FormState.notValid(FormModel model) = NotValidFormState;
+  const factory FormState.notValid(
+    FormModel model,
+    String errorMessage,
+  ) = NotValidFormState;
 }
 
 class ValidFormState implements FormState {
@@ -17,8 +20,10 @@ class ValidFormState implements FormState {
 }
 
 class NotValidFormState implements FormState {
+  final String errorMessage;
+
   @override
   final FormModel model;
 
-  const NotValidFormState(this.model);
+  const NotValidFormState(this.model, this.errorMessage);
 }

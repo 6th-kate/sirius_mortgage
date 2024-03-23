@@ -30,20 +30,9 @@ class CalculatorTextField extends StatelessWidget {
             controller: controller,
             cursorColor: const Color.fromARGB(255, 101, 199, 134),
             decoration: InputDecoration(
+              floatingLabelBehavior: FloatingLabelBehavior.always,
               hintText: placeholder,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.0),
-                borderSide:
-                    const BorderSide(color: Color.fromARGB(255, 177, 183, 179)),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.0),
-                borderSide: const BorderSide(
-                  width: 2.0,
-                  color: Color.fromARGB(255, 101, 199, 134),
-                ),
-              ),
-              suffix: suffix,
+              suffixIcon: suffix
             ),
           ),
         ],

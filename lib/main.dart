@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'features/count/ui/calculator_bottom_sheet.dart';
 import 'features/count/ui/screens/calculator/widgets/calc_form.dart';
+import 'features/count/ui/screens/calculator/calc_form_sheet.dart';
 import 'features/count/ui/screens/calculator/widgets/calc_text_field.dart';
 
 void main() {
@@ -38,10 +40,22 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: SafeArea(
-          child: CalculatorForm()
-        ),
+        body: SafeArea(child: OpenableSheet()),
       ), //const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class OpenableSheet extends StatelessWidget {
+  const OpenableSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      child: Text("dnjlgnsk"),
+      onPressed: () {
+        showCalculatorBottomSheet(context);
+      },
     );
   }
 }

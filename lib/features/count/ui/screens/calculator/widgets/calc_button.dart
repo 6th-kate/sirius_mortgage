@@ -15,7 +15,7 @@ class CalculateButton extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ElevatedButton(
           onPressed: () => {
-            Navigator.of(context).pushNamed(routeResult)
+            Navigator.of(context).pushNamed(routeResult),
           },
           child: Text(AppLocalizations.of(context)!.calculate),
         ),

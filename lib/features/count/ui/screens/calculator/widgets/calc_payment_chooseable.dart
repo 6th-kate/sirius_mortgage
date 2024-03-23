@@ -21,10 +21,10 @@ class CalculatorPaymentChooseable extends StatelessWidget {
         Radio<bool>(
             value: isAnnuity,
             groupValue: annuityIsSelected,
-            onChanged: onChanged),
+            onChanged: onChanged,),
         Text(isAnnuity
             ? AppLocalizations.of(context)!.annuity
-            : AppLocalizations.of(context)!.differentiated)
+            : AppLocalizations.of(context)!.differentiated,),
       ],
     );
   }

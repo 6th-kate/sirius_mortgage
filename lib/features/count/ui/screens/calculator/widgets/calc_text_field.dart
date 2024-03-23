@@ -32,7 +32,7 @@ class CalculatorTextField extends StatelessWidget {
             decoration: InputDecoration(
               floatingLabelBehavior: FloatingLabelBehavior.always,
               hintText: placeholder,
-              suffixIcon: suffix
+              suffixIcon: suffix,
             ),
           ),
         ],

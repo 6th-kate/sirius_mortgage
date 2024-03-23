@@ -4,22 +4,17 @@ class SuffixButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
 
-  SuffixButton({super.key, required this.text, required this.onPressed});
-
-  // TODO("fix, apply theme")
-  final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-    backgroundColor: Color(0xFFAC76FF),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-    ),
-  );
+  const SuffixButton({
+    super.key,
+    required this.text,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(3.0),
-      child: TextButton(
-        style: flatButtonStyle,
+      padding: const EdgeInsets.symmetric(vertical: 3.0, horizontal: 8.0),
+      child: FilledButton(
         onPressed: onPressed,
         child: Text(text),
       ),

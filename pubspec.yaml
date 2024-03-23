@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   intl: ^0.18.0
   google_fonts: ^6.2.1
+  flutter_bloc: ^8.1.4
+  freezed: ^2.4.7
 
 dev_dependencies:
   flutter_test:

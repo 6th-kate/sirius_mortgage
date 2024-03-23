@@ -1,0 +1,13 @@
+{
+	"currency": "Frotter",
+	"mortgageCalculator": "Calculateur d'hypothèque",
+	"calculateMortgage": "Calculer l'hypothèque",
+	"loanAmount": "La valeur de la propriété",
+	"downpayment": "Un premier frais",
+	"loanTerm": "Trimestre (mois)",
+	"rate": "Stavka par an",
+	"paymentsType": "Type de paiements mensuels",
+	"annuity": "Annuité",
+	"differentiated": "Différencié",
+	"calculate": "Calculer"
+}

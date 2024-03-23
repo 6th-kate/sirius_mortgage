@@ -1,0 +1,13 @@
+{
+	"currency": "Rub",
+	"mortgageCalculator": "Mortgage calculator",
+	"calculateMortgage": "Calculate the mortgage",
+	"loanAmount": "The value of property",
+	"downpayment": "An initial fee",
+	"loanTerm": "Term (months)",
+	"rate": "Stavka per year",
+	"paymentsType": "Type of monthly payments",
+	"annuity": "Annuite",
+	"differentiated": "Differentiated",
+	"calculate": "Calculate"
+}

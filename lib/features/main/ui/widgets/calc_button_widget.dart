@@ -11,7 +11,7 @@ class CalcButton extends StatelessWidget {
     return const MainButtonTemplate(
       title: 'Рассчитать вашу ипотеку',
       subtitle: 'Узнайте, сколько переплатите',
-      image: imageFromAsset.calcButton,
+      image: ImageFromAsset.calcButton,
     );
   }
 }

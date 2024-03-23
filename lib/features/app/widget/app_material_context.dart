@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../locale/locale.dart';
 import '../../theme/theme.dart';
 
 class AppMaterialContext extends StatelessWidget {
@@ -13,6 +14,10 @@ class AppMaterialContext extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         theme: AppThemeScope.of(context).theme,
+        localizationsDelegates: AppLocaleScope.localizationsDelegatesOf(context),
+        supportedLocales: AppLocaleScope.supportedLocalesOf(context),
+        locale: AppLocaleScope.localeOf(context),
         home: child,
       );
 }
+

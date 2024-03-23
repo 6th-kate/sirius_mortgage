@@ -1,0 +1,13 @@
+{
+	"currency": "Сөртегез",
+	"mortgageCalculator": "Ипотека калькулятор",
+	"calculateMortgage": "Ипотеканы исәпләгез",
+	"loanAmount": "Мөлкәтнең кыйммәте",
+	"downpayment": "Башлангыч түләү",
+	"loanTerm": "Термин (айлар)",
+	"rate": "Елына ставка",
+	"paymentsType": "Айлык түләү төре",
+	"annuity": "Аннуит",
+	"differentiated": "Дифференциацияләнгән",
+	"calculate": "Исәпләү"
+}

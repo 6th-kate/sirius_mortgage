@@ -10,6 +10,6 @@ class CompareButton extends StatelessWidget {
     return const MainButtonTemplate(
         title: 'Сравнить программы',
         subtitle: 'Найдите выгодный вариант',
-        image: imageFromAsset.compareButton);
+        image: imageFromAsset.compareButton,);
   }
 }

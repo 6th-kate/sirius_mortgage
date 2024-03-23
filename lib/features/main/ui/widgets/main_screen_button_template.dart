@@ -8,7 +8,7 @@ class MainButtonTemplate extends StatefulWidget {
   const MainButtonTemplate({super.key,
     required this.title,
     required this.subtitle,
-    this.image});
+    this.image,});
 
   @override
   State<MainButtonTemplate> createState() => _MainButtonTemplateState();
@@ -52,11 +52,11 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                            left: 25, bottom: 20),
+                            left: 25, bottom: 20,),
                         child: Text(
                           widget.subtitle,
                           style: const TextStyle(
-                              color: Colors.black54
+                              color: Colors.black54,
                           ),
                         ),
                       ),
@@ -76,7 +76,7 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
             Positioned(

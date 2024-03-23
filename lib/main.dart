@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'features/count/ui/calculator_bottom_sheet.dart';
-import 'features/count/ui/screens/calculator/widgets/calc_form.dart';
-import 'features/count/ui/screens/calculator/calc_form_sheet.dart';
-import 'features/count/ui/screens/calculator/widgets/calc_text_field.dart';
 
 void main() {
   runApp(const MyApp());

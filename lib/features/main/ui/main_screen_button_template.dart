@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 
-class MainButtonTemplate extends StatefulWidget {
+class MainButtonTemplate extends StatelessWidget {
   final String title;
   final String subtitle;
   final String? image;
+  final VoidCallback? onClick;
 
-  const MainButtonTemplate({super.key,
+  const MainButtonTemplate({
+    super.key,
     required this.title,
     required this.subtitle,
-    this.image,});
+    this.image,
+    this.onClick,
+  });
 
-  @override
-  State<MainButtonTemplate> createState() => _MainButtonTemplateState();
-}
-
-class _MainButtonTemplateState extends State<MainButtonTemplate> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -43,7 +42,7 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
                       Padding(
                         padding: const EdgeInsets.only(left: 25, top: 20),
                         child: Text(
-                          widget.title,
+                          title,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -51,13 +50,10 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            left: 25, bottom: 20,),
+                        padding: const EdgeInsets.only(left: 25, bottom: 20),
                         child: Text(
-                          widget.subtitle,
-                          style: const TextStyle(
-                              color: Colors.black54,
-                          ),
+                          subtitle,
+                          style: const TextStyle(color: Colors.black54),
                         ),
                       ),
                     ],
@@ -72,7 +68,7 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
                       SizedBox(
                         height: 90,
                         width: 90,
-                        child: Image.asset(widget.image!),
+                        child: Image.asset(image!),
                       ),
                     ],
                   ),
@@ -88,7 +84,7 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
                 color: Colors.transparent,
                 child: InkWell(
                   splashColor: Colors.white24,
-                  onTap: () {},
+                  onTap: onClick ?? () {},
                 ),
               ),
             ),
@@ -98,4 +94,3 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
     );
   }
 }
-

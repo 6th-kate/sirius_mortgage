@@ -1,13 +1,13 @@
 {
-	"currency": "Сөртегез",
-	"mortgageCalculator": "Ипотека калькулятор",
-	"calculateMortgage": "Ипотеканы исәпләгез",
-	"loanAmount": "Мөлкәтнең кыйммәте",
+	"currency": "RUB",
+	"mortgageCalculator": "Ипотека калькуляторы",
+	"calculateMortgage": "Ипотеканы исәпләү",
+	"loanAmount": "Милек бәясе",
 	"downpayment": "Башлангыч түләү",
-	"loanTerm": "Термин (айлар)",
-	"rate": "Елына ставка",
-	"paymentsType": "Айлык түләү төре",
-	"annuity": "Аннуит",
-	"differentiated": "Дифференциацияләнгән",
+	"loanTerm": "Вакыт (айлар)",
+	"rate": "Ел саен ставкасы",
+	"paymentsType": "Айлык түләүләр төре",
+	"annuity": "Аннуитлы (Tигез зурлыклы түләүләр)",
+	"differentiated": "Аерымланган түләүләр",
 	"calculate": "Исәпләү"
 }

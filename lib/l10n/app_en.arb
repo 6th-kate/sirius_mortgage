@@ -5,7 +5,7 @@
 	"loanAmount": "The value of property",
 	"downpayment": "An initial fee",
 	"loanTerm": "Term (months)",
-	"rate": "Stavka per year",
+	"rate": "Rate per year",
 	"paymentsType": "Type of monthly payments",
 	"annuity": "Annuite",
 	"differentiated": "Differentiated",

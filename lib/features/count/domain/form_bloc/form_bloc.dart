@@ -6,8 +6,13 @@ import '../model/form_model.dart';
 part 'form_event.dart';
 part 'form_state.dart';
 
-class FormBloc extends Bloc<FormEvent, FormState> {
-  FormBloc() : super(FormState.notValid(FormModel(), 'Заполнены не все поля')) {
+class FormBloc extends Bloc<FormEvent, ValidationFormState> {
+  FormBloc()
+      : super(ValidationFormState.notValid(
+          FormModel(),
+          'Заполнены не все поля',
+          true,
+        )) {
     on<FormEvent>(
       (event, emit) => switch (event) {
         CostChangedEvent() => _costChangedEvent(event, emit),
@@ -26,18 +31,27 @@ class FormBloc extends Bloc<FormEvent, FormState> {
     final isFilled = model.isFullyFilled;
 
     if (!isFilled) {
-      emit(FormState.notValid(model, 'Введены не все данные'));
+      emit(ValidationFormState.notValid(
+        model,
+        'Введены не все данные',
+        false,
+      ));
       return;
     }
 
-    emit(FormState.valid(model));
+    emit(ValidationFormState.valid(model));
   }
 
   void _costChangedEvent(CostChangedEvent event, Emitter emit) {
     final value = int.tryParse(event.cost);
     if (value == null || value <= 0) {
       emit(
-          FormState.notValid(state.model, 'Некорректные данные суммы кредита'));
+        ValidationFormState.notValid(
+          state.model,
+          'Некорректные данные суммы кредита',
+          false,
+        ),
+      );
       return;
     }
     final model = state.model.copyWith(cost: event.cost);
@@ -47,8 +61,11 @@ class FormBloc extends Bloc<FormEvent, FormState> {
   void _contributionChangedEvent(ContributionChangedEvent event, Emitter emit) {
     final value = int.tryParse(event.contribution);
     if (value == null || value <= 0) {
-      emit(FormState.notValid(
-          state.model, 'Некорректные данные начального взноса'));
+      emit(ValidationFormState.notValid(
+        state.model,
+        'Некорректные данные начального взноса',
+        false,
+      ));
       return;
     }
     final model = state.model.copyWith(contribution: event.contribution);
@@ -58,8 +75,11 @@ class FormBloc extends Bloc<FormEvent, FormState> {
   void _termChangedEvent(TermChangedEvent event, Emitter emit) {
     final value = int.tryParse(event.term);
     if (value == null || value <= 0 || value >= 80) {
-      emit(
-          FormState.notValid(state.model, 'Некорректные данные срока кредита'));
+      emit(ValidationFormState.notValid(
+        state.model,
+        'Некорректные данные срока кредита',
+        false,
+      ));
       return;
     }
     final model = state.model.copyWith(term: event.term);
@@ -69,8 +89,11 @@ class FormBloc extends Bloc<FormEvent, FormState> {
   void _betChangedEvent(BetChangedEvent event, Emitter emit) {
     final value = int.tryParse(event.bet);
     if (value == null || value <= 0 || value > 100) {
-      emit(FormState.notValid(
-          state.model, 'Некорректные данные процентной ставки'));
+      emit(ValidationFormState.notValid(
+        state.model,
+        'Некорректные данные процентной ставки',
+        false,
+      ));
       return;
     }
     final model = state.model.copyWith(bet: event.bet);

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sirius_mortgage/features/count/domain/form_bloc/textfield_type_to_event.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_text_field.dart';
 import 'calc_payments.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -23,11 +24,13 @@ class CalculatorForm extends StatelessWidget {
               text: AppLocalizations.of(context)!.currency,
               onPressed: () {},
             ),
+            textFieldType: TextFieldType.cost,
           ),
           CalculatorTextField(
             controller: TextEditingController(),
             label: AppLocalizations.of(context)!.downpayment,
             placeholder: '0Р',
+            textFieldType: TextFieldType.contribution,
           ),
           Row(
             children: [
@@ -35,7 +38,8 @@ class CalculatorForm extends StatelessWidget {
                 child: CalculatorTextField(
                   controller: TextEditingController(),
                   label: AppLocalizations.of(context)!.loanTerm,
-                  placeholder: '0Р',
+                  placeholder: '0',
+                  textFieldType: TextFieldType.term,
                 ),
               ),
               const SizedBox(width: 8.0),
@@ -44,6 +48,7 @@ class CalculatorForm extends StatelessWidget {
                   controller: TextEditingController(),
                   label: AppLocalizations.of(context)!.rate,
                   placeholder: '0Р',
+                  textFieldType: TextFieldType.bet,
                 ),
               ),
             ],

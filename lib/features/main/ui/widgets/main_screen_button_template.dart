@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MainButtonTemplate extends StatefulWidget {
+class MainButtonTemplate extends StatelessWidget {
   final String title;
   final String subtitle;
   final String? image;
@@ -10,11 +10,6 @@ class MainButtonTemplate extends StatefulWidget {
     required this.subtitle,
     this.image,});
 
-  @override
-  State<MainButtonTemplate> createState() => _MainButtonTemplateState();
-}
-
-class _MainButtonTemplateState extends State<MainButtonTemplate> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -43,7 +38,7 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
                       Padding(
                         padding: const EdgeInsets.only(left: 25, top: 20),
                         child: Text(
-                          widget.title,
+                          title,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -54,7 +49,7 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
                         padding: const EdgeInsets.only(
                             left: 25, bottom: 20,),
                         child: Text(
-                          widget.subtitle,
+                          subtitle,
                           style: const TextStyle(
                               color: Colors.black54,
                           ),
@@ -72,7 +67,7 @@ class _MainButtonTemplateState extends State<MainButtonTemplate> {
                       SizedBox(
                         height: 90,
                         width: 90,
-                        child: Image.asset(widget.image!),
+                        child: Image.asset(image!),
                       ),
                     ],
                   ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sirius_mortgage/features/main/ui/calc_button_widget.dart';
-import 'package:sirius_mortgage/features/main/ui/compare_button_widget.dart';
-import 'package:sirius_mortgage/features/main/ui/settings_button_widget.dart';
+import 'package:sirius_mortgage/features/main/ui/widgets/calc_button_widget.dart';
+import 'package:sirius_mortgage/features/main/ui/widgets/compare_button_widget.dart';
+import 'package:sirius_mortgage/features/main/ui/widgets/settings_button_widget.dart';
+
+import '../../locale/locale.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -10,7 +12,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ипотечный калькулятор'),
+        title: Text(AppLocaleScope.of(context).mortgageCalculator),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         actions: const [SettingButton()],

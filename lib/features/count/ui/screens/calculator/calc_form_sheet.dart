@@ -1,10 +1,10 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/count/domain/form_bloc/form_bloc.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_button.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_form.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_constants.dart';
+
+import '../../../../locale/locale.dart';
 
 class CalculatorFormPage extends StatefulWidget {
   const CalculatorFormPage({super.key});
@@ -35,7 +35,7 @@ class _CalculatorFormPageState extends State<CalculatorFormPage> {
             ),
             child: Column(
               children: [
-                Text(AppLocalizations.of(context)!.calculateMortage),
+                Text(AppLocaleScope.of(context).calculateMortgage),
                 const CalculatorForm(),
                 const Spacer(),
                 BlocBuilder<FormBloc, ValidationFormState>(

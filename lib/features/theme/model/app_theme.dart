@@ -4,7 +4,6 @@ import 'theme_constants.dart';
 
 abstract interface class AppTheme {
   ThemeData get theme;
-
   TextTheme get textTheme;
 }
 

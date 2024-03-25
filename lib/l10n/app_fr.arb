@@ -1,0 +1,16 @@
+{
+	"currency": "EUR",
+	"mortgageCalculator": "Calculateur d'hypothèque",
+	"calculateMortgage": "Calculer l'hypothèque",
+	"calculateMortgageLabel" : "Découvrez combien vous allez payer en trop",
+	"compareMortgage" : "Comparer les programmes",
+	"compareMortgageLabel" : "Trouvez la meilleure offre",
+	"loanAmount": "Montant total de l'hypothèque",
+	"downpayment": "Un frais initial",
+	"loanTerm": "Durée (mois)",
+	"rate": "Taux d'intérêt",
+	"paymentsType": "Type de paiements mensuels",
+	"annuity": "Annuité",
+	"differentiated": "Différencié",
+	"calculate": "Calculer"
+}

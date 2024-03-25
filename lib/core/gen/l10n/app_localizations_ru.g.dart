@@ -8,10 +8,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get currency => 'RUB';
 
   @override
-  String get mortageCalculator => 'Ипотечный калькулятор';
+  String get mortgageCalculator => 'Ипотечный калькулятор';
 
   @override
-  String get calculateMortage => 'Рассчитать ипотеку';
+  String get calculateMortgage => 'Рассчитать ипотеку';
+
+  @override
+  String get calculateMortgageLabel => 'Узнайте, сколько переплатите';
+
+  @override
+  String get compareMortgage => 'Сравнить программы';
+
+  @override
+  String get compareMortgageLabel => 'Найдите выгодный вариант';
 
   @override
   String get loanAmount => 'Стоимость имущества';

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_text_field.dart';
+import '../../../../../locale/locale.dart';
 import 'calc_payments.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'calc_suffix_button.dart';
 
@@ -17,16 +17,16 @@ class CalculatorForm extends StatelessWidget {
         children: [
           CalculatorTextField(
             controller: TextEditingController(),
-            label: AppLocalizations.of(context)!.loanAmount,
+            label: AppLocaleScope.of(context).loanAmount,
             placeholder: '0Р',
             suffix: SuffixButton(
-              text: AppLocalizations.of(context)!.currency,
+              text: AppLocaleScope.of(context).currency,
               onPressed: () {},
             ),
           ),
           CalculatorTextField(
             controller: TextEditingController(),
-            label: AppLocalizations.of(context)!.downpayment,
+            label: AppLocaleScope.of(context).downpayment,
             placeholder: '0Р',
           ),
           Row(
@@ -34,7 +34,7 @@ class CalculatorForm extends StatelessWidget {
               Expanded(
                 child: CalculatorTextField(
                   controller: TextEditingController(),
-                  label: AppLocalizations.of(context)!.loanTerm,
+                  label: AppLocaleScope.of(context).loanTerm,
                   placeholder: '0Р',
                 ),
               ),
@@ -42,7 +42,7 @@ class CalculatorForm extends StatelessWidget {
               Expanded(
                 child: CalculatorTextField(
                   controller: TextEditingController(),
-                  label: AppLocalizations.of(context)!.rate,
+                  label: AppLocaleScope.of(context).rate,
                   placeholder: '0Р',
                 ),
               ),

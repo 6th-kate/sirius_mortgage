@@ -12,8 +12,7 @@ class ThemeSetting extends StatelessWidget {
   Widget build(BuildContext context) {
     return SettingTemplate(
       title: 'Тема',
-      suffixChild:
-      DayNightSwitch(
+      suffixChild: DayNightSwitch(
         value: context.watch<ThemeBloc>().state.themeMode ==
             CustomThemeMode.baseDark,
         onChanged: (isDark) {

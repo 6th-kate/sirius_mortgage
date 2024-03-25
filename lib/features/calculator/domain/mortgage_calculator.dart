@@ -2,9 +2,46 @@ import 'dart:math';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_inteface.dart';
 import '../utils/utils_calculator.dart';
 import 'model/calculator_dataclass.dart';
+import 'dart:async';
+import 'package:flutter/foundation.dart';
 
 class MortgageCalculator implements ICalculator {
   const MortgageCalculator();
+  
+  List<CalculatorResultData> _calculateDifferentiatedPayments(
+    CalculatorInputData data,
+  ) {
+    List<CalculatorResultData> response = [];
+    for (int index = 0; index <= data.loanTermYears * 12; index++) {
+      response.add(calculateDifferentiatedPayment(data, index));
+    }
+    return response;
+  }
+
+  List<CalculatorResultData> _calculateAnnuityPayments(
+    CalculatorInputData data,
+  ) {
+    List<CalculatorResultData> response = [];
+    for (int index = 0; index <= data.loanTermYears * 12; index++) {
+      response.add(calculateAnnuityPayment(data, index));
+    }
+    return response;
+  }
+
+  @override
+  Future<List<CalculatorResultData>> differentiatedPayments(
+    CalculatorInputData data,
+  ) async {
+    return compute(_calculateDifferentiatedPayments, data);
+  }
+
+  @override
+  Future<List<CalculatorResultData>> annuityPayments(
+    CalculatorInputData data,
+  ) async {
+    return compute(_calculateAnnuityPayments, data);
+  }
+
   @override
   CalculatorResultData calculateDifferentiatedPayment(
     CalculatorInputData data,
@@ -118,24 +155,6 @@ class MortgageCalculator implements ICalculator {
       residue: UtilsCalculator.round(loanResidue),
     );
 
-    return response;
-  }
-
-  @override
-  List<CalculatorResultData> differentiatedPayments(CalculatorInputData data) {
-    List<CalculatorResultData> response = [];
-    for (int index = 0; index <= data.loanTermYears * 12; index++) {
-      response.add(calculateDifferentiatedPayment(data, index));
-    }
-    return response;
-  }
-
-  @override
-  List<CalculatorResultData> annuityPayments(CalculatorInputData data) {
-    List<CalculatorResultData> response = [];
-    for (int index = 0; index <= data.loanTermYears * 12; index++) {
-      response.add(calculateAnnuityPayment(data, index));
-    }
     return response;
   }
 

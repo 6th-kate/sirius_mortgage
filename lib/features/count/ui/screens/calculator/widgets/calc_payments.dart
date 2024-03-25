@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../../../../locale/locale.dart';
 import 'calc_payment_chooseable.dart';
 
 class CalcPayments extends StatelessWidget {
@@ -15,7 +15,7 @@ class CalcPayments extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Text(AppLocalizations.of(context)!.paymentsType),
+            child: Text(AppLocaleScope.of(context).paymentsType),
           ),
           CalculatorPaymentChooseable(
             isAnnuity: true,

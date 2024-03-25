@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:sirius_mortgage/features/settings/domain/theme/theme_repository.dart';
+import 'package:sirius_mortgage/features/settings/utils/defaults.dart';
 import 'package:sirius_mortgage/features/settings/utils/simple_response.dart';
 
 import '../theme_mode_enum.dart';
@@ -15,7 +16,12 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   final ThemeRepository _repository;
 
   ThemeBloc(this._repository)
-      : super(const ThemeState(themeMode: CustomThemeMode.system)) {
+      : super(
+          ThemeState(
+            themeMode: CustomThemeMode
+                .values[SettingDefaults.selectedThemeModeDefault],
+          ),
+        ) {
     on<ThemeEvent>((event, emit) {
       event.map(
         themeChanged: (ThemeChanged value) {
@@ -85,7 +91,8 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
           add(
             ThemeEvent.reload(
               SimpleResponse.error(
-                payload: CustomThemeMode.system,
+                payload: CustomThemeMode
+                    .values[SettingDefaults.selectedThemeModeDefault],
                 message: response.message,
               ),
             ),

@@ -22,20 +22,28 @@ class LocaleSetting extends StatelessWidget {
   void onLanguageSheetOpen(BuildContext context) {
     showCupertinoModalBottomSheet(
       context: context,
+      expand: false,
       builder: (context) {
-        return Scaffold(
-          body: SafeArea(
-            child: Column(
-              children: AppLocalizations.supportedLocales
-                  .map(
-                    (locale) => TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        locale.languageCode,
+        return SizedBox(
+          height: (AppLocalizations.supportedLocales.length + 2) * 50,
+          child: Scaffold(
+            body: SafeArea(
+              child: Column(
+                children: [
+                  ...AppLocalizations.supportedLocales,
+                  Locale('tat'),
+                  Locale('en')
+                ]
+                    .map(
+                      (locale) => TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          locale.languageCode,
+                        ),
                       ),
-                    ),
-                  )
-                  .toList(),
+                    )
+                    .toList(),
+              ),
             ),
           ),
         );

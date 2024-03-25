@@ -1,11 +1,13 @@
-import 'package:sirius_mortgage/features/settings/domain/theme/theme_mode_enum.dart';
+import '../../utils/defaults.dart';
 
 class KeyStore {
   KeyStore._();
 
   static const String selectedThemeMode = 'selectedThemeMode';
-  static final int selectedThemeModeDefault = CustomThemeMode.system.index;
+  static final int selectedThemeModeDefault =
+      SettingDefaults.selectedThemeModeDefault;
 
   static const String selectedLocale = 'selectedLocale';
-  static const String selectedLocaleDefault = 'ru';
+  static const String selectedLocaleDefault =
+      SettingDefaults.selectedLocaleDefault;
 }

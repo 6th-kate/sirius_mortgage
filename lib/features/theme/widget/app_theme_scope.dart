@@ -9,7 +9,7 @@ import '../model/app_theme.dart';
 class AppThemeScope extends StatelessWidget {
   final Widget child;
 
-  const AppThemeScope({required this.child, super.key});
+  const AppThemeScope({super.key, required this.child});
 
   static AppTheme of(BuildContext context) {
     final AppThemeProvider? result =
@@ -22,23 +22,26 @@ class AppThemeScope extends StatelessWidget {
   Widget build(BuildContext context) => BlocProvider(
         create: (context) =>
             ThemeBloc(ThemeRepositoryImpl())..add(ThemeEvent.needThemeLoad()),
-        // TODO(REWRITE CORRECTLY)
-        child: BlocBuilder<ThemeBloc, ThemeState>(
-          buildWhen: (previous, current) {
-            return previous.themeMode != current.themeMode;
-          },
-          builder: (context, state) {
-            return AppThemeProvider(
-              theme: switch (state.themeMode) {
-                CustomThemeMode.system => const LightAppTheme(),
-                CustomThemeMode.baseLight => const LightAppTheme(),
-                CustomThemeMode.baseDark => const LightAppTheme(),
-              },
-              child: child,
-            );
-          },
-        ),
+        child: ContextualAppThemeProvider(child: child),
       );
+}
+
+class ContextualAppThemeProvider extends StatelessWidget {
+  const ContextualAppThemeProvider({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppThemeProvider(
+      theme: switch (context.watch<ThemeBloc>().state.themeMode) {
+        CustomThemeMode.system => const LightAppTheme(),
+        CustomThemeMode.baseLight => const LightAppTheme(),
+        CustomThemeMode.baseDark => const LightAppTheme(),
+      },
+      child: child,
+    );
+  }
 }
 
 class AppThemeProvider extends InheritedWidget {

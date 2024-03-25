@@ -138,14 +138,14 @@ class _DayNightSwitchState extends State<DayNightSwitch>
     final SwitchThemeData switchTheme = SwitchTheme.of(context);
 
     final MaterialStateProperty<MouseCursor> effectiveMouseCursor =
-    MaterialStateProperty.resolveWith<MouseCursor>(
+        MaterialStateProperty.resolveWith<MouseCursor>(
             (Set<MaterialState> states) {
-          return MaterialStateProperty.resolveAs<MouseCursor?>(
+      return MaterialStateProperty.resolveAs<MouseCursor?>(
               widget.mouseCursor, states) ??
-              switchTheme.mouseCursor?.resolve(states) ??
-              MaterialStateProperty.resolveAs<MouseCursor>(
-                  MaterialStateMouseCursor.clickable, states);
-        });
+          switchTheme.mouseCursor?.resolve(states) ??
+          MaterialStateProperty.resolveAs<MouseCursor>(
+              MaterialStateMouseCursor.clickable, states);
+    });
 
     return Semantics(
       toggled: widget.value,
@@ -176,8 +176,12 @@ class _DayNightSwitchState extends State<DayNightSwitch>
             ..moonImage = widget.moonImage
             ..sunColor = widget.sunColor //TODO FIX COLORS
             ..moonColor = widget.moonColor //TODO FIX COLORS
-            ..dayColor = Theme.of(context).colorScheme.tertiary.withOpacity(0.8) // FIX COLORS
-            ..nightColor = Theme.of(context).colorScheme.onPrimary //TODO FIX COLORS
+            ..dayColor = Theme.of(context)
+                .colorScheme
+                .tertiary
+                .withOpacity(0.8) // FIX COLORS
+            ..nightColor =
+                Theme.of(context).colorScheme.onPrimary //TODO FIX COLORS
             ..configuration = createLocalImageConfiguration(context)
             ..textDirection = Directionality.of(context)
             ..isInteractive = isInteractive
@@ -316,7 +320,7 @@ class _DayNightSwitchPainter extends ToggleablePainter {
     final Color thumbColor = Color.lerp(sunColor, moonColor, currentValue)!;
 
     final ImageProvider? thumbImage =
-    isEnabled ? (currentValue < 0.5 ? sunImage : moonImage) : sunImage;
+        isEnabled ? (currentValue < 0.5 ? sunImage : moonImage) : sunImage;
     final trackPaint = Paint()..color = trackColor;
     final linePaint = Paint()
       ..color = Colors.white
@@ -332,12 +336,12 @@ class _DayNightSwitchPainter extends ToggleablePainter {
       ..style = PaintingStyle.stroke;
 
     final Offset trackPaintOffset =
-    _computeTrackPaintOffset(size, _kTrackWidth, _kTrackHeight);
+        _computeTrackPaintOffset(size, _kTrackWidth, _kTrackHeight);
     final double thumbRadius = _kThumbRadius;
     final Offset thumbPaintOffset =
-    _computeThumbPaintOffset(trackPaintOffset, visualPosition, thumbRadius);
+        _computeThumbPaintOffset(trackPaintOffset, visualPosition, thumbRadius);
     final Offset radialReactionOrigin =
-    Offset(thumbPaintOffset.dx + _kThumbRadius, size.height / 2);
+        Offset(thumbPaintOffset.dx + _kThumbRadius, size.height / 2);
 
     _paintTrack(canvas, trackPaint, trackPaintOffset);
     _paintBackground(
@@ -437,13 +441,13 @@ class _DayNightSwitchPainter extends ToggleablePainter {
   }
 
   void _paintThumb(
-      Canvas canvas,
-      Offset thumbPaintOffset,
-      double currentValue,
-      Color thumbColor,
-      ImageProvider? thumbImage,
-      double thumbRadius,
-      ) {
+    Canvas canvas,
+    Offset thumbPaintOffset,
+    double currentValue,
+    Color thumbColor,
+    ImageProvider? thumbImage,
+    double thumbRadius,
+  ) {
     try {
       _isPainting = true;
       if (_cachedThumbPainter == null ||

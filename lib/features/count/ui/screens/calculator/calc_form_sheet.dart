@@ -14,7 +14,8 @@ class CalculatorFormPage extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         child: ConstrainedBox(
           constraints: BoxConstraints(
-              maxHeight: MediaQuery.of(context).size.height - 43,),
+            maxHeight: MediaQuery.of(context).size.height - 43,
+          ),
           child: Column(
             children: [
               Text(AppLocaleScope.of(context).calculateMortgage),

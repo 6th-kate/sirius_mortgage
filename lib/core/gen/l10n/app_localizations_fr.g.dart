@@ -14,7 +14,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get calculateMortgage => 'Calculer l\'hypothèque';
 
   @override
-  String get calculateMortgageLabel => 'Découvrez combien vous allez payer en trop';
+  String get calculateMortgageLabel =>
+      'Découvrez combien vous allez payer en trop';
 
   @override
   String get compareMortgage => 'Comparer les programmes';

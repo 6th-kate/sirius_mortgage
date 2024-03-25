@@ -5,8 +5,6 @@ import 'package:sirius_mortgage/features/locale/locale.dart';
 import 'package:sirius_mortgage/features/settings/domain/locale/locale_bloc/locale_bloc.dart';
 import 'package:sirius_mortgage/features/settings/ui/widgets/setting_template.dart';
 
-import '../../../../core/core.dart';
-
 class LocaleSetting extends StatelessWidget {
   const LocaleSetting({super.key});
 

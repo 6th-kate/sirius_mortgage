@@ -10,7 +10,7 @@ class CalcButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainButtonTemplate(
-      title: 'Рассчитать вашу ипотеку',
+      title: 'Рассчитать ипотеку',
       subtitle: 'Узнайте, сколько переплатите',
       image: ImageFromAsset.calcButton,
       onClick: onClick,

@@ -8,11 +8,13 @@ part 'form_state.dart';
 
 class FormBloc extends Bloc<FormEvent, ValidationFormState> {
   FormBloc()
-      : super(ValidationFormState.notValid(
-          FormModel(),
-          'Заполнены не все поля',
-          true,
-        )) {
+      : super(
+          ValidationFormState.notValid(
+            FormModel(),
+            'Заполните все поля',
+            true,
+          ),
+        ) {
     on<FormEvent>(
       (event, emit) => switch (event) {
         CostChangedEvent() => _costChangedEvent(event, emit),
@@ -48,7 +50,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
       emit(
         ValidationFormState.notValid(
           state.model,
-          'Некорректные данные суммы кредита',
+          'Некорректные стоимость недвижимости',
           false,
         ),
       );
@@ -63,7 +65,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     if (value == null || value <= 0) {
       emit(ValidationFormState.notValid(
         state.model,
-        'Некорректные данные начального взноса',
+        'Некорректный первоначальный взнос',
         false,
       ));
       return;
@@ -74,10 +76,10 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
 
   void _termChangedEvent(TermChangedEvent event, Emitter emit) {
     final value = int.tryParse(event.term);
-    if (value == null || value <= 0 || value >= 80) {
+    if (value == null || value <= 0) {
       emit(ValidationFormState.notValid(
         state.model,
-        'Некорректные данные срока кредита',
+        'Некорректные срок',
         false,
       ));
       return;
@@ -91,7 +93,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     if (value == null || value <= 0 || value > 100) {
       emit(ValidationFormState.notValid(
         state.model,
-        'Некорректные данные процентной ставки',
+        'Некорректная ставка',
         false,
       ));
       return;

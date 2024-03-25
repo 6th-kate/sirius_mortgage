@@ -25,7 +25,7 @@ abstract interface class ICalculator {
   Future<List<CalculatorResultData>> annuityPayments(CalculatorInputData data);
 
   /// Основная информация по методу выплаты. [Виджет с результатом].
-  CalculatorSummaryInformation summaryInformation(
+  Future<CalculatorSummaryInformation> summaryInformation(
     CalculatorInputData data,
     CalculateType type,
   );

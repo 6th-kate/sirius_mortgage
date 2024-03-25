@@ -259,7 +259,7 @@ void main() {
   });
 
   /// Tests for summaryInformation method
-  test('Summary information method [test-1].', () {
+  test('Summary information method [test-1].', () async {
     final input = CalculatorInputData(
       loanAmount: 100000,
       initialPayment: 0,
@@ -268,20 +268,23 @@ void main() {
       date: DateTime(2024, 1, 1),
     );
 
-    final response = calculator.summaryInformation(
+    final response = await calculator.summaryInformation(
       input,
       CalculateType.annuity,
     );
 
-    const output = CalculatorSummaryInformation(
+    final output = CalculatorSummaryInformation(
       totalPayout: 108309.97,
       loanAmount: 100000,
       interestPayout: 8309.97,
     );
 
-    expect(output, equals(response));
+    expect(output.totalPayout, equals(response.totalPayout));
+    expect(output.loanAmount, equals(response.loanAmount));
+    expect(output.interestPayout, equals(response.interestPayout));
   });
-  test('Summary information method [test-2].', () {
+
+  test('Summary information method [test-2].', () async {
     final input = CalculatorInputData(
       loanAmount: 100000,
       initialPayment: 0,
@@ -290,18 +293,23 @@ void main() {
       date: DateTime(2024, 1, 1),
     );
 
-    final response =
-        calculator.summaryInformation(input, CalculateType.differentiated);
+    final response = await calculator.summaryInformation(
+      input,
+      CalculateType.differentiated,
+    );
 
-    const output = CalculatorSummaryInformation(
+    final output = CalculatorSummaryInformation(
       totalPayout: 108125.00,
       loanAmount: 100000,
       interestPayout: 8125.00,
     );
 
-    expect(output, equals(response));
+    expect(output.totalPayout, equals(response.totalPayout));
+    expect(output.loanAmount, equals(response.loanAmount));
+    expect(output.interestPayout, equals(response.interestPayout));
   });
-  test('Summary information method [test-3].', () {
+
+  test('Summary information method [test-3].', () async {
     final input = CalculatorInputData(
       loanAmount: 100000,
       initialPayment: 20000,
@@ -310,20 +318,23 @@ void main() {
       date: DateTime(2024, 1, 1),
     );
 
-    final response = calculator.summaryInformation(
+    final response = await calculator.summaryInformation(
       input,
       CalculateType.annuity,
     );
 
-    const output = CalculatorSummaryInformation(
+    final output = CalculatorSummaryInformation(
       totalPayout: 85029.08,
       loanAmount: 80000,
       interestPayout: 5029.08,
     );
 
-    expect(output, equals(response));
+    expect(output.totalPayout, equals(response.totalPayout));
+    expect(output.loanAmount, equals(response.loanAmount));
+    expect(output.interestPayout, equals(response.interestPayout));
   });
-  test('Summary information method [test-4].', () {
+
+  test('Summary information method [test-4].', () async {
     final input = CalculatorInputData(
       loanAmount: 1000000,
       initialPayment: 0,
@@ -332,20 +343,23 @@ void main() {
       date: DateTime(2024, 1, 1),
     );
 
-    final response = calculator.summaryInformation(
+    final response = await calculator.summaryInformation(
       input,
       CalculateType.differentiated,
     );
 
-    const output = CalculatorSummaryInformation(
+    final output = CalculatorSummaryInformation(
       totalPayout: 1531250.00,
       loanAmount: 1000000,
       interestPayout: 531250.00,
     );
 
-    expect(output, equals(response));
+    expect(output.totalPayout, equals(response.totalPayout));
+    expect(output.loanAmount, equals(response.loanAmount));
+    expect(output.interestPayout, equals(response.interestPayout));
   });
-  test('Summary information method [test-5].', () {
+
+  test('Summary information method [test-5].', () async {
     final input = CalculatorInputData(
       loanAmount: 1000000,
       initialPayment: 0,
@@ -354,20 +368,23 @@ void main() {
       date: DateTime(2024, 1, 1),
     );
 
-    final response = calculator.summaryInformation(
+    final response = await calculator.summaryInformation(
       input,
       CalculateType.annuity,
     );
 
-    const output = CalculatorSummaryInformation(
+    final output = CalculatorSummaryInformation(
       totalPayout: 1083099.75,
       loanAmount: 1000000,
       interestPayout: 83099.75,
     );
 
-    expect(output, equals(response));
+    expect(output.totalPayout, equals(response.totalPayout));
+    expect(output.loanAmount, equals(response.loanAmount));
+    expect(output.interestPayout, equals(response.interestPayout));
   });
-  test('Summary information method [test-6].', () {
+
+  test('Summary information method [test-6].', () async {
     final input = CalculatorInputData(
       loanAmount: 566678,
       initialPayment: 0,
@@ -376,17 +393,19 @@ void main() {
       date: DateTime(2024, 1, 1),
     );
 
-    final response = calculator.summaryInformation(
+    final response = await calculator.summaryInformation(
       input,
       CalculateType.differentiated,
     );
 
-    const output = CalculatorSummaryInformation(
+    final output = CalculatorSummaryInformation(
       totalPayout: 802793.83,
       loanAmount: 566678,
       interestPayout: 236115.83,
     );
 
-    expect(output, equals(response));
+    expect(output.totalPayout, equals(response.totalPayout));
+    expect(output.loanAmount, equals(response.loanAmount));
+    expect(output.interestPayout, equals(response.interestPayout));
   });
 }

@@ -1,3 +1,5 @@
+import 'package:sirius_mortgage/features/calculator/domain/model/calculator_inteface.dart';
+
 class CalculatorInputData {
   /// Кредит
   final double loanAmount;
@@ -40,6 +42,25 @@ class CalculatorInputData {
       interestRate.hashCode ^
       date.hashCode ^
       initialPayment.hashCode;
+}
+
+class SummaryInformationInput {
+  final CalculatorInputData data;
+
+  final CalculateType type;
+
+  SummaryInformationInput({required this.data, required this.type});
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SummaryInformationInput &&
+          runtimeType == other.runtimeType &&
+          data == other.data &&
+          type == other.type;
+
+  @override
+  int get hashCode => data.hashCode ^ type.hashCode;
 }
 
 class CalculatorResultData {

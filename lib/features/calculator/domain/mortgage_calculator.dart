@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart';
 
 class MortgageCalculator implements ICalculator {
   const MortgageCalculator();
-  
+
   List<CalculatorResultData> _calculateDifferentiatedPayments(
     CalculatorInputData data,
   ) {
@@ -159,10 +159,20 @@ class MortgageCalculator implements ICalculator {
   }
 
   @override
-  CalculatorSummaryInformation summaryInformation(
+  Future<CalculatorSummaryInformation> summaryInformation(
     CalculatorInputData data,
     CalculateType type,
+  ) async {
+    return compute(
+        _calculateSummaryInformation, SummaryInformationInput(data: data, type: type),);
+  }
+
+  CalculatorSummaryInformation _calculateSummaryInformation(
+    SummaryInformationInput summaryData,
   ) {
+    final data = summaryData.data;
+    final type = summaryData.type;
+
     final loanAmount = data.loanAmount - data.initialPayment;
     double totalPayout = 0;
     double interestPayout = 0;

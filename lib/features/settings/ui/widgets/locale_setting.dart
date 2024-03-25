@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:sirius_mortgage/features/settings/ui/widgets/setting_template.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../../core/core.dart';
 
 class LocaleSetting extends StatelessWidget {
   const LocaleSetting({super.key});

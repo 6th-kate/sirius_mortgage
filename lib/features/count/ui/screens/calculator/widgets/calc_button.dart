@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_constants.dart';
 
+import '../../../../../locale/locale.dart';
 import '../../../../domain/form_bloc/form_bloc.dart';
 import '../../../../route/route.dart';
 
@@ -31,7 +31,7 @@ class CalculateButton extends StatelessWidget {
                   Navigator.of(context).pushNamed(routeResult);
                 }
               : null,
-          child: Text(AppLocalizations.of(context)!.calculate),
+          child: Text(AppLocaleScope.of(context).calculate),
         ),
       ),
     );

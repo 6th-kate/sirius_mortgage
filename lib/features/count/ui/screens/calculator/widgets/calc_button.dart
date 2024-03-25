@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../../../locale/locale.dart';
 import '../../../../route/route.dart';
 
 class CalculateButton extends StatelessWidget {
@@ -17,7 +17,7 @@ class CalculateButton extends StatelessWidget {
           onPressed: () => {
             Navigator.of(context).pushNamed(routeResult),
           },
-          child: Text(AppLocalizations.of(context)!.calculate),
+          child: Text(AppLocaleScope.of(context).calculate),
         ),
       ),
     );

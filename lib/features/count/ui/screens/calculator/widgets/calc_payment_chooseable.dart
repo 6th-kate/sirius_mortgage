@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../../../../locale/locale.dart';
+
 
 class CalculatorPaymentChooseable extends StatelessWidget {
   final bool isAnnuity;
@@ -23,8 +24,8 @@ class CalculatorPaymentChooseable extends StatelessWidget {
             groupValue: annuityIsSelected,
             onChanged: onChanged,),
         Text(isAnnuity
-            ? AppLocalizations.of(context)!.annuity
-            : AppLocalizations.of(context)!.differentiated,),
+            ? AppLocaleScope.of(context).annuity
+            : AppLocaleScope.of(context).differentiated,),
       ],
     );
   }

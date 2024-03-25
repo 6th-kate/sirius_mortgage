@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../core/core.dart';
 
 class AppLocaleScope extends StatelessWidget {
   final Widget child;
@@ -7,7 +8,7 @@ class AppLocaleScope extends StatelessWidget {
   const AppLocaleScope({required this.child, super.key});
 
   static AppLocalizations of(BuildContext context) {
-    return AppLocalizations.of(context)!;
+    return AppLocalizations.of(context);
   }
 
   static Locale localeOf(BuildContext context) {

@@ -17,7 +17,7 @@ class CalculatorFormPage extends StatelessWidget {
               maxHeight: MediaQuery.of(context).size.height - 43,),
           child: Column(
             children: [
-              Text(AppLocaleScope.of(context).calculateMortage),
+              Text(AppLocaleScope.of(context).calculateMortgage),
               const CalculatorForm(),
               const Spacer(),
               const CalculateButton(),

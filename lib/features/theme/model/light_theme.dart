@@ -10,6 +10,7 @@ class LightAppTheme implements AppTheme {
   ThemeData get theme => ThemeData(
     extensions: [
       ThemeGradients.light,
+      ThemeColors.light,
     ],
     inputDecorationTheme: InputDecorationTheme(
       labelStyle: AppTextStyles.largeLabel.apply(color: AppColors.form),

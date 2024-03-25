@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../model/app_theme.dart';
 import '../model/light_theme.dart';
+import '../model/dark_theme.dart';
 
 class AppThemeScope extends StatelessWidget {
   final Widget child;
@@ -17,7 +18,7 @@ class AppThemeScope extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppThemeProvider(
-        theme: const LightAppTheme(),
+        theme: const DarkAppTheme(),
         child: child,
       );
 }

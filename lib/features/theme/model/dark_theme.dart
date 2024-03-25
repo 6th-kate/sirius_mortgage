@@ -8,6 +8,7 @@ class DarkAppTheme implements AppTheme {
   ThemeData get theme => ThemeData(
     extensions: [
       ThemeGradients.dark,
+      ThemeColors.dark,
     ],
     inputDecorationTheme: InputDecorationTheme(
       labelStyle: AppTextStyles.largeLabel.apply(color: AppColorsDark.form),

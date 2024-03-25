@@ -137,7 +137,7 @@ abstract class AppColorsDark {
 
   //onCard == buttonTitle
   static const onPrimary = Color(0xFFEEF9EE);
-  static const label = Color(0xFFB1B7B3);
+  static const label = Color(0xFFEEF9EE);
   static const focus = Color(0xFF65C786);
 
 //when focus/pressed -- cardLabel (label)

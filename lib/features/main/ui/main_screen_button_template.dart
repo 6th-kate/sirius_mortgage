@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
 class MainButtonTemplate extends StatelessWidget {
   final String title;
@@ -19,15 +20,8 @@ class MainButtonTemplate extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromRGBO(140, 231, 186, 1),
-              Color.fromRGBO(238, 244, 220, 1),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+        decoration: BoxDecoration(
+          gradient: Theme.of(context).extension<ThemeGradients>()!.buttonGradient,
         ),
         child: Stack(
           children: [
@@ -43,17 +37,14 @@ class MainButtonTemplate extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 25, top: 20),
                         child: Text(
                           title,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
+                          style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 25, bottom: 20),
                         child: Text(
                           subtitle,
-                          style: const TextStyle(color: Colors.black54),
+                          style: Theme.of(context).textTheme.labelSmall!.apply(color:  Theme.of(context).extension<ThemeColors>()!.label),
                         ),
                       ),
                     ],

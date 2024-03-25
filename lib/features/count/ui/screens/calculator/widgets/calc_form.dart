@@ -39,6 +39,7 @@ class CalculatorForm extends StatelessWidget {
                   controller: TextEditingController(),
                   label: AppLocaleScope.of(context).loanTerm,
                   placeholder: '0Р',
+                  textFieldType: TextFieldType.term,
                 ),
               ),
               const SizedBox(width: 8.0),

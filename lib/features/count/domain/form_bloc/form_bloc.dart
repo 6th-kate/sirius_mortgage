@@ -11,8 +11,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
       : super(
           ValidationFormState.notValid(
             FormModel(),
-            'Заполните все поля',
-            true,
+            '',
           ),
         ) {
     on<FormEvent>(
@@ -21,8 +20,6 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
         ContributionChangedEvent() => _contributionChangedEvent(event, emit),
         TermChangedEvent() => _termChangedEvent(event, emit),
         BetChangedEvent() => _betChangedEvent(event, emit),
-        SuccessEvent() => _successEvent(event, emit),
-        ErrorEvent() => _errorEvent(event, emit),
         AnnuityPaymentTypeChangeEvent() =>
           _annuityPaymentTypeChangeEvent(event, emit),
       },
@@ -33,11 +30,12 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     final isFilled = model.isFullyFilled;
 
     if (!isFilled) {
-      emit(ValidationFormState.notValid(
-        model,
-        'Введены не все данные',
-        false,
-      ));
+      emit(
+        ValidationFormState.notValid(
+          model,
+          'Введены не все данные',
+        ),
+      );
       return;
     }
 
@@ -45,58 +43,104 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
   }
 
   void _costChangedEvent(CostChangedEvent event, Emitter emit) {
-    final value = int.tryParse(event.cost);
-    if (value == null || value <= 0) {
+    if (event.cost.isNotEmpty) {
+      final value = int.tryParse(event.cost);
+      if (value == null || value <= 0) {
+        emit(
+          ValidationFormState.notValid(
+            state.model,
+            'Некорректная стоимость имущества',
+          ),
+        );
+        return;
+      }
+    } else {
       emit(
         ValidationFormState.notValid(
           state.model,
-          'Некорректные стоимость недвижимости',
-          false,
+          '',
         ),
       );
-      return;
     }
+
     final model = state.model.copyWith(cost: event.cost);
     fullyFilledCheck(model, emit);
   }
 
   void _contributionChangedEvent(ContributionChangedEvent event, Emitter emit) {
-    final value = int.tryParse(event.contribution);
-    if (value == null || value <= 0) {
-      emit(ValidationFormState.notValid(
-        state.model,
-        'Некорректный первоначальный взнос',
-        false,
-      ));
-      return;
+    final cost =
+        state.model.cost != null ? int.tryParse(state.model.cost!) : null;
+
+    if (event.contribution.isNotEmpty) {
+      final value = int.tryParse(event.contribution);
+      if (value == null ||
+          value <= 0 ||
+          cost != null && cost <= value ||
+          cost == null) {
+        emit(
+          ValidationFormState.notValid(
+            state.model,
+            'Некорректный первоначальный взнос',
+          ),
+        );
+        return;
+      }
+    } else {
+      emit(
+        ValidationFormState.notValid(
+          state.model,
+          '',
+        ),
+      );
     }
+
     final model = state.model.copyWith(contribution: event.contribution);
     fullyFilledCheck(model, emit);
   }
 
   void _termChangedEvent(TermChangedEvent event, Emitter emit) {
-    final value = int.tryParse(event.term);
-    if (value == null || value <= 0) {
-      emit(ValidationFormState.notValid(
-        state.model,
-        'Некорректные срок',
-        false,
-      ));
-      return;
+    if (event.term.isNotEmpty) {
+      final value = int.tryParse(event.term);
+      if (value == null || value <= 0) {
+        emit(
+          ValidationFormState.notValid(
+            state.model,
+            'Некорректный срок',
+          ),
+        );
+        return;
+      }
+    } else {
+      emit(
+        ValidationFormState.notValid(
+          state.model,
+          '',
+        ),
+      );
     }
     final model = state.model.copyWith(term: event.term);
     fullyFilledCheck(model, emit);
   }
 
   void _betChangedEvent(BetChangedEvent event, Emitter emit) {
-    final value = int.tryParse(event.bet);
-    if (value == null || value <= 0 || value > 100) {
-      emit(ValidationFormState.notValid(
-        state.model,
-        'Некорректная ставка',
-        false,
-      ));
-      return;
+    if (event.bet.isNotEmpty) {
+      final value = int.tryParse(event.bet);
+      if (value == null || value <= 0) {
+        emit(
+          ValidationFormState.notValid(
+            state.model,
+            'Некорректная ставка',
+          ),
+        );
+        return;
+      }
+    } else {
+      emit(
+        ValidationFormState.notValid(
+          state.model,
+          '',
+        ),
+      );
     }
     final model = state.model.copyWith(bet: event.bet);
     fullyFilledCheck(model, emit);
@@ -107,13 +151,5 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     final model =
         state.model.copyWith(isAnnuityPaymentType: event.isAnnuityPaymentType);
     fullyFilledCheck(model, emit);
-  }
-
-  void _successEvent(SuccessEvent event, Emitter emit) {
-    // TODO
-  }
-
-  void _errorEvent(ErrorEvent event, Emitter emit) {
-    // TODO
   }
 }

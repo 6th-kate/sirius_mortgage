@@ -9,7 +9,6 @@ sealed class ValidationFormState {
   const factory ValidationFormState.notValid(
     FormModel model,
     String errorMessage,
-    bool isInit,
   ) = NotValidFormState;
 }
 
@@ -22,10 +21,9 @@ class ValidFormState implements ValidationFormState {
 
 class NotValidFormState implements ValidationFormState {
   final String errorMessage;
-  final bool isInit;
 
   @override
   final FormModel model;
 
-  const NotValidFormState(this.model, this.errorMessage, this.isInit);
+  const NotValidFormState(this.model, this.errorMessage);
 }

@@ -20,4 +20,3 @@ class AppMaterialContext extends StatelessWidget {
         home: child,
       );
 }
-

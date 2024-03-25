@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sirius_mortgage/features/settings/data/locale_repository_impl.dart';
+import 'package:sirius_mortgage/features/settings/domain/locale/locale_bloc/locale_bloc.dart';
 
 import '../../../core/core.dart';
 
@@ -29,9 +32,17 @@ class AppLocaleScope extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => AppLocaleProvider(
-        locale: const Locale('ru'),
-        child: child,
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => LocaleBloc(LocaleRepositoryImpl())
+          ..add(LocaleEvent.needLocaleLoad()),
+        child: BlocBuilder<LocaleBloc, LocaleState>(
+          builder: (context, state) {
+            return AppLocaleProvider(
+              locale: Locale(state.languageCode),
+              child: child,
+            );
+          },
+        ),
       );
 }
 

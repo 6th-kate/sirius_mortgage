@@ -37,11 +37,18 @@ class ContextualAppThemeProvider extends StatelessWidget {
       theme: switch (context.watch<ThemeBloc>().state.themeMode) {
         CustomThemeMode.system => const LightAppTheme(),
         CustomThemeMode.baseLight => const LightAppTheme(),
-        CustomThemeMode.baseDark => const LightAppTheme(),
+        CustomThemeMode.baseDark => const DarkThemeMock(),
       },
       child: child,
     );
   }
+}
+
+class DarkThemeMock extends LightAppTheme {
+  const DarkThemeMock();
+
+  @override
+  ThemeData get theme => ThemeData();
 }
 
 class AppThemeProvider extends InheritedWidget {

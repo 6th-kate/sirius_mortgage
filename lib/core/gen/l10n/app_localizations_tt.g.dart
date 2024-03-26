@@ -45,4 +45,28 @@ class AppLocalizationsTt extends AppLocalizations {
 
   @override
   String get calculate => 'Исәпләү';
+
+  @override
+  String get result => 'Нәтиҗә';
+
+  @override
+  String get totalPayoutResult => 'Гомуми түләү: ';
+
+  @override
+  String get loanAmountResult => 'Төп бурыч: ';
+
+  @override
+  String get interestAmountResult => 'Исәпләнгән процентлар: ';
+
+  @override
+  String get interestAmountAgenda => 'Исәпләнгән процентлар';
+
+  @override
+  String get loanAmountAgenda => 'Төп бурыч';
+
+  @override
+  String get payoutChart => 'Түләү графигы: ';
+
+  @override
+  String get openTable => '+ Тулы таблицаны карагыз';
 }

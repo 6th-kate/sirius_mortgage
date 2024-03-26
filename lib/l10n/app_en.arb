@@ -12,5 +12,13 @@
 	"paymentsType": "Type of monthly payments",
 	"annuity": "Annuite",
 	"differentiated": "Differentiated",
-	"calculate": "Calculate"
+	"calculate": "Calculate",
+	"result": "Result",
+	"totalPayoutResult": "Total amount: ",
+	"loanAmountResult": "Main debt: ",
+	"interestAmountResult": "Interest charges: ",
+	"interestAmountAgenda": "Interest charges",
+	"loanAmountAgenda": "Main debt",
+	"payoutChart": "Repayment schedule: ",
+	"openTable": "+ View full table"
 }

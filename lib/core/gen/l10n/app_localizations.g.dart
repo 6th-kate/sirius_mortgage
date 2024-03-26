@@ -94,7 +94,7 @@ abstract class AppLocalizations {
     Locale('en'),
     Locale('fr'),
     Locale('ru'),
-    Locale('tt'),
+    Locale('tt')
   ];
 
   /// No description provided for @currency.
@@ -180,6 +180,54 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Рассчитать'**
   String get calculate;
+
+  /// No description provided for @result.
+  ///
+  /// In ru, this message translates to:
+  /// **'Результат'**
+  String get result;
+
+  /// No description provided for @totalPayoutResult.
+  ///
+  /// In ru, this message translates to:
+  /// **'Общая сумма: '**
+  String get totalPayoutResult;
+
+  /// No description provided for @loanAmountResult.
+  ///
+  /// In ru, this message translates to:
+  /// **'Основной долг: '**
+  String get loanAmountResult;
+
+  /// No description provided for @interestAmountResult.
+  ///
+  /// In ru, this message translates to:
+  /// **'Начисленные проценты: '**
+  String get interestAmountResult;
+
+  /// No description provided for @interestAmountAgenda.
+  ///
+  /// In ru, this message translates to:
+  /// **'Начисленные проценты'**
+  String get interestAmountAgenda;
+
+  /// No description provided for @loanAmountAgenda.
+  ///
+  /// In ru, this message translates to:
+  /// **'Основной долг'**
+  String get loanAmountAgenda;
+
+  /// No description provided for @payoutChart.
+  ///
+  /// In ru, this message translates to:
+  /// **'График погашения: '**
+  String get payoutChart;
+
+  /// No description provided for @openTable.
+  ///
+  /// In ru, this message translates to:
+  /// **'+ Посмотреть полную таблицу'**
+  String get openTable;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -12,5 +12,13 @@
 	"paymentsType": "Type de paiements mensuels",
 	"annuity": "Annuité",
 	"differentiated": "Différencié",
-	"calculate": "Calculer"
+	"calculate": "Calculer",
+	"result": "Résultat",
+	"totalPayoutResult": "Montant total: ",
+	"loanAmountResult": "Dette principale: ",
+	"interestAmountResult": "Frais d'intérêt: ",
+	"interestAmountAgenda": "Frais d'intérêt",
+	"loanAmountAgenda": "Dette principale",
+	"payoutChart": "Calendrier de remboursement: ",
+	"openTable": "+ Voir le tableau complet"
 }

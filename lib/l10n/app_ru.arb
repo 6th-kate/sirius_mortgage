@@ -12,5 +12,13 @@
   "paymentsType" : "Тип ежемесячных платежей",
   "annuity" : "Аннуитетные",
   "differentiated" : "Дифференцированные",
-  "calculate" : "Рассчитать"
+  "calculate" : "Рассчитать",
+  "result": "Результат",
+  "totalPayoutResult": "Общая сумма: ",
+  "loanAmountResult": "Основной долг: ",
+  "interestAmountResult": "Начисленные проценты: ",
+  "interestAmountAgenda": "Начисленные проценты",
+  "loanAmountAgenda": "Основной долг",
+  "payoutChart": "График погашения: ",
+  "openTable": "+ Посмотреть полную таблицу"
 }

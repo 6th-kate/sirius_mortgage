@@ -16,6 +16,7 @@ dependencies:
   flutter_bloc: ^8.1.4
   modal_bottom_sheet: ^3.0.0
   freezed: ^2.4.7
+  fl_chart: ^0.66.2
 
 dev_dependencies:
   # Lints

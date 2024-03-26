@@ -45,4 +45,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get calculate => 'Calculate';
+
+  @override
+  String get result => 'Result';
+
+  @override
+  String get totalPayoutResult => 'Total amount: ';
+
+  @override
+  String get loanAmountResult => 'Main debt: ';
+
+  @override
+  String get interestAmountResult => 'Interest charges: ';
+
+  @override
+  String get interestAmountAgenda => 'Interest charges';
+
+  @override
+  String get loanAmountAgenda => 'Main debt';
+
+  @override
+  String get payoutChart => 'Repayment schedule: ';
+
+  @override
+  String get openTable => '+ View full table';
 }

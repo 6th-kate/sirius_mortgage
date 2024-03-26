@@ -18,7 +18,7 @@ class AppThemeScope extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppThemeProvider(
-        theme: const DarkAppTheme(),
+        theme: const LightAppTheme(),
         child: child,
       );
 }

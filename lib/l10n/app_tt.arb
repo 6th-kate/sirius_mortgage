@@ -12,5 +12,13 @@
 	"paymentsType": "Айлык түләүләр төре",
 	"annuity": "Аннуитлы (Tигез зурлыклы түләүләр)",
 	"differentiated": "Аерымланган түләүләр",
-	"calculate": "Исәпләү"
+	"calculate": "Исәпләү",
+	"result": "Нәтиҗә",
+	"totalPayoutResult": "Гомуми түләү: ",
+	"loanAmountResult": "Төп бурыч: ",
+	"interestAmountResult": "Исәпләнгән процентлар: ",
+	"interestAmountAgenda": "Исәпләнгән процентлар",
+	"loanAmountAgenda": "Төп бурыч",
+	"payoutChart": "Түләү графигы: ",
+	"openTable": "+ Тулы таблицаны карагыз"
 }

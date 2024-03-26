@@ -14,33 +14,32 @@ class ThemeGradients extends ThemeExtension<ThemeGradients> {
     LinearGradient? buttonGradient,
   }) {
     return ThemeGradients(
-      buttonGradient:
-      buttonGradient ?? this.buttonGradient,
+      buttonGradient: buttonGradient ?? this.buttonGradient,
     );
   }
 
   @override
   ThemeExtension<ThemeGradients> lerp(
-      ThemeExtension<ThemeGradients>? other,
-      double t,
-      ) {
+    ThemeExtension<ThemeGradients>? other,
+    double t,
+  ) {
     if (other is! ThemeGradients) {
       return this;
     }
 
     return ThemeGradients(
       buttonGradient:
-      LinearGradient.lerp(buttonGradient, other.buttonGradient, t)!,
+          LinearGradient.lerp(buttonGradient, other.buttonGradient, t)!,
     );
   }
 
   static get light => const ThemeGradients(
-    buttonGradient: AppColors.buttonGradient,
-  );
+        buttonGradient: AppColors.buttonGradient,
+      );
 
   static get dark => const ThemeGradients(
-    buttonGradient: AppColorsDark.buttonGradient,
-  );
+        buttonGradient: AppColorsDark.buttonGradient,
+      );
 }
 
 class ThemeColors extends ThemeExtension<ThemeColors> {
@@ -61,42 +60,38 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     Color? label,
   }) {
     return ThemeColors(
-      chartColorFirst:
-      chartColorFirst ?? this.chartColorFirst,
-      chartColorSecond:
-      chartColorSecond ?? this.chartColorFirst,
+      chartColorFirst: chartColorFirst ?? this.chartColorFirst,
+      chartColorSecond: chartColorSecond ?? this.chartColorFirst,
       label: label ?? this.label,
     );
   }
 
   @override
   ThemeExtension<ThemeColors> lerp(
-      ThemeExtension<ThemeColors>? other,
-      double t,
-      ) {
+    ThemeExtension<ThemeColors>? other,
+    double t,
+  ) {
     if (other is! ThemeColors) {
       return this;
     }
 
     return ThemeColors(
-      chartColorFirst:
-      Color.lerp(chartColorFirst, other.chartColorFirst, t)!,
+      chartColorFirst: Color.lerp(chartColorFirst, other.chartColorFirst, t)!,
       chartColorSecond:
-      Color.lerp(chartColorSecond, other.chartColorSecond, t)!,
-      label:
-      Color.lerp(label, other.label, t)!,
+          Color.lerp(chartColorSecond, other.chartColorSecond, t)!,
+      label: Color.lerp(label, other.label, t)!,
     );
   }
 
   static get light => const ThemeColors(
-    chartColorFirst: AppColors.coldGreen,
-    chartColorSecond: AppColors.secondDiagramColor,
-    label: AppColors.label,
-  );
+        chartColorFirst: AppColors.coldGreen,
+        chartColorSecond: AppColors.secondDiagramColor,
+        label: AppColors.label,
+      );
 
   static get dark => const ThemeColors(
-    chartColorFirst: AppColorsDark.coldGreen,
-    chartColorSecond: AppColorsDark.secondDiagramColor,
-    label: AppColorsDark.label,
-  );
+        chartColorFirst: AppColorsDark.coldGreen,
+        chartColorSecond: AppColorsDark.secondDiagramColor,
+        label: AppColorsDark.label,
+      );
 }

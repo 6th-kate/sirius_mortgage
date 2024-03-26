@@ -21,7 +21,8 @@ class MainButtonTemplate extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       child: Container(
         decoration: BoxDecoration(
-          gradient: Theme.of(context).extension<ThemeGradients>()!.buttonGradient,
+          gradient:
+              Theme.of(context).extension<ThemeGradients>()!.buttonGradient,
         ),
         child: Stack(
           children: [
@@ -44,7 +45,10 @@ class MainButtonTemplate extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 25, bottom: 20),
                         child: Text(
                           subtitle,
-                          style: Theme.of(context).textTheme.labelSmall!.apply(color:  Theme.of(context).extension<ThemeColors>()!.label),
+                          style: Theme.of(context).textTheme.labelSmall!.apply(
+                              color: Theme.of(context)
+                                  .extension<ThemeColors>()!
+                                  .label),
                         ),
                       ),
                     ],

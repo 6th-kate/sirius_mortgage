@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../locale/locale.dart';
@@ -23,10 +24,15 @@ class CalculatorPaymentChooseable extends StatelessWidget {
           groupValue: annuityIsSelected,
           onChanged: onChanged,
         ),
-        Text(
-          isAnnuity
-              ? AppLocaleScope.of(context).annuity
-              : AppLocaleScope.of(context).differentiated,
+        InkWell(
+          onTap: () {
+            onChanged(isAnnuity);
+          },
+          child: Text(
+            isAnnuity
+                ? AppLocaleScope.of(context).annuity
+                : AppLocaleScope.of(context).differentiated,
+          ),
         ),
       ],
     );

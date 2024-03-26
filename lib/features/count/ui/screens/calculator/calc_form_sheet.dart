@@ -27,15 +27,16 @@ class CalculatorFormPage extends StatelessWidget {
                 const CalculatorForm(),
                 const Spacer(),
                 BlocBuilder<FormBloc, ValidationFormState>(
-                    builder: (context, state) {
-                  if (state is NotValidFormState && !state.isInit) {
-                    return Text(
-                      state.errorMessage,
-                      style: const TextStyle(color: AppColors.error),
-                    );
-                  }
-                  return const SizedBox.shrink();
-                }),
+                  builder: (context, state) {
+                    if (state is NotValidFormState) {
+                      return Text(
+                        state.errorMessage,
+                        style: const TextStyle(color: AppColors.error),
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  },
+                ),
                 const CalculateButton(),
               ],
             ),

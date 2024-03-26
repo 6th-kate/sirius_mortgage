@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-class FormModel with EquatableMixin {
+class FormModel {
   final String? cost;
   final String? contribution;
   final String? term;
@@ -18,13 +16,6 @@ class FormModel with EquatableMixin {
   bool get isFullyFilled =>
       cost != null && contribution != null && term != null && bet != null;
 
-  const FormModel.empty()
-      : cost = '',
-        contribution = '',
-        term = '',
-        bet = '',
-        isAnnuityPaymentType = true;
-
   FormModel copyWith({
     String? cost,
     String? contribution,
@@ -40,8 +31,4 @@ class FormModel with EquatableMixin {
       isAnnuityPaymentType: isAnnuityPaymentType ?? this.isAnnuityPaymentType,
     );
   }
-
-  @override
-  List<Object?> get props =>
-      [cost, contribution, term, bet, isAnnuityPaymentType];
 }

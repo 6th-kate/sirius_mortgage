@@ -21,8 +21,6 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
         ContributionChangedEvent() => _contributionChangedEvent(event, emit),
         TermChangedEvent() => _termChangedEvent(event, emit),
         BetChangedEvent() => _betChangedEvent(event, emit),
-        SuccessEvent() => _successEvent(event, emit),
-        ErrorEvent() => _errorEvent(event, emit),
         AnnuityPaymentTypeChangeEvent() =>
           _annuityPaymentTypeChangeEvent(event, emit),
       },
@@ -107,13 +105,5 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     final model =
         state.model.copyWith(isAnnuityPaymentType: event.isAnnuityPaymentType);
     fullyFilledCheck(model, emit);
-  }
-
-  void _successEvent(SuccessEvent event, Emitter emit) {
-    // TODO
-  }
-
-  void _errorEvent(ErrorEvent event, Emitter emit) {
-    // TODO
   }
 }

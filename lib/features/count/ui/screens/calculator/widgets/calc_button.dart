@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:sirius_mortgage/features/theme/model/theme_constants.dart';
 
 import '../../../../domain/form_bloc/form_bloc.dart';
+import '../../../../../locale/locale.dart';
 import '../../../../route/route.dart';
 
 class CalculateButton extends StatelessWidget {
@@ -20,18 +19,12 @@ class CalculateButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ElevatedButton(
-          style: !isFormValid
-              ? ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.focus.withOpacity(0.2),
-                )
-              : null,
           onPressed: isFormValid
               ? () {
-                  formBloc.add(SuccessEvent());
                   Navigator.of(context).pushNamed(routeResult);
                 }
               : null,
-          child: Text(AppLocalizations.of(context)!.calculate),
+          child: Text(AppLocaleScope.of(context).calculate),
         ),
       ),
     );

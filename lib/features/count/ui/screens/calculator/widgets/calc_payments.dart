@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sirius_mortgage/features/count/domain/form_bloc/form_bloc.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../../../../locale/locale.dart';
 import 'calc_payment_chooseable.dart';
 
 class CalcPayments extends StatelessWidget {
@@ -15,17 +17,29 @@ class CalcPayments extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Text(AppLocalizations.of(context)!.paymentsType),
+            child: Text(AppLocaleScope.of(context).paymentsType),
           ),
           CalculatorPaymentChooseable(
             isAnnuity: true,
-            annuityIsSelected: true,
-            onChanged: (_) => {},
+            annuityIsSelected:
+                context.watch<FormBloc>().state.model.isAnnuityPaymentType,
+            onChanged: (value) {
+              if (value != null) {
+                BlocProvider.of<FormBloc>(context)
+                    .add(AnnuityPaymentTypeChangeEvent(value));
+              }
+            },
           ),
           CalculatorPaymentChooseable(
             isAnnuity: false,
-            annuityIsSelected: true,
-            onChanged: (_) => {},
+            annuityIsSelected:
+                context.watch<FormBloc>().state.model.isAnnuityPaymentType,
+            onChanged: (value) {
+              if (value != null) {
+                BlocProvider.of<FormBloc>(context)
+                    .add(AnnuityPaymentTypeChangeEvent(value));
+              }
+            },
           ),
         ],
       ),

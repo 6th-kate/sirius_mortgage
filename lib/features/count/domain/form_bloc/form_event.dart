@@ -34,7 +34,3 @@ class AnnuityPaymentTypeChangeEvent extends FormEvent {
 
   const AnnuityPaymentTypeChangeEvent(this.isAnnuityPaymentType);
 }
-
-class SuccessEvent extends FormEvent {}
-
-class ErrorEvent extends FormEvent {}

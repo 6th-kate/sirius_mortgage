@@ -49,7 +49,7 @@ class SummaryInformationInput {
 
   final CalculateType type;
 
-  SummaryInformationInput({required this.data, required this.type});
+  const SummaryInformationInput({required this.data, required this.type});
 
   @override
   bool operator ==(Object other) =>

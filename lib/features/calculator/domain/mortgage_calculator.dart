@@ -8,26 +8,6 @@ import 'package:flutter/foundation.dart';
 class MortgageCalculator implements ICalculator {
   const MortgageCalculator();
 
-  List<CalculatorResultData> _calculateDifferentiatedPayments(
-    CalculatorInputData data,
-  ) {
-    List<CalculatorResultData> response = [];
-    for (int index = 0; index <= data.loanTermYears * 12; index++) {
-      response.add(calculateDifferentiatedPayment(data, index));
-    }
-    return response;
-  }
-
-  List<CalculatorResultData> _calculateAnnuityPayments(
-    CalculatorInputData data,
-  ) {
-    List<CalculatorResultData> response = [];
-    for (int index = 0; index <= data.loanTermYears * 12; index++) {
-      response.add(calculateAnnuityPayment(data, index));
-    }
-    return response;
-  }
-
   @override
   Future<List<CalculatorResultData>> differentiatedPayments(
     CalculatorInputData data,
@@ -164,7 +144,29 @@ class MortgageCalculator implements ICalculator {
     CalculateType type,
   ) async {
     return compute(
-        _calculateSummaryInformation, SummaryInformationInput(data: data, type: type),);
+      _calculateSummaryInformation,
+      SummaryInformationInput(data: data, type: type),
+    );
+  }
+
+  List<CalculatorResultData> _calculateDifferentiatedPayments(
+    CalculatorInputData data,
+  ) {
+    List<CalculatorResultData> response = [];
+    for (int index = 0; index <= data.loanTermYears * 12; index++) {
+      response.add(calculateDifferentiatedPayment(data, index));
+    }
+    return response;
+  }
+
+  List<CalculatorResultData> _calculateAnnuityPayments(
+    CalculatorInputData data,
+  ) {
+    List<CalculatorResultData> response = [];
+    for (int index = 0; index <= data.loanTermYears * 12; index++) {
+      response.add(calculateAnnuityPayment(data, index));
+    }
+    return response;
   }
 
   CalculatorSummaryInformation _calculateSummaryInformation(

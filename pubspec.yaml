@@ -11,20 +11,25 @@ dependencies:
     sdk: flutter
   flutter:
     sdk: flutter
+  modal_bottom_sheet: ^3.0.0
   intl: ^0.18.0
   google_fonts: ^6.2.1
-  flutter_bloc: ^8.1.4
-  modal_bottom_sheet: ^3.0.0
-  freezed: ^2.4.7
+  flutter_bloc: ^8.1.5
+  bloc: ^8.1.4
+  meta: ^1.11.0
+  freezed_annotation: ^2.4.1
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   # Lints
-  flutter_lints: ^3.0.0
+  flutter_lints: ^3.0.1
 
   # Tests
-  flutter_test:
-    sdk: flutter
   test: ^1.24.9
+
+  # Codegeneration
+  build_runner: ^2.4.8
+  freezed: ^2.4.7
 
 flutter_gen:
   output: lib/core/gen/resource

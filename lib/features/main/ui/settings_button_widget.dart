@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sirius_mortgage/features/settings/ui/settings_screen.dart';
 
 class SettingButton extends StatelessWidget {
   const SettingButton({super.key});
@@ -10,7 +11,13 @@ class SettingButton extends StatelessWidget {
         Icons.settings_outlined,
         size: 30,
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const SettingsScreen(),
+          ),
+        );
+      },
     );
   }
 }

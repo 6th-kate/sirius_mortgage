@@ -5,6 +5,8 @@ import 'package:sirius_mortgage/features/settings/domain/theme/theme_bloc/theme_
 import 'package:sirius_mortgage/features/settings/domain/theme/theme_mode_enum.dart';
 
 import '../model/app_theme.dart';
+import '../model/light_theme.dart';
+import '../model/dark_theme.dart';
 
 class AppThemeScope extends StatelessWidget {
   final Widget child;
@@ -37,18 +39,11 @@ class ContextualAppThemeProvider extends StatelessWidget {
       theme: switch (context.watch<ThemeBloc>().state.themeMode) {
         CustomThemeMode.system => const LightAppTheme(),
         CustomThemeMode.baseLight => const LightAppTheme(),
-        CustomThemeMode.baseDark => const DarkThemeMock(),
+        CustomThemeMode.baseDark => const DarkAppTheme(),
       },
       child: child,
     );
   }
-}
-
-class DarkThemeMock extends LightAppTheme {
-  const DarkThemeMock();
-
-  @override
-  ThemeData get theme => ThemeData();
 }
 
 class AppThemeProvider extends InheritedWidget {

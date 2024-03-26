@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../calculator/domain/model/calculator_dataclass.dart';
 import '../ui/screens/calculator/calc_form_sheet.dart';
 import '../ui/screens/result/result_screen.dart';
+import '../ui/screens/table/table_screen.dart';
 
 final List<CalculatorResultData> calcResData = List.generate(30 * 12, (i) =>
     CalculatorResultData(date: DateTime(2024),
@@ -29,7 +30,7 @@ Route onGenerateRoute(BuildContext context, RouteSettings settings) {
               interestPayout: 1000000,), calcResData,); //TODO
       break;
     case routeTable:
-      page = const Placeholder();
+      page = TablePage(calcResData);
       break;
     default:
       throw Exception('Unknown route: ${settings.name}');

@@ -3,6 +3,7 @@ import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
 import '../../../../calculator/domain/model/calculator_dataclass.dart';
 import '../../../../locale/locale.dart';
+import '../../../route/route.dart';
 import 'widgets/result_mortgage_chart.dart';
 import 'widgets/result_mortgage_plot.dart';
 import 'widgets/result_mortgage_stat.dart';
@@ -63,7 +64,14 @@ class ResultPage extends StatelessWidget {
                     .chartColorSecond,
               ),
               //get table text button
-              Center(child: TextButton(onPressed: () {}, child: Text(AppLocaleScope.of(context).openTable),),),
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(routeTable);
+                  },
+                  child: Text(AppLocaleScope.of(context).openTable),
+                ),
+              ),
             ],
           ),
         ),

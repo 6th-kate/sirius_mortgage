@@ -273,7 +273,7 @@ void main() {
       CalculateType.annuity,
     );
 
-    final output = CalculatorSummaryInformation(
+    const output = CalculatorSummaryInformation(
       totalPayout: 108309.97,
       loanAmount: 100000,
       interestPayout: 8309.97,
@@ -298,7 +298,7 @@ void main() {
       CalculateType.differentiated,
     );
 
-    final output = CalculatorSummaryInformation(
+    const output = CalculatorSummaryInformation(
       totalPayout: 108125.00,
       loanAmount: 100000,
       interestPayout: 8125.00,
@@ -323,7 +323,7 @@ void main() {
       CalculateType.annuity,
     );
 
-    final output = CalculatorSummaryInformation(
+    const output = CalculatorSummaryInformation(
       totalPayout: 85029.08,
       loanAmount: 80000,
       interestPayout: 5029.08,
@@ -348,7 +348,7 @@ void main() {
       CalculateType.differentiated,
     );
 
-    final output = CalculatorSummaryInformation(
+    const output = CalculatorSummaryInformation(
       totalPayout: 1531250.00,
       loanAmount: 1000000,
       interestPayout: 531250.00,
@@ -373,7 +373,7 @@ void main() {
       CalculateType.annuity,
     );
 
-    final output = CalculatorSummaryInformation(
+    const output = CalculatorSummaryInformation(
       totalPayout: 1083099.75,
       loanAmount: 1000000,
       interestPayout: 83099.75,
@@ -398,7 +398,7 @@ void main() {
       CalculateType.differentiated,
     );
 
-    final output = CalculatorSummaryInformation(
+    const output = CalculatorSummaryInformation(
       totalPayout: 802793.83,
       loanAmount: 566678,
       interestPayout: 236115.83,

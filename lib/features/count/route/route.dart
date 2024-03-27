@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sirius_mortgage/features/count/domain/domain_models/output_model.dart';
 
 import '../ui/screens/calculator/calc_form_sheet.dart';
 
@@ -13,6 +14,7 @@ Route onGenerateRoute(BuildContext context, RouteSettings settings) {
       page = const CalculatorFormPage();
       break;
     case routeResult:
+      final output = settings.arguments as OutputDomainModel;
       page = const Placeholder();
       break;
     case routeTable:

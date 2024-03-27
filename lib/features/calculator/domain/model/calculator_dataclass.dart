@@ -23,6 +23,27 @@ class CalculatorInputData {
     required this.date,
     required this.initialPayment,
   });
+  // Convert CalculatorInputData instance to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'loanAmount': loanAmount,
+      'loanTermMonth': loanTermMonth,
+      'interestRate': interestRate,
+      'date': date.toIso8601String(),
+      'initialPayment': initialPayment,
+    };
+  }
+
+  // Create CalculatorInputData instance from JSON
+  factory CalculatorInputData.fromJson(Map<String, dynamic> json) {
+    return CalculatorInputData(
+      loanAmount: json['loanAmount'],
+      loanTermMonth: json['loanTermMonth'],
+      interestRate: json['interestRate'],
+      date: DateTime.parse(json['date']),
+      initialPayment: json['initialPayment'],
+    );
+  }
 
   @override
   bool operator ==(Object other) =>
@@ -50,6 +71,24 @@ class SummaryInformationInput {
   final CalculateType type;
 
   const SummaryInformationInput({required this.data, required this.type});
+
+  // Convert SummaryInformationInput instance to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'data': data.toJson(),
+      'type': type.toString(),
+    };
+  }
+
+  // Create SummaryInformationInput instance from JSON
+  factory SummaryInformationInput.fromJson(Map<String, dynamic> json) {
+    return SummaryInformationInput(
+      data: CalculatorInputData.fromJson(json['data']),
+      type: json['type'] == CalculateType.annuity.toString()
+          ? CalculateType.annuity
+          : CalculateType.differentiated,
+    );
+  }
 
   @override
   bool operator ==(Object other) =>
@@ -87,6 +126,28 @@ class CalculatorResultData {
     required this.residue,
   });
 
+  // Convert CalculatorResultData instance to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'date': date.toIso8601String(),
+      'payment': payment,
+      'principal': principal,
+      'interest': interest,
+      'residue': residue,
+    };
+  }
+
+  // Create CalculatorResultData instance from JSON
+  factory CalculatorResultData.fromJson(Map<String, dynamic> json) {
+    return CalculatorResultData(
+      date: DateTime.parse(json['date']),
+      payment: json['payment'],
+      principal: json['principal'],
+      interest: json['interest'],
+      residue: json['residue'],
+    );
+  }
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -122,6 +183,24 @@ class CalculatorSummaryInformation {
     required this.loanAmount,
     required this.interestPayout,
   });
+
+  // Convert CalculatorSummaryInformation instance to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'totalPayout': totalPayout,
+      'loanAmount': loanAmount,
+      'interestPayout': interestPayout,
+    };
+  }
+
+  // Create CalculatorSummaryInformation instance from JSON
+  factory CalculatorSummaryInformation.fromJson(Map<String, dynamic> json) {
+    return CalculatorSummaryInformation(
+      totalPayout: json['totalPayout'],
+      loanAmount: json['loanAmount'],
+      interestPayout: json['interestPayout'],
+    );
+  }
 
   @override
   bool operator ==(Object other) =>

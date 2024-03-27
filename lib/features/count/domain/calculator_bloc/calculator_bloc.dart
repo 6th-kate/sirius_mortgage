@@ -19,8 +19,18 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     on<CalculatorEvent>(
       (event, emit) => switch (event) {
         StartCalculationEvent() => _startCalculationEvent(event, emit),
+        ReloadCalculationEvent() => _reloadSuccessCalculation(event, emit),
+        ErrorCalculationEvent() => _errorSuccessCalculation(event, emit),
       },
     );
+  }
+
+  void _reloadSuccessCalculation(ReloadCalculationEvent event, Emitter emit) {
+    emit(SuccessCalculatorState(event.input, event.output));
+  }
+
+  void _errorSuccessCalculation(ErrorCalculationEvent event, Emitter emit) {
+    emit(ErrorCalculatorState(event.input, event.message));
   }
 
   void _startCalculationEvent(
@@ -45,9 +55,9 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     emit(InProcessCalculatorState(inputModel));
 
     _repository.calculate(inputModel).then((output) {
-      emit(SuccessCalculatorState(inputModel, output));
-    }).onError((error, stackTrace) {
-      emit(ErrorCalculatorState(inputModel, error.toString()));
+      add(ReloadCalculationEvent(inputModel, output));
+    }).catchError((err) {
+      add(ErrorCalculationEvent(inputModel, err.toString()));
     });
   }
 }

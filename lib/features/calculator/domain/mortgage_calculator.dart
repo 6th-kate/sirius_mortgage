@@ -82,8 +82,7 @@ class MortgageCalculator implements ICalculator {
     CalculatorInputData data,
     index,
   ) {
-    final loanTermMonths =
-        data.loanTermMonth; // Количество месяцев кредита
+    final loanTermMonths = data.loanTermMonth; // Количество месяцев кредита
 
     if (index > loanTermMonths || index < 0) {
       throw Exception('Index is out of range');

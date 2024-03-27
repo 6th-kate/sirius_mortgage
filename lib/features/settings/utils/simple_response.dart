@@ -5,5 +5,5 @@ part 'simple_response.freezed.dart';
 abstract class SimpleResponse<T> with _$SimpleResponse {
   const factory SimpleResponse.ok({required T? payload}) = _SimpleOkResponse<T>;
   const factory SimpleResponse.error(
-      {required String message, required T? payload}) = _SimpleErrorResponse<T>;
+      {required String message, required T? payload,}) = _SimpleErrorResponse<T>;
 }

@@ -6,7 +6,7 @@ import 'package:sirius_mortgage/features/count/domain/count_repository.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/input_model.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/output_model.dart';
 
-import '../model/form_model.dart';
+import '../domain_models/form_model.dart';
 
 part 'calculator_event.dart';
 

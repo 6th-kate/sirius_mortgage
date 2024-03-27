@@ -23,6 +23,27 @@ class CalculatorInputData {
     required this.date,
     required this.initialPayment,
   });
+  // Convert CalculatorInputData instance to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'loanAmount': loanAmount,
+      'loanTermMonth': loanTermMonth,
+      'interestRate': interestRate,
+      'date': date.toIso8601String(),
+      'initialPayment': initialPayment,
+    };
+  }
+
+  // Create CalculatorInputData instance from JSON
+  factory CalculatorInputData.fromJson(Map<String, dynamic> json) {
+    return CalculatorInputData(
+      loanAmount: json['loanAmount'],
+      loanTermMonth: json['loanTermMonth'],
+      interestRate: json['interestRate'],
+      date: DateTime.parse(json['date']),
+      initialPayment: json['initialPayment'],
+    );
+  }
 
   @override
   bool operator ==(Object other) =>
@@ -45,12 +66,31 @@ class CalculatorInputData {
 }
 
 class SummaryInformationInput {
+  
   final CalculatorInputData data;
 
   final CalculateType type;
 
   const SummaryInformationInput({required this.data, required this.type});
 
+  // Convert SummaryInformationInput instance to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'data': data.toJson(),
+      'type': type.toString(),
+    };
+  }
+
+  // Create SummaryInformationInput instance from JSON
+  factory SummaryInformationInput.fromJson(Map<String, dynamic> json) {
+    return SummaryInformationInput(
+      data: CalculatorInputData.fromJson(json['data']),
+      type: json['type'] == CalculateType.annuity.toString()
+          ? CalculateType.annuity
+          : CalculateType.differentiated,
+    );
+  }
+  
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||

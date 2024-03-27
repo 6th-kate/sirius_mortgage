@@ -106,7 +106,7 @@ class _TablePageState extends State<TablePage> {
                 child: Align(
                   alignment: Alignment.bottomLeft,
                   child: Text(
-                    DateFormat('d.M.y').format(widget.table[index].date),
+                    DateFormat('dd.MM.yyyy').format(widget.table[index].date),
                     style: Theme.of(context).textTheme.labelMedium,
                   ),
                 ),
@@ -193,7 +193,7 @@ class _TablePageState extends State<TablePage> {
             child: Align(
               alignment: Alignment.bottomLeft,
               child: Text(
-                DateFormat('d.M.y').format(widget.table[index].date),
+                DateFormat('dd.MM.yyyy').format(widget.table[index].date),
                 style: Theme.of(context).textTheme.labelMedium,
               ),
             ),

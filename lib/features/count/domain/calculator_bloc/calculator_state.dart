@@ -12,7 +12,6 @@ sealed class CalculatorState {
       SuccessCalculatorState;
 
   const factory CalculatorState.error(
-    InputDomainModel model,
     String errorMessage,
   ) = ErrorCalculatorState;
 }
@@ -36,7 +35,6 @@ final class SuccessCalculatorState implements CalculatorState {
 
 final class ErrorCalculatorState implements CalculatorState {
   final String errorMessage;
-  final InputDomainModel inputModel;
 
-  const ErrorCalculatorState(this.inputModel, this.errorMessage);
+  const ErrorCalculatorState(this.errorMessage);
 }

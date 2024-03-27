@@ -30,21 +30,34 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   }
 
   void _errorSuccessCalculation(ErrorCalculationEvent event, Emitter emit) {
-    emit(ErrorCalculatorState(event.input, event.message));
+    emit(ErrorCalculatorState(event.message));
   }
 
   void _startCalculationEvent(
     StartCalculationEvent event,
     Emitter emit,
   ) {
+    final loanAmount = double.tryParse(event.model.cost!);
+    final loanTermYears = int.tryParse(event.model.term!);
+    final interestRate = double.tryParse(event.model.bet!);
+    final date = DateTime.now();
+    final initialPayment = double.tryParse(event.model.contribution!);
+    if (loanAmount == null ||
+        loanTermYears == null ||
+        interestRate == null ||
+        initialPayment == null) {
+      add(const ErrorCalculationEvent('Incorrect data'));
+      return;
+    }
+
     InputDomainModel inputModel = InputDomainModel(
       input: SummaryInformationInput(
         data: CalculatorInputData(
-          loanAmount: double.parse(event.model.cost!),
-          loanTermYears: int.parse(event.model.term!),
-          interestRate: double.parse(event.model.bet!),
-          date: DateTime.now(),
-          initialPayment: double.parse(event.model.contribution!),
+          loanAmount: loanAmount,
+          loanTermYears: loanTermYears,
+          interestRate: interestRate,
+          date: date,
+          initialPayment: initialPayment,
         ),
         type: event.model.isAnnuityPaymentType
             ? CalculateType.annuity
@@ -57,7 +70,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     _repository.calculate(inputModel).then((output) {
       add(ReloadCalculationEvent(inputModel, output));
     }).catchError((err) {
-      add(ErrorCalculationEvent(inputModel, err.toString()));
+      add(ErrorCalculationEvent(err.toString()));
     });
   }
 }

@@ -22,8 +22,7 @@ class ReloadCalculationEvent extends CalculatorEvent {
 }
 
 class ErrorCalculationEvent extends CalculatorEvent {
-  const ErrorCalculationEvent(this.input, this.message);
+  const ErrorCalculationEvent(this.message);
 
-  final InputDomainModel input;
   final String message;
 }

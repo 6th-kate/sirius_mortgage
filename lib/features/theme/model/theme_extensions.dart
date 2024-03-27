@@ -47,11 +47,13 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color chartColorFirst;
   final Color chartColorSecond;
   final Color label;
+  final Color tableLabel;
 
   const ThemeColors({
     required this.chartColorFirst,
     required this.chartColorSecond,
     required this.label,
+    required this.tableLabel,
   });
 
   @override
@@ -59,6 +61,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     Color? chartColorFirst,
     Color? chartColorSecond,
     Color? label,
+    Color? tableLabel,
   }) {
     return ThemeColors(
       chartColorFirst:
@@ -66,6 +69,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       chartColorSecond:
       chartColorSecond ?? this.chartColorFirst,
       label: label ?? this.label,
+      tableLabel: tableLabel ?? this.tableLabel,
     );
   }
 
@@ -85,6 +89,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       Color.lerp(chartColorSecond, other.chartColorSecond, t)!,
       label:
       Color.lerp(label, other.label, t)!,
+      tableLabel:
+      Color.lerp(tableLabel, other.tableLabel, t)!,
     );
   }
 
@@ -92,11 +98,13 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     chartColorFirst: AppColors.coldGreen,
     chartColorSecond: AppColors.secondDiagramColor,
     label: AppColors.label,
+    tableLabel: AppColors.form,
   );
 
   static get dark => const ThemeColors(
     chartColorFirst: AppColorsDark.coldGreen,
     chartColorSecond: AppColorsDark.secondDiagramColor,
     label: AppColorsDark.label,
+    tableLabel: AppColorsDark.tableLabel,
   );
 }

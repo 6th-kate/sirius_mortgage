@@ -20,5 +20,16 @@
 	"interestAmountAgenda": "Исәпләнгән процентлар",
 	"loanAmountAgenda": "Төп бурыч",
 	"payoutChart": "Түләү графигы: ",
-	"openTable": "+ Тулы таблицаны карагыз"
+	"openTable": "+ Тулы таблицаны карагыз",
+	"table": " Таблица",
+	"tableShort": "Кыска",
+	"tableDetail": "Тәфсилле",
+	"tableDate": "Датасы",
+	"tablePayment": "Түләү",
+	"tableResidue": "Калдык",
+	"tableInterest" : "Процентлар:",
+	"tablePrincipal": "Төп бурыч:",
+	"settings": "Көйләнешләр",
+	"language": "Тел",
+	"theme": "Бизәк"
 }

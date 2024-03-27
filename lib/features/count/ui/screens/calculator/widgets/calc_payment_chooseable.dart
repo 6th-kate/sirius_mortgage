@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../locale/locale.dart';
 
-
 class CalculatorPaymentChooseable extends StatelessWidget {
   final bool isAnnuity;
   final bool annuityIsSelected;
@@ -20,12 +19,20 @@ class CalculatorPaymentChooseable extends StatelessWidget {
     return Row(
       children: [
         Radio<bool>(
-            value: isAnnuity,
-            groupValue: annuityIsSelected,
-            onChanged: onChanged,),
-        Text(isAnnuity
-            ? AppLocaleScope.of(context).annuity
-            : AppLocaleScope.of(context).differentiated,),
+          value: isAnnuity,
+          groupValue: annuityIsSelected,
+          onChanged: onChanged,
+        ),
+        InkWell(
+          onTap: () {
+            onChanged(isAnnuity);
+          },
+          child: Text(
+            isAnnuity
+                ? AppLocaleScope.of(context).annuity
+                : AppLocaleScope.of(context).differentiated,
+          ),
+        ),
       ],
     );
   }

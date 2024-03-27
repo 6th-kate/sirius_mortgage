@@ -69,4 +69,37 @@ class AppLocalizationsTt extends AppLocalizations {
 
   @override
   String get openTable => '+ Тулы таблицаны карагыз';
+
+  @override
+  String get table => ' Таблица';
+
+  @override
+  String get tableShort => 'Кыска';
+
+  @override
+  String get tableDetail => 'Тәфсилле';
+
+  @override
+  String get tableDate => 'Датасы';
+
+  @override
+  String get tablePayment => 'Түләү';
+
+  @override
+  String get tableResidue => 'Калдык';
+
+  @override
+  String get tableInterest => 'Процентлар:';
+
+  @override
+  String get tablePrincipal => 'Төп бурыч:';
+
+  @override
+  String get settings => 'Көйләнешләр';
+
+  @override
+  String get language => 'Тел';
+
+  @override
+  String get theme => 'Бизәк';
 }

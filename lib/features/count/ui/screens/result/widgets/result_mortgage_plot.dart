@@ -30,7 +30,7 @@ class MortgagePlot extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: ConstrainedBox(
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               maxHeight: 200,
             ),
             child: LayoutBuilder(

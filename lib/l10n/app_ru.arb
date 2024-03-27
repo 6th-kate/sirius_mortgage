@@ -20,5 +20,16 @@
   "interestAmountAgenda": "Начисленные проценты",
   "loanAmountAgenda": "Основной долг",
   "payoutChart": "График погашения: ",
-  "openTable": "+ Посмотреть полную таблицу"
+  "openTable": "+ Посмотреть полную таблицу",
+  "table": "Таблица",
+  "tableShort": "Кратко",
+  "tableDetail": "Детально",
+  "tableDate": "Дата",
+  "tablePayment": "Платёж",
+  "tableResidue": "Остаток",
+  "tableInterest" : "Проценты:",
+  "tablePrincipal": "Осн. долг:",
+  "settings": "Настройки",
+  "language": "Язык",
+  "theme": "Тема"
 }

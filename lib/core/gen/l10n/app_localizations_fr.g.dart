@@ -69,4 +69,37 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get openTable => '+ Voir le tableau complet';
+
+  @override
+  String get table => 'Tableau';
+
+  @override
+  String get tableShort => 'Brièvement';
+
+  @override
+  String get tableDetail => 'Détails';
+
+  @override
+  String get tableDate => 'Date';
+
+  @override
+  String get tablePayment => 'Paiement';
+
+  @override
+  String get tableResidue => 'Reste';
+
+  @override
+  String get tableInterest => 'Intérêt:';
+
+  @override
+  String get tablePrincipal => 'Dette princ.:';
+
+  @override
+  String get settings => 'Paramètres';
+
+  @override
+  String get language => 'Langue';
+
+  @override
+  String get theme => 'Thème';
 }

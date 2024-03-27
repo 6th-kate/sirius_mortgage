@@ -27,7 +27,7 @@ class MortgageChart extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ConstrainedBox(
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             maxHeight: 200,
           ),
           child: LayoutBuilder(
@@ -53,7 +53,7 @@ class MortgageChart extends StatelessWidget {
                     show: false,
                   ),
                 ),
-                swapAnimationDuration: Duration(milliseconds: 150), // Optional
+                swapAnimationDuration: const Duration(milliseconds: 150), // Optional
                 swapAnimationCurve: Curves.linear, // Optional
               );
             },
@@ -79,7 +79,7 @@ class MortgageChart extends StatelessWidget {
             Text(
               AppLocaleScope.of(context).interestAmountAgenda,
               style: Theme.of(context).textTheme.labelSmall,
-            )
+            ),
           ],
         ),
         const SizedBox(height: 4),
@@ -100,7 +100,7 @@ class MortgageChart extends StatelessWidget {
             Text(
               AppLocaleScope.of(context).loanAmountAgenda,
               style: Theme.of(context).textTheme.labelSmall,
-            )
+            ),
           ],
         ),
       ],

@@ -120,7 +120,7 @@ class DarkAppTheme implements AppTheme {
     dividerTheme: const DividerThemeData(
       color: AppColorsDark.tableLabel,
       thickness: 1,
-      space: 9,
+      space: 1,
     ),
     appBarTheme: AppBarTheme(
       backgroundColor: AppColorsDark.background,

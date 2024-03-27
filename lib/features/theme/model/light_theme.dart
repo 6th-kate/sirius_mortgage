@@ -56,7 +56,7 @@ class LightAppTheme implements AppTheme {
           style: ButtonStyle(
             textStyle: MaterialStateProperty.all(AppTextStyles.bodyLarge.apply(
               decoration: TextDecoration.underline,
-            )),
+            ),),
             foregroundColor: MaterialStateProperty.resolveWith((states) {
               return states.contains(MaterialState.pressed)
                   ? AppColors.lightGreen
@@ -122,7 +122,7 @@ class LightAppTheme implements AppTheme {
         dividerTheme: const DividerThemeData(
           color: AppColors.form,
           thickness: 1,
-          space: 9,
+          space: 1,
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: AppColors.white,

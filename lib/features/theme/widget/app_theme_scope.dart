@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sirius_mortgage/features/settings/data/theme_repository_impl.dart';
+import 'package:sirius_mortgage/features/settings/domain/theme/theme_bloc/theme_bloc.dart';
+import 'package:sirius_mortgage/features/settings/domain/theme/theme_mode_enum.dart';
 
 import '../model/app_theme.dart';
 import '../model/light_theme.dart';
@@ -7,7 +11,7 @@ import '../model/dark_theme.dart';
 class AppThemeScope extends StatelessWidget {
   final Widget child;
 
-  const AppThemeScope({required this.child, super.key});
+  const AppThemeScope({super.key, required this.child});
 
   static AppTheme of(BuildContext context) {
     final AppThemeProvider? result =
@@ -17,10 +21,29 @@ class AppThemeScope extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => AppThemeProvider(
-        theme: const LightAppTheme(),
-        child: child,
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) =>
+            ThemeBloc(ThemeRepositoryImpl())..add(ThemeEvent.needThemeLoad()),
+        child: ContextualAppThemeProvider(child: child),
       );
+}
+
+class ContextualAppThemeProvider extends StatelessWidget {
+  const ContextualAppThemeProvider({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppThemeProvider(
+      theme: switch (context.watch<ThemeBloc>().state.themeMode) {
+        CustomThemeMode.system => const LightAppTheme(),
+        CustomThemeMode.baseLight => const LightAppTheme(),
+        CustomThemeMode.baseDark => const DarkAppTheme(),
+      },
+      child: child,
+    );
+  }
 }
 
 class AppThemeProvider extends InheritedWidget {

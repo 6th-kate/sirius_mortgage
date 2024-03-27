@@ -69,4 +69,37 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get openTable => '+ Посмотреть полную таблицу';
+
+  @override
+  String get table => 'Таблица';
+
+  @override
+  String get tableShort => 'Кратко';
+
+  @override
+  String get tableDetail => 'Детально';
+
+  @override
+  String get tableDate => 'Дата';
+
+  @override
+  String get tablePayment => 'Платёж';
+
+  @override
+  String get tableResidue => 'Остаток';
+
+  @override
+  String get tableInterest => 'Проценты:';
+
+  @override
+  String get tablePrincipal => 'Осн. долг:';
+
+  @override
+  String get settings => 'Настройки';
+
+  @override
+  String get language => 'Язык';
+
+  @override
+  String get theme => 'Тема';
 }

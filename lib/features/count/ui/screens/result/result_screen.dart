@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
-import '../../../../calculator/domain/model/calculator_dataclass.dart';
 import '../../../../locale/locale.dart';
+import '../../../domain/domain_models/output_model.dart';
 import '../../../route/route.dart';
 import 'widgets/result_mortgage_chart.dart';
 import 'widgets/result_mortgage_plot.dart';
 import 'widgets/result_mortgage_stat.dart';
 
 class ResultPage extends StatelessWidget {
-  const ResultPage(this.result, this.table, {super.key});
+  const ResultPage(this.result, {super.key});
 
-  final CalculatorSummaryInformation result;
-  final List<CalculatorResultData> table;
+  final OutputDomainModel result;
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +35,8 @@ class ResultPage extends StatelessWidget {
             children: [
               //chart
               MortgageChart(
-                loanAmount: result.loanAmount,
-                interestAmount: result.interestPayout,
+                loanAmount: result.output.loanAmount,
+                interestAmount: result.output.interestPayout,
                 loanAmountColor:
                     Theme.of(context).extension<ThemeColors>()!.chartColorFirst,
                 interestAmountColor: Theme.of(context)
@@ -48,15 +47,15 @@ class ResultPage extends StatelessWidget {
               const SizedBox(height: 16),
               //summary
               MortgageSimpleStat(
-                total: result.totalPayout,
-                loanAmount: result.loanAmount,
-                interestAmount: result.interestPayout,
+                total: result.output.totalPayout,
+                loanAmount: result.output.loanAmount,
+                interestAmount: result.output.interestPayout,
               ),
 
               const SizedBox(height: 8),
               //chart2 -- like plot
               MortgagePlot(
-                table,
+                result.tableInfo,
                 loanAmountColor:
                     Theme.of(context).extension<ThemeColors>()!.chartColorFirst,
                 interestAmountColor: Theme.of(context)

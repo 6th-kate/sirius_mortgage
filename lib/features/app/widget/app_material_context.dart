@@ -14,7 +14,8 @@ class AppMaterialContext extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         supportedLocales: AppLocaleScope.supportedLocalesOf(context),
-        localizationsDelegates: AppLocaleScope.localizationsDelegatesOf(context),
+        localizationsDelegates:
+            AppLocaleScope.localizationsDelegatesOf(context),
         theme: AppThemeScope.of(context).theme,
         locale: AppLocaleScope.localeOf(context),
         home: child,

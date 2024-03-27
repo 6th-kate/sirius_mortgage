@@ -20,5 +20,16 @@
 	"interestAmountAgenda": "Frais d'intérêt",
 	"loanAmountAgenda": "Dette principale",
 	"payoutChart": "Calendrier de remboursement: ",
-	"openTable": "+ Voir le tableau complet"
+	"openTable": "+ Voir le tableau complet",
+	"table": "Tableau",
+	"tableShort": "Brièvement",
+	"tableDetail": "Détails",
+	"tableDate": "Date",
+	"tablePayment": "Paiement",
+	"tableResidue": "Reste",
+	"tableInterest" : "Intérêt:",
+	"tablePrincipal": "Dette princ.:",
+	"settings": "Paramètres",
+	"language": "Langue",
+	"theme": "Thème"
 }

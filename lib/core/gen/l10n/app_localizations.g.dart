@@ -228,6 +228,72 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'+ Посмотреть полную таблицу'**
   String get openTable;
+
+  /// No description provided for @table.
+  ///
+  /// In ru, this message translates to:
+  /// **'Таблица'**
+  String get table;
+
+  /// No description provided for @tableShort.
+  ///
+  /// In ru, this message translates to:
+  /// **'Кратко'**
+  String get tableShort;
+
+  /// No description provided for @tableDetail.
+  ///
+  /// In ru, this message translates to:
+  /// **'Детально'**
+  String get tableDetail;
+
+  /// No description provided for @tableDate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Дата'**
+  String get tableDate;
+
+  /// No description provided for @tablePayment.
+  ///
+  /// In ru, this message translates to:
+  /// **'Платёж'**
+  String get tablePayment;
+
+  /// No description provided for @tableResidue.
+  ///
+  /// In ru, this message translates to:
+  /// **'Остаток'**
+  String get tableResidue;
+
+  /// No description provided for @tableInterest.
+  ///
+  /// In ru, this message translates to:
+  /// **'Проценты:'**
+  String get tableInterest;
+
+  /// No description provided for @tablePrincipal.
+  ///
+  /// In ru, this message translates to:
+  /// **'Осн. долг:'**
+  String get tablePrincipal;
+
+  /// No description provided for @settings.
+  ///
+  /// In ru, this message translates to:
+  /// **'Настройки'**
+  String get settings;
+
+  /// No description provided for @language.
+  ///
+  /// In ru, this message translates to:
+  /// **'Язык'**
+  String get language;
+
+  /// No description provided for @theme.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тема'**
+  String get theme;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

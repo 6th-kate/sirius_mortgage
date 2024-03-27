@@ -105,4 +105,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get loading => 'Загрузка...';
+
+  @override
+  String get favorites => 'Избранное';
 }

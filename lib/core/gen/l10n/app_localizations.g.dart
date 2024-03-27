@@ -303,6 +303,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Загрузка...'**
   String get loading;
+
+  /// No description provided for @loading.
+  ///
+  /// In ru, this message translates to:
+  /// **'Избранное...'**
+  String get favorites;
 }
 
 class _AppLocalizationsDelegate

@@ -105,4 +105,7 @@ class AppLocalizationsTt extends AppLocalizations {
 
   @override
   String get loading => 'Йөкләү...';
+
+  @override
+  String get favorites => 'Сайланма';
 }

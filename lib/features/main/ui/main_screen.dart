@@ -25,7 +25,8 @@ class MainScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
             child: CalcButton(
               onClick: () {
-                showCalculatorBottomSheet(context);
+                throw Exception("This is a crash!");
+                //showCalculatorBottomSheet(context);
               },
             ),
           ),

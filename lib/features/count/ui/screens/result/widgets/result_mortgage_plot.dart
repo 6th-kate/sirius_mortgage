@@ -1,4 +1,3 @@
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -11,11 +10,11 @@ class MortgagePlot extends StatelessWidget {
   final Color interestAmountColor;
 
   const MortgagePlot(
-      this.data, {
-        super.key,
-        required this.loanAmountColor,
-        required this.interestAmountColor,
-      });
+    this.data, {
+    super.key,
+    required this.loanAmountColor,
+    required this.interestAmountColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +38,13 @@ class MortgagePlot extends StatelessWidget {
                   BarChartData(
                     barGroups: List.generate(
                       data.length,
-                          (i) => generateGroupData(
+                      (i) => generateGroupData(
                         i,
                         principal: data[i].principal,
                         interest: data[i].interest,
                         width: (constraints.maxWidth - 60) / data.length,
                         betweenSpace:
-                        data[0].payment / (0.3 * constraints.maxHeight),
+                            data[0].payment / (0.3 * constraints.maxHeight),
                       ),
                     ),
                     //config
@@ -75,12 +74,12 @@ class MortgagePlot extends StatelessWidget {
   }
 
   BarChartGroupData generateGroupData(
-      int x, {
-        required double principal,
-        required double interest,
-        required double width,
-        required double betweenSpace,
-      }) {
+    int x, {
+    required double principal,
+    required double interest,
+    required double width,
+    required double betweenSpace,
+  }) {
     return BarChartGroupData(
       x: x,
       groupVertically: true,

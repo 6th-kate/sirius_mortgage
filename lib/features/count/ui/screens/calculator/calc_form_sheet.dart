@@ -36,9 +36,9 @@ class CalculatorFormPage extends StatelessWidget {
               child: ConstrainedBox(
                 constraints: BoxConstraints(
                   maxHeight: max(
-                      660,
-                      constraints
-                          .maxHeight,), //660 = heightForm+heightButton идеологически должно быть, но тут с запасом
+                    660,
+                    constraints.maxHeight,
+                  ), //660 = heightForm+heightButton идеологически должно быть, но тут с запасом
                 ),
                 child: Column(
                   children: [

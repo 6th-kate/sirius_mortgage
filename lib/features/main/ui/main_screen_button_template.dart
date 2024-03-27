@@ -46,9 +46,10 @@ class MainButtonTemplate extends StatelessWidget {
                         child: Text(
                           subtitle,
                           style: Theme.of(context).textTheme.labelSmall!.apply(
-                              color: Theme.of(context)
-                                  .extension<ThemeColors>()!
-                                  .label,),
+                                color: Theme.of(context)
+                                    .extension<ThemeColors>()!
+                                    .label,
+                              ),
                         ),
                       ),
                     ],

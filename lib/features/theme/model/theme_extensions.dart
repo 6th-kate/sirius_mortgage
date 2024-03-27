@@ -82,25 +82,23 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     return ThemeColors(
       chartColorFirst: Color.lerp(chartColorFirst, other.chartColorFirst, t)!,
       chartColorSecond:
-      Color.lerp(chartColorSecond, other.chartColorSecond, t)!,
-      label:
-      Color.lerp(label, other.label, t)!,
-      tableLabel:
-      Color.lerp(tableLabel, other.tableLabel, t)!,
+          Color.lerp(chartColorSecond, other.chartColorSecond, t)!,
+      label: Color.lerp(label, other.label, t)!,
+      tableLabel: Color.lerp(tableLabel, other.tableLabel, t)!,
     );
   }
 
   static get light => const ThemeColors(
-    chartColorFirst: AppColors.coldGreen,
-    chartColorSecond: AppColors.secondDiagramColor,
-    label: AppColors.label,
-    tableLabel: AppColors.form,
-  );
+        chartColorFirst: AppColors.coldGreen,
+        chartColorSecond: AppColors.secondDiagramColor,
+        label: AppColors.label,
+        tableLabel: AppColors.form,
+      );
 
   static get dark => const ThemeColors(
-    chartColorFirst: AppColorsDark.coldGreen,
-    chartColorSecond: AppColorsDark.secondDiagramColor,
-    label: AppColorsDark.label,
-    tableLabel: AppColorsDark.tableLabel,
-  );
+        chartColorFirst: AppColorsDark.coldGreen,
+        chartColorSecond: AppColorsDark.secondDiagramColor,
+        label: AppColorsDark.label,
+        tableLabel: AppColorsDark.tableLabel,
+      );
 }

@@ -182,8 +182,7 @@ class _DayNightSwitchState extends State<DayNightSwitch>
                 .colorScheme
                 .tertiary
                 .withOpacity(0.8) // FIX COLORS
-            ..nightColor =
-                Colors.black //TODO FIX COLORS
+            ..nightColor = Colors.black //TODO FIX COLORS
             ..configuration = createLocalImageConfiguration(context)
             ..textDirection = Directionality.of(context)
             ..isInteractive = isInteractive
@@ -299,7 +298,11 @@ class _DayNightSwitchPainter extends ToggleablePainter {
   ) {
     return BoxDecoration(
       color: color,
-      image: image == null ? null : DecorationImage(image: image,),
+      image: image == null
+          ? null
+          : DecorationImage(
+              image: image,
+            ),
       shape: BoxShape.circle,
       boxShadow: kElevationToShadow[1],
     );
@@ -411,7 +414,6 @@ class _DayNightSwitchPainter extends ToggleablePainter {
     );
     canvas.drawRRect(trackRRect, paint);
   }
-
 
   void _paintBackground(
     Canvas canvas,

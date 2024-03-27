@@ -54,9 +54,11 @@ class LightAppTheme implements AppTheme {
         textTheme: textTheme,
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-            textStyle: MaterialStateProperty.all(AppTextStyles.bodyLarge.apply(
-              decoration: TextDecoration.underline,
-            ),),
+            textStyle: MaterialStateProperty.all(
+              AppTextStyles.bodyLarge.apply(
+                decoration: TextDecoration.underline,
+              ),
+            ),
             foregroundColor: MaterialStateProperty.resolveWith((states) {
               return states.contains(MaterialState.pressed)
                   ? AppColors.lightGreen

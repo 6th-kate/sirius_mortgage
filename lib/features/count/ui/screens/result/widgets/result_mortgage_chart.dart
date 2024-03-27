@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
@@ -41,7 +40,7 @@ class MortgageChart extends StatelessWidget {
                       value: i == 0 ? interestAmount : loanAmount,
                       title: '',
                       radius:
-                      min(constraints.maxHeight, constraints.maxWidth) / 2,
+                          min(constraints.maxHeight, constraints.maxWidth) / 2,
                     );
                   }),
                   centerSpaceRadius: 0,
@@ -53,7 +52,8 @@ class MortgageChart extends StatelessWidget {
                     show: false,
                   ),
                 ),
-                swapAnimationDuration: const Duration(milliseconds: 150), // Optional
+                swapAnimationDuration:
+                    const Duration(milliseconds: 150), // Optional
                 swapAnimationCurve: Curves.linear, // Optional
               );
             },

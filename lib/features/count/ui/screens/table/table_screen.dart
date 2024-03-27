@@ -43,41 +43,43 @@ class _TablePageState extends State<TablePage> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(16,0,16,8),
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
             child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text(
-                        AppLocaleScope.of(context).tableDate,
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      AppLocaleScope.of(context).tableDate,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Text(
-                        AppLocaleScope.of(context).tablePayment,
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
+                ),
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(
+                      AppLocaleScope.of(context).tablePayment,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: Text(
-                        AppLocaleScope.of(context).tableResidue,
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
+                ),
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: Text(
+                      AppLocaleScope.of(context).tableResidue,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
+            ),
           ),
-          Divider(color: Theme.of(context).colorScheme.onPrimary,),
+          Divider(
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
           Expanded(
             child: ListView.separated(
               itemBuilder: isDetailed ? _detailBuilder : _shortBuilder,

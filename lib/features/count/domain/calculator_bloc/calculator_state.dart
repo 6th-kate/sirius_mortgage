@@ -8,8 +8,9 @@ sealed class CalculatorState {
       InProcessCalculatorState;
 
   const factory CalculatorState.success(
-          InputDomainModel model, OutputDomainModel outputModel,) =
-      SuccessCalculatorState;
+    InputDomainModel model,
+    OutputDomainModel outputModel,
+  ) = SuccessCalculatorState;
 
   const factory CalculatorState.error(
     InputDomainModel model,

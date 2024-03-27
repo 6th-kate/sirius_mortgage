@@ -408,4 +408,62 @@ void main() {
     expect(output.loanAmount, equals(response.loanAmount));
     expect(output.interestPayout, equals(response.interestPayout));
   });
+
+  /// Tests for serialization functions
+  test('Tests for serialization functions [test-1].', () async {
+    // Serialize CalculatorResultData instance to JSON
+    final resultData = CalculatorResultData(
+      date: DateTime.now(),
+      payment: 1000000.0,
+      principal: 0.0,
+      interest: 20.0,
+      residue: 5000.0,
+    );
+    Map<String, dynamic> json = resultData.toJson();
+    // Deserialize JSON back to CalculatorResultData instance
+    final deserializedResultData = CalculatorResultData.fromJson(json);
+    expect(resultData, deserializedResultData);
+  });
+
+  test('Tests for serialization functions [test-2].', () async {
+    // Serialize CalculatorResultData instance to JSON
+    final resultData = CalculatorResultData(
+      date: DateTime(2024, 03, 23),
+      payment: 4541.67,
+      principal: 4166.67,
+      interest: 12.00,
+      residue: 95833.33,
+    );
+    Map<String, dynamic> json = resultData.toJson();
+    // Deserialize JSON back to CalculatorResultData instance
+    final deserializedResultData = CalculatorResultData.fromJson(json);
+    expect(resultData, deserializedResultData);
+  });
+
+  test('Tests for serialization functions [test-3].', () async {
+    // Serialize CalculatorResultData instance to JSON
+    const resultData = CalculatorSummaryInformation(
+      totalPayout: 108309.97,
+      loanAmount: 100000,
+      interestPayout: 8309.97,
+    );
+    Map<String, dynamic> json = resultData.toJson();
+    // Deserialize JSON back to CalculatorResultData instance
+    final deserializedResultData = CalculatorSummaryInformation.fromJson(json);
+    expect(resultData, deserializedResultData);
+  });
+  test('Tests for serialization functions [test-4].', () async {
+    // Serialize CalculatorResultData instance to JSON
+    final resultData = CalculatorResultData(
+      date: DateTime.now(),
+      payment: 1000.0,
+      principal: 800.0,
+      interest: 20.0,
+      residue: 5000.0,
+    );
+    Map<String, dynamic> json = resultData.toJson();
+    // Deserialize JSON back to CalculatorResultData instance
+    final deserializedResultData = CalculatorResultData.fromJson(json);
+    expect(resultData, deserializedResultData);
+  });
 }

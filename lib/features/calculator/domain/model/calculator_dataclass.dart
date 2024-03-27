@@ -87,6 +87,28 @@ class CalculatorResultData {
     required this.residue,
   });
 
+  // Convert CalculatorResultData instance to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'date': date.toIso8601String(),
+      'payment': payment,
+      'principal': principal,
+      'interest': interest,
+      'residue': residue,
+    };
+  }
+
+  // Create CalculatorResultData instance from JSON
+  factory CalculatorResultData.fromJson(Map<String, dynamic> json) {
+    return CalculatorResultData(
+      date: DateTime.parse(json['date']),
+      payment: json['payment'],
+      principal: json['principal'],
+      interest: json['interest'],
+      residue: json['residue'],
+    );
+  }
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -122,6 +144,24 @@ class CalculatorSummaryInformation {
     required this.loanAmount,
     required this.interestPayout,
   });
+
+  // Convert CalculatorSummaryInformation instance to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'totalPayout': totalPayout,
+      'loanAmount': loanAmount,
+      'interestPayout': interestPayout,
+    };
+  }
+
+  // Create CalculatorSummaryInformation instance from JSON
+  factory CalculatorSummaryInformation.fromJson(Map<String, dynamic> json) {
+    return CalculatorSummaryInformation(
+      totalPayout: json['totalPayout'],
+      loanAmount: json['loanAmount'],
+      interestPayout: json['interestPayout'],
+    );
+  }
 
   @override
   bool operator ==(Object other) =>

@@ -66,7 +66,6 @@ class CalculatorInputData {
 }
 
 class SummaryInformationInput {
-  
   final CalculatorInputData data;
 
   final CalculateType type;
@@ -90,7 +89,7 @@ class SummaryInformationInput {
           : CalculateType.differentiated,
     );
   }
-  
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||

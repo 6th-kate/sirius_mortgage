@@ -1,6 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:sirius_mortgage/features/calculator/domain/mortgage_calculator.dart';
+import 'package:sirius_mortgage/features/count/data/count_repository_impl.dart';
+import 'package:sirius_mortgage/features/count/domain/calculator_bloc/calculator_bloc.dart';
 import 'package:sirius_mortgage/features/count/domain/form_bloc/form_bloc.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_button.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_form.dart';
@@ -13,8 +16,16 @@ class CalculatorFormPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => FormBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => FormBloc(),
+        ),
+        BlocProvider(
+          create: (context) => // TODO: Replace with DI
+              CalculatorBloc(const CountRepositoryImpl(MortgageCalculator())),
+        ),
+      ],
       child: Scaffold(
         appBar: AppBar(
           title: Text(AppLocaleScope.of(context).calculateMortgage),

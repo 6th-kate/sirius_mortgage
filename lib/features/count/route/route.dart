@@ -28,9 +28,10 @@ Route onGenerateRoute(BuildContext context, RouteSettings settings) {
       page = const CalculatorFormPage();
       break;
     case routeResult:
+      final output = settings.arguments as OutputDomainModel;
       page = ResultPage(
         OutputDomainModel(
-          output: CalculatorSummaryInformation(
+          output: const CalculatorSummaryInformation(
             totalPayout: 3000000,
             loanAmount: 2000000,
             interestPayout: 1000000,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../domain/form_bloc/form_bloc.dart';
+
 import '../../../../../locale/locale.dart';
+import '../../../../domain/calculator_bloc/calculator_bloc.dart';
+import '../../../../domain/form_bloc/form_bloc.dart';
 import '../../../../route/route.dart';
 
 class CalculateButton extends StatelessWidget {
@@ -11,18 +13,31 @@ class CalculateButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final isFormValid = context.watch<FormBloc>().state is ValidFormState;
 
-    return SizedBox(
-      width: double.maxFinite,
-      height: 80.0,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ElevatedButton(
-          onPressed: isFormValid
-              ? () {
-                  Navigator.of(context).pushNamed(routeResult);
-                }
-              : null,
-          child: Text(AppLocaleScope.of(context).calculate),
+    return BlocListener<CalculatorBloc, CalculatorState>(
+      listenWhen: (context, state) => state is SuccessCalculatorState,
+      listener: (context, state) {
+        if (state is SuccessCalculatorState) {
+          Navigator.of(context)
+              .pushNamed(routeResult, arguments: state.outputModel);
+        }
+      },
+      child: SizedBox(
+        width: double.maxFinite,
+        height: 80.0,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ElevatedButton(
+            onPressed: isFormValid
+                ? () {
+                    context.read<CalculatorBloc>().add(
+                          StartCalculationEvent(
+                            context.read<FormBloc>().state.model,
+                          ),
+                        );
+                  }
+                : null,
+            child: Text(AppLocaleScope.of(context).calculate),
+          ),
         ),
       ),
     );

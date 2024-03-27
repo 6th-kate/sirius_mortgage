@@ -31,5 +31,6 @@
   "tablePrincipal": "Осн. долг:",
   "settings": "Настройки",
   "language": "Язык",
-  "theme": "Тема"
+  "theme": "Тема",
+  "loading": "Загрузка..."
 }

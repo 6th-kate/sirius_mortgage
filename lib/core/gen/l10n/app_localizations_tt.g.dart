@@ -102,4 +102,7 @@ class AppLocalizationsTt extends AppLocalizations {
 
   @override
   String get theme => 'Бизәк';
+
+  @override
+  String get loading => 'Йөкләү...';
 }

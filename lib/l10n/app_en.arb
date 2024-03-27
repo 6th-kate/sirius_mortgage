@@ -31,5 +31,6 @@
 	"tablePrincipal": "Main debt:",
 	"settings": "Settings",
 	"language": "Language",
-	"theme": "Theme"
+	"theme": "Theme",
+	"loading": "Loading..."
 }

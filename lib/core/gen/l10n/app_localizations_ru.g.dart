@@ -102,4 +102,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get theme => 'Тема';
+
+  @override
+  String get loading => 'Загрузка...';
 }

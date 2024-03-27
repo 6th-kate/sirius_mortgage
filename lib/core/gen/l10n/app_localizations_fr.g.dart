@@ -102,4 +102,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get theme => 'Thème';
+
+  @override
+  String get loading => 'Chargement...';
 }

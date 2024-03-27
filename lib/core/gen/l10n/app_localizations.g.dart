@@ -294,6 +294,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Тема'**
   String get theme;
+
+  /// No description provided for @loading.
+  ///
+  /// In ru, this message translates to:
+  /// **'Загрузка...'**
+  String get loading;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

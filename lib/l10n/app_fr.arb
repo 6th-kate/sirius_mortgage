@@ -31,5 +31,6 @@
 	"tablePrincipal": "Dette princ.:",
 	"settings": "Paramètres",
 	"language": "Langue",
-	"theme": "Thème"
+	"theme": "Thème",
+	"loading": "Chargement..."
 }

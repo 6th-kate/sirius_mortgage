@@ -66,7 +66,8 @@ class ResultPage extends StatelessWidget {
               Center(
                 child: TextButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed(routeTable);
+                    Navigator.of(context)
+                        .pushNamed(routeTable, arguments: result);
                   },
                   child: Text(AppLocaleScope.of(context).openTable),
                 ),

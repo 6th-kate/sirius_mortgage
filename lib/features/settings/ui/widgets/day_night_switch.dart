@@ -176,13 +176,13 @@ class _DayNightSwitchState extends State<DayNightSwitch>
             ..inactiveColor = Colors.yellow
             ..sunImage = widget.sunImage
             ..moonImage = widget.moonImage
-            ..sunColor = widget.sunColor //TODO FIX COLORS
-            ..moonColor = widget.moonColor //TODO FIX COLORS
+            ..sunColor = widget.sunColor
+            ..moonColor = widget.moonColor
             ..dayColor = Theme.of(context)
                 .colorScheme
                 .tertiary
                 .withOpacity(0.8) // FIX COLORS
-            ..nightColor = Colors.black //TODO FIX COLORS
+            ..nightColor = Colors.black
             ..configuration = createLocalImageConfiguration(context)
             ..textDirection = Directionality.of(context)
             ..isInteractive = isInteractive

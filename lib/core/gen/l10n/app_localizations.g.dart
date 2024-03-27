@@ -97,7 +97,7 @@ abstract class AppLocalizations {
     Locale('en'),
     Locale('fr'),
     Locale('ru'),
-    Locale('tt'),
+    Locale('tt')
   ];
 
   /// No description provided for @currency.

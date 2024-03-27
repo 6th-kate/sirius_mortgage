@@ -38,12 +38,12 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     Emitter emit,
   ) {
     final loanAmount = double.tryParse(event.model.cost!);
-    final loanTermYears = int.tryParse(event.model.term!);
+    final loanTermMonths = int.tryParse(event.model.term!);
     final interestRate = double.tryParse(event.model.bet!);
     final date = DateTime.now();
     final initialPayment = double.tryParse(event.model.contribution!);
     if (loanAmount == null ||
-        loanTermYears == null ||
+        loanTermMonths == null ||
         interestRate == null ||
         initialPayment == null) {
       add(const ErrorCalculationEvent('Incorrect data'));
@@ -54,7 +54,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
       input: SummaryInformationInput(
         data: CalculatorInputData(
           loanAmount: loanAmount,
-          loanTermYears: loanTermYears,
+          loanTermMonth: loanTermMonths,
           interestRate: interestRate,
           date: date,
           initialPayment: initialPayment,

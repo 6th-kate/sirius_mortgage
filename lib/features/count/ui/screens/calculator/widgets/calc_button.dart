@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../domain/form_bloc/form_bloc.dart';
 import '../../../../../locale/locale.dart';
 import '../../../../domain/calculator_bloc/calculator_bloc.dart';
-import '../../../../domain/form_bloc/form_bloc.dart';
 import '../../../../route/route.dart';
 
 class CalculateButton extends StatelessWidget {
@@ -38,7 +38,7 @@ class CalculateButton extends StatelessWidget {
                 : null,
             child: Text(
               context.watch<CalculatorBloc>().state is InProcessCalculatorState
-                  ? 'Загружаем...'
+                  ? AppLocaleScope.of(context).loading
                   : AppLocaleScope.of(context).calculate,
             ),
           ),

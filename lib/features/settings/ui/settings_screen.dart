@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/settings/ui/widgets/locale_setting.dart';
 import 'package:sirius_mortgage/features/settings/ui/widgets/theme_setting.dart';
 
+import '../../locale/locale.dart';
+
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -9,7 +11,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Настройки'),
+        title: Text(AppLocaleScope.of(context).settings),
       ),
       body: const SafeArea(
         child: Padding(

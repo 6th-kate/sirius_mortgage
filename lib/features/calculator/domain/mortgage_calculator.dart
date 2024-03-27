@@ -44,7 +44,7 @@ class MortgageCalculator implements ICalculator {
       return response;
     }
     // Количество месяцев кредита
-    final loanTermMonths = data.loanTermYears * 12;
+    final loanTermMonths = data.loanTermMonth;
 
     if (index > loanTermMonths || index.isNegative) {
       throw Exception('Index [$index] is out of range 0 - [$loanTermMonths]');
@@ -82,8 +82,7 @@ class MortgageCalculator implements ICalculator {
     CalculatorInputData data,
     index,
   ) {
-    double loanTermMonths =
-        data.loanTermYears * 12; // Количество месяцев кредита
+    final loanTermMonths = data.loanTermMonth; // Количество месяцев кредита
 
     if (index > loanTermMonths || index < 0) {
       throw Exception('Index is out of range');
@@ -153,7 +152,7 @@ class MortgageCalculator implements ICalculator {
     CalculatorInputData data,
   ) {
     List<CalculatorResultData> response = [];
-    for (int index = 0; index <= data.loanTermYears * 12; index++) {
+    for (int index = 0; index <= data.loanTermMonth; index++) {
       response.add(calculateDifferentiatedPayment(data, index));
     }
     return response;
@@ -163,7 +162,7 @@ class MortgageCalculator implements ICalculator {
     CalculatorInputData data,
   ) {
     List<CalculatorResultData> response = [];
-    for (int index = 0; index <= data.loanTermYears * 12; index++) {
+    for (int index = 0; index <= data.loanTermMonth; index++) {
       response.add(calculateAnnuityPayment(data, index));
     }
     return response;
@@ -180,7 +179,7 @@ class MortgageCalculator implements ICalculator {
     double interestPayout = 0;
 
     // Количество месяцев кредита
-    final loanTermMonths = data.loanTermYears * 12;
+    final loanTermMonths = data.loanTermMonth;
     final monthlyInterestRate = (data.interestRate / 100) / 12;
 
     double loanResidue = loanAmount;

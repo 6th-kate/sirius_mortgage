@@ -54,13 +54,21 @@ class LightAppTheme implements AppTheme {
         textTheme: textTheme,
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-            textStyle: MaterialStateProperty.all(AppTextStyles.bodyLarge),
-            foregroundColor: MaterialStateProperty.all(AppColors.focus),
+            textStyle: MaterialStateProperty.all(
+              AppTextStyles.bodyLarge.apply(
+                decoration: TextDecoration.underline,
+              ),
+            ),
+            foregroundColor: MaterialStateProperty.resolveWith((states) {
+              return states.contains(MaterialState.pressed)
+                  ? AppColors.lightGreen
+                  : AppColors.focus;
+            }),
             elevation: MaterialStateProperty.all(0),
             overlayColor: MaterialStateProperty.resolveWith(
               (states) {
                 return states.contains(MaterialState.pressed)
-                    ? AppColors.whiteSplash
+                    ? AppColors.white
                     : null;
               },
             ),
@@ -116,7 +124,7 @@ class LightAppTheme implements AppTheme {
         dividerTheme: const DividerThemeData(
           color: AppColors.form,
           thickness: 1,
-          space: 9,
+          space: 1,
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: AppColors.white,

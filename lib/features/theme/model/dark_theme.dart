@@ -52,8 +52,16 @@ class DarkAppTheme implements AppTheme {
         textTheme: textTheme,
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-            textStyle: MaterialStateProperty.all(AppTextStyles.bodyLarge),
-            foregroundColor: MaterialStateProperty.all(AppColorsDark.focus),
+            textStyle: MaterialStateProperty.all(
+              AppTextStyles.bodyLarge.apply(
+                decoration: TextDecoration.underline,
+              ),
+            ),
+            foregroundColor: MaterialStateProperty.resolveWith((states) {
+              return states.contains(MaterialState.pressed)
+                  ? AppColorsDark.disabled
+                  : AppColorsDark.focus;
+            }),
             elevation: MaterialStateProperty.all(0),
             overlayColor: MaterialStateProperty.resolveWith(
               (states) {
@@ -114,7 +122,7 @@ class DarkAppTheme implements AppTheme {
         dividerTheme: const DividerThemeData(
           color: AppColorsDark.tableLabel,
           thickness: 1,
-          space: 9,
+          space: 1,
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: AppColorsDark.background,

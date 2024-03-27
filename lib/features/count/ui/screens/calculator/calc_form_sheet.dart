@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/calculator/domain/mortgage_calculator.dart';
 import 'package:sirius_mortgage/features/count/data/count_repository_impl.dart';
@@ -26,32 +27,40 @@ class CalculatorFormPage extends StatelessWidget {
         ),
       ],
       child: Scaffold(
-        body: SingleChildScrollView(
-          physics: const NeverScrollableScrollPhysics(),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxHeight: MediaQuery.of(context).size.height - 43,
-            ),
-            child: Column(
-              children: [
-                Text(AppLocaleScope.of(context).calculateMortgage),
-                const CalculatorForm(),
-                const Spacer(),
-                BlocBuilder<FormBloc, ValidationFormState>(
-                  builder: (context, state) {
-                    if (state is NotValidFormState) {
-                      return Text(
-                        state.errorMessage,
-                        style: const TextStyle(color: AppColors.error),
-                      );
-                    }
-                    return const SizedBox.shrink();
-                  },
+        appBar: AppBar(
+          title: Text(AppLocaleScope.of(context).calculateMortgage),
+        ),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: max(
+                    660,
+                    constraints.maxHeight,
+                  ), //660 = heightForm+heightButton идеологически должно быть, но тут с запасом
                 ),
-                const CalculateButton(),
-              ],
-            ),
-          ),
+                child: Column(
+                  children: [
+                    const CalculatorForm(),
+                    const Spacer(),
+                    BlocBuilder<FormBloc, ValidationFormState>(
+                      builder: (context, state) {
+                        if (state is NotValidFormState) {
+                          return Text(
+                            state.errorMessage,
+                            style: const TextStyle(color: AppColors.error),
+                          );
+                        }
+                        return const SizedBox.shrink();
+                      },
+                    ),
+                    const CalculateButton(),
+                  ],
+                ),
+              ),
+            );
+          },
         ),
       ),
     );

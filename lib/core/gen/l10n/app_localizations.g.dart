@@ -183,6 +183,126 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Рассчитать'**
   String get calculate;
+
+  /// No description provided for @result.
+  ///
+  /// In ru, this message translates to:
+  /// **'Результат'**
+  String get result;
+
+  /// No description provided for @totalPayoutResult.
+  ///
+  /// In ru, this message translates to:
+  /// **'Общая сумма: '**
+  String get totalPayoutResult;
+
+  /// No description provided for @loanAmountResult.
+  ///
+  /// In ru, this message translates to:
+  /// **'Основной долг: '**
+  String get loanAmountResult;
+
+  /// No description provided for @interestAmountResult.
+  ///
+  /// In ru, this message translates to:
+  /// **'Начисленные проценты: '**
+  String get interestAmountResult;
+
+  /// No description provided for @interestAmountAgenda.
+  ///
+  /// In ru, this message translates to:
+  /// **'Начисленные проценты'**
+  String get interestAmountAgenda;
+
+  /// No description provided for @loanAmountAgenda.
+  ///
+  /// In ru, this message translates to:
+  /// **'Основной долг'**
+  String get loanAmountAgenda;
+
+  /// No description provided for @payoutChart.
+  ///
+  /// In ru, this message translates to:
+  /// **'График погашения: '**
+  String get payoutChart;
+
+  /// No description provided for @openTable.
+  ///
+  /// In ru, this message translates to:
+  /// **'+ Посмотреть полную таблицу'**
+  String get openTable;
+
+  /// No description provided for @table.
+  ///
+  /// In ru, this message translates to:
+  /// **'Таблица'**
+  String get table;
+
+  /// No description provided for @tableShort.
+  ///
+  /// In ru, this message translates to:
+  /// **'Кратко'**
+  String get tableShort;
+
+  /// No description provided for @tableDetail.
+  ///
+  /// In ru, this message translates to:
+  /// **'Детально'**
+  String get tableDetail;
+
+  /// No description provided for @tableDate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Дата'**
+  String get tableDate;
+
+  /// No description provided for @tablePayment.
+  ///
+  /// In ru, this message translates to:
+  /// **'Платёж'**
+  String get tablePayment;
+
+  /// No description provided for @tableResidue.
+  ///
+  /// In ru, this message translates to:
+  /// **'Остаток'**
+  String get tableResidue;
+
+  /// No description provided for @tableInterest.
+  ///
+  /// In ru, this message translates to:
+  /// **'Проценты:'**
+  String get tableInterest;
+
+  /// No description provided for @tablePrincipal.
+  ///
+  /// In ru, this message translates to:
+  /// **'Осн. долг:'**
+  String get tablePrincipal;
+
+  /// No description provided for @settings.
+  ///
+  /// In ru, this message translates to:
+  /// **'Настройки'**
+  String get settings;
+
+  /// No description provided for @language.
+  ///
+  /// In ru, this message translates to:
+  /// **'Язык'**
+  String get language;
+
+  /// No description provided for @theme.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тема'**
+  String get theme;
+
+  /// No description provided for @loading.
+  ///
+  /// In ru, this message translates to:
+  /// **'Загрузка...'**
+  String get loading;
 }
 
 class _AppLocalizationsDelegate

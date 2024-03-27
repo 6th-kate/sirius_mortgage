@@ -23,6 +23,7 @@ dependencies:
   freezed_annotation: ^2.4.1
   shared_preferences: ^2.2.2
   json_annotation: ^4.8.1
+  fl_chart: ^0.66.2
 
 dev_dependencies:
   # Lints
@@ -33,7 +34,6 @@ dev_dependencies:
 
   # Codegeneration
   build_runner: ^2.4.8
-  freezed: ^2.4.7
   json_serializable: ^6.7.1
 
 flutter_gen:

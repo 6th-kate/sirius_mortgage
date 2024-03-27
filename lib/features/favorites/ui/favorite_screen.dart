@@ -13,17 +13,7 @@ class FavoriteScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(AppLocaleScope.of(context).favorites),
       ),
-      body: const SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              ThemeSetting(),
-              LocaleSetting(),
-            ],
-          ),
-        ),
-      ),
+      body: Container(),
     );
   }
 }

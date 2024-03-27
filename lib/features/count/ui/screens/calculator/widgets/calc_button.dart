@@ -39,7 +39,7 @@ class CalculateButton extends StatelessWidget {
             child: Text(context.watch<CalculatorBloc>().state
                     is InProcessCalculatorState
                 ? 'Загружаем...'
-                : AppLocaleScope.of(context).calculate),
+                : AppLocaleScope.of(context).calculate,),
           ),
         ),
       ),

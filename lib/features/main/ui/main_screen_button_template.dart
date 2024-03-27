@@ -48,7 +48,7 @@ class MainButtonTemplate extends StatelessWidget {
                           style: Theme.of(context).textTheme.labelSmall!.apply(
                               color: Theme.of(context)
                                   .extension<ThemeColors>()!
-                                  .label),
+                                  .label,),
                         ),
                       ),
                     ],

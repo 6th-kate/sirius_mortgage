@@ -31,7 +31,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
       input: SummaryInformationInput(
         data: CalculatorInputData(
           loanAmount: double.parse(event.model.cost!),
-          loanTermYears: int.parse(event.model.term!),
+          loanTermMonth: int.parse(event.model.term!),
           interestRate: double.parse(event.model.bet!),
           date: DateTime.now(),
           initialPayment: double.parse(event.model.contribution!),

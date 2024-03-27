@@ -4,8 +4,8 @@ class CalculatorInputData {
   /// Кредит
   final double loanAmount;
 
-  ///Срок в годах
-  final int loanTermYears;
+  ///Срок в месяцах
+  final int loanTermMonth;
 
   /// Процентная ставка
   final double interestRate;
@@ -18,7 +18,7 @@ class CalculatorInputData {
 
   const CalculatorInputData({
     required this.loanAmount,
-    required this.loanTermYears,
+    required this.loanTermMonth,
     required this.interestRate,
     required this.date,
     required this.initialPayment,
@@ -30,7 +30,7 @@ class CalculatorInputData {
       other is CalculatorInputData &&
           runtimeType == other.runtimeType &&
           loanAmount == other.loanAmount &&
-          loanTermYears == other.loanTermYears &&
+          loanTermMonth == other.loanTermMonth &&
           interestRate == other.interestRate &&
           date == other.date &&
           initialPayment == other.initialPayment;
@@ -38,7 +38,7 @@ class CalculatorInputData {
   @override
   int get hashCode =>
       loanAmount.hashCode ^
-      loanTermYears.hashCode ^
+      loanTermMonth.hashCode ^
       interestRate.hashCode ^
       date.hashCode ^
       initialPayment.hashCode;

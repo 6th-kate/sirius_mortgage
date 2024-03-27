@@ -1,0 +1,5 @@
+
+class KeyStore {
+  KeyStore._();
+
+}

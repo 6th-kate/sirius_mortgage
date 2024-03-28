@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../common/widget/mortgage_card.dart';
+import '../../theme/model/theme_extensions.dart';
+
 class LeadersWidget extends StatefulWidget {
   const LeadersWidget({super.key});
 
@@ -24,7 +27,9 @@ class _LeadersWidgetState extends State<LeadersWidget> {
               width: double.infinity,
               child: CupertinoSlidingSegmentedControl<int>(
                 thumbColor: Theme.of(context).colorScheme.background,
-                // backgroundColor: Theme.of(context).extension<ThemeColoros>()!.switchBackground,
+                backgroundColor: Theme.of(context)
+                    .extension<ThemeColors>()!
+                    .switchBackground,
                 onValueChanged: (value) {
                   if (value != null) {
                     setState(() {
@@ -48,9 +53,15 @@ class _LeadersWidgetState extends State<LeadersWidget> {
             //     ? TrendIndexLeaders.buy.length
             //     : TrendIndexLeaders.sell.length,
             itemBuilder: (BuildContext context, int index) {
-              return const ListTile(
-                title: Text('ListTile with red background'),
-                tileColor: Colors.red,
+              return const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: CompareItem(
+                  title: 'Дом какой то',
+                  loanAmount: 2000000,
+                  downPayment: 200000,
+                  loanTerm: 20,
+                  rate: 7,
+                ),
               );
             },
           ),
@@ -94,6 +105,7 @@ class TrIndexOptionsWidget extends StatelessWidget {
       child: Center(
         child: Text(
           text,
+          style: Theme.of(context).textTheme.titleSmall,
         ),
       ),
     );

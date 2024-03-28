@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/count/domain/form_bloc/textfield_type_to_event.dart';
+import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_payments.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_text_field.dart';
 import '../../../../../locale/locale.dart';
 
 import 'calc_suffix_button.dart';
 
 class CalculatorForm extends StatelessWidget {
-
   const CalculatorForm({super.key});
 
   @override
@@ -54,6 +54,7 @@ class CalculatorForm extends StatelessWidget {
               ),
             ],
           ),
+          const CalcPayments(),
         ],
       ),
     );

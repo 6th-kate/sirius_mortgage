@@ -2,9 +2,9 @@ import 'package:sirius_mortgage/features/calculator/domain/model/calculator_inte
 import 'package:sirius_mortgage/features/settings/domain/currency/currency_enum.dart';
 
 class CalculatorInputData {
-
   // Валюта
   final CurrencyType currency;
+
   /// Кредит
   final double loanAmount;
 
@@ -75,7 +75,6 @@ class CalculatorInputData {
 }
 
 class SummaryInformationInput {
- 
   final CalculatorInputData data;
 
   final CalculateType type;

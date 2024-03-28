@@ -8,7 +8,8 @@ class FavoritesRepository implements IFavoritesRepository {
   @override
   Future<List<SummaryInformationInput>> getAllFavorites() async {
     final prefs = await SharedPreferences.getInstance();
-    final favoritesString = prefs.getString(KeyStore.favoritesKey) ?? KeyStore.favoritesDefault;
+    final favoritesString =
+        prefs.getString(KeyStore.favoritesKey) ?? KeyStore.favoritesDefault;
     final List<dynamic> favoritesJson = jsonDecode(favoritesString);
     return favoritesJson
         .map((json) => SummaryInformationInput.fromJson(json))

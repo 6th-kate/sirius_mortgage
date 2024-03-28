@@ -9,13 +9,14 @@ class FavoriteCard extends StatelessWidget {
   final double rateD;
   final VoidCallback? onClick;
 
-  const FavoriteCard(
-      {super.key,
-      required this.loanAmountD,
-      required this.downpaymentD,
-      required this.termD,
-      required this.rateD,
-      this.onClick,});
+  const FavoriteCard({
+    super.key,
+    required this.loanAmountD,
+    required this.downpaymentD,
+    required this.termD,
+    required this.rateD,
+    this.onClick,
+  });
 
   @override
   Widget build(BuildContext context) {

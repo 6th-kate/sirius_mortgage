@@ -36,54 +36,71 @@ class MortgagePlot extends StatelessWidget {
             ),
             child: LayoutBuilder(
               builder: (context, constraints) {
-                double betweenSpace = data[1].payment / (0.3 * constraints.maxHeight);
+                double betweenSpace =
+                    data[1].payment / (0.3 * constraints.maxHeight);
                 double minBarHeight = min(
-                  data[data.length - 1].interest * constraints.maxHeight / (data[1].principal + betweenSpace + data[1].interest),
+                  data[data.length - 1].interest *
+                      constraints.maxHeight /
+                      (data[1].principal + betweenSpace + data[1].interest),
                   data[1].principal *
-                      constraints.maxHeight / (data[1].principal + betweenSpace + data[1].interest),
+                      constraints.maxHeight /
+                      (data[1].principal + betweenSpace + data[1].interest),
                 );
                 double width = (constraints.maxWidth - 60) / data.length;
-                betweenSpace = width > minBarHeight * 1.5 ? min(betweenSpace, minBarHeight,) : betweenSpace;
+                betweenSpace = width > minBarHeight * 1.5
+                    ? min(
+                        betweenSpace,
+                        minBarHeight,
+                      )
+                    : betweenSpace;
                 double radius = min(
-                  min(
-                    data[data.length - 1].interest * constraints.maxHeight / (data[1].principal + betweenSpace + data[1].interest),
-                    data[1].principal *
-                        constraints.maxHeight / (data[1].principal + betweenSpace + data[1].interest),
-                  ),
-                  width,
-                ) / 4;
-                return BarChart(
-                    BarChartData(
-                      barGroups: List.generate(
-                        data.length - 1,
-                        (i) => generateGroupData(
-                          i,
-                          principal: data[i + 1].principal,
-                          interest: data[i + 1].interest,
-                          width: width,
-                          radius: radius,
-                          betweenSpace: betweenSpace,
-                        ),
+                      min(
+                        data[data.length - 1].interest *
+                            constraints.maxHeight /
+                            (data[1].principal +
+                                betweenSpace +
+                                data[1].interest),
+                        data[1].principal *
+                            constraints.maxHeight /
+                            (data[1].principal +
+                                betweenSpace +
+                                data[1].interest),
                       ),
-                      //config
-                      maxY: data[1].payment +
-                          data[1].payment / (0.3 * constraints.maxHeight),
-                      barTouchData: BarTouchData(enabled: false),
-                      borderData: FlBorderData(show: false),
-                      gridData: const FlGridData(show: false),
-                      titlesData: const FlTitlesData(
-                        leftTitles: AxisTitles(),
-                        rightTitles: AxisTitles(),
-                        topTitles: AxisTitles(),
-                        bottomTitles: AxisTitles(
-                          sideTitles: SideTitles(
-                            showTitles: false,
-                            // getTitlesWidget: bottomTitles,
-                            // reservedSize: 20,
-                          ),
+                      width,
+                    ) /
+                    4;
+                return BarChart(
+                  BarChartData(
+                    barGroups: List.generate(
+                      data.length - 1,
+                      (i) => generateGroupData(
+                        i,
+                        principal: data[i + 1].principal,
+                        interest: data[i + 1].interest,
+                        width: width,
+                        radius: radius,
+                        betweenSpace: betweenSpace,
+                      ),
+                    ),
+                    //config
+                    maxY: data[1].payment +
+                        data[1].payment / (0.3 * constraints.maxHeight),
+                    barTouchData: BarTouchData(enabled: false),
+                    borderData: FlBorderData(show: false),
+                    gridData: const FlGridData(show: false),
+                    titlesData: const FlTitlesData(
+                      leftTitles: AxisTitles(),
+                      rightTitles: AxisTitles(),
+                      topTitles: AxisTitles(),
+                      bottomTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: false,
+                          // getTitlesWidget: bottomTitles,
+                          // reservedSize: 20,
                         ),
                       ),
                     ),
+                  ),
                 );
               },
             ),

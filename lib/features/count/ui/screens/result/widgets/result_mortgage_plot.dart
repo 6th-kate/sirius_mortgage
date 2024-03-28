@@ -34,32 +34,36 @@ class MortgagePlot extends StatelessWidget {
             ),
             child: LayoutBuilder(
               builder: (context, constraints) {
-                return BarChart(
-                  BarChartData(
-                    barGroups: List.generate(
-                      data.length,
-                      (i) => generateGroupData(
-                        i,
-                        principal: data[i].principal,
-                        interest: data[i].interest,
-                        width: (constraints.maxWidth - 60) / data.length,
-                        betweenSpace:
-                            data[0].payment / (0.3 * constraints.maxHeight),
+                return Container(
+                  color: Colors.blue,
+                  child: BarChart(
+                    BarChartData(
+                      barGroups: List.generate(
+                        data.length - 1,
+                        (i) => generateGroupData(
+                          i,
+                          principal: data[i + 1].principal,
+                          interest: data[i + 1].interest,
+                          width: (constraints.maxWidth - 60) / data.length,
+                          betweenSpace:
+                              data[1].payment / (0.3 * constraints.maxHeight),
+                        ),
                       ),
-                    ),
-                    //config
-                    barTouchData: BarTouchData(enabled: false),
-                    borderData: FlBorderData(show: false),
-                    gridData: const FlGridData(show: false),
-                    titlesData: const FlTitlesData(
-                      leftTitles: AxisTitles(),
-                      rightTitles: AxisTitles(),
-                      topTitles: AxisTitles(),
-                      bottomTitles: AxisTitles(
-                        sideTitles: SideTitles(
-                          showTitles: false,
-                          // getTitlesWidget: bottomTitles,
-                          // reservedSize: 20,
+                      //config
+                      maxY: data[1].payment + data[1].payment / (0.3 * constraints.maxHeight),
+                      barTouchData: BarTouchData(enabled: false),
+                      borderData: FlBorderData(show: false),
+                      gridData: const FlGridData(show: false),
+                      titlesData: const FlTitlesData(
+                        leftTitles: AxisTitles(),
+                        rightTitles: AxisTitles(),
+                        topTitles: AxisTitles(),
+                        bottomTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: false,
+                            // getTitlesWidget: bottomTitles,
+                            // reservedSize: 20,
+                          ),
                         ),
                       ),
                     ),

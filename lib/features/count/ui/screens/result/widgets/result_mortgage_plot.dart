@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -34,9 +36,23 @@ class MortgagePlot extends StatelessWidget {
             ),
             child: LayoutBuilder(
               builder: (context, constraints) {
-                return Container(
-                  color: Colors.blue,
-                  child: BarChart(
+                double betweenSpace = data[1].payment / (0.3 * constraints.maxHeight);
+                double minBarHeight = min(
+                  data[data.length - 1].interest * constraints.maxHeight / (data[1].principal + betweenSpace + data[1].interest),
+                  data[1].principal *
+                      constraints.maxHeight / (data[1].principal + betweenSpace + data[1].interest),
+                );
+                double width = (constraints.maxWidth - 60) / data.length;
+                betweenSpace = width > minBarHeight * 1.5 ? min(betweenSpace, minBarHeight,) : betweenSpace;
+                double radius = min(
+                  min(
+                    data[data.length - 1].interest * constraints.maxHeight / (data[1].principal + betweenSpace + data[1].interest),
+                    data[1].principal *
+                        constraints.maxHeight / (data[1].principal + betweenSpace + data[1].interest),
+                  ),
+                  width,
+                ) / 4;
+                return BarChart(
                     BarChartData(
                       barGroups: List.generate(
                         data.length - 1,
@@ -44,13 +60,14 @@ class MortgagePlot extends StatelessWidget {
                           i,
                           principal: data[i + 1].principal,
                           interest: data[i + 1].interest,
-                          width: (constraints.maxWidth - 60) / data.length,
-                          betweenSpace:
-                              data[1].payment / (0.3 * constraints.maxHeight),
+                          width: width,
+                          radius: radius,
+                          betweenSpace: betweenSpace,
                         ),
                       ),
                       //config
-                      maxY: data[1].payment + data[1].payment / (0.3 * constraints.maxHeight),
+                      maxY: data[1].payment +
+                          data[1].payment / (0.3 * constraints.maxHeight),
                       barTouchData: BarTouchData(enabled: false),
                       borderData: FlBorderData(show: false),
                       gridData: const FlGridData(show: false),
@@ -67,7 +84,6 @@ class MortgagePlot extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
                 );
               },
             ),
@@ -82,6 +98,7 @@ class MortgagePlot extends StatelessWidget {
     required double principal,
     required double interest,
     required double width,
+    required double radius,
     required double betweenSpace,
   }) {
     return BarChartGroupData(
@@ -93,14 +110,18 @@ class MortgagePlot extends StatelessWidget {
           toY: principal,
           color: loanAmountColor,
           width: width,
-          borderRadius: BorderRadius.all(Radius.circular(width / 4)),
+          borderRadius: BorderRadius.all(
+            Radius.circular(radius),
+          ),
         ),
         BarChartRodData(
           fromY: principal + betweenSpace,
           toY: principal + betweenSpace + interest,
           color: interestAmountColor,
           width: width,
-          borderRadius: BorderRadius.all(Radius.circular(width / 4)),
+          borderRadius: BorderRadius.all(
+            Radius.circular(radius),
+          ),
         ),
       ],
     );

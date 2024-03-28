@@ -307,7 +307,7 @@ abstract class AppLocalizations {
   /// No description provided for @loading.
   ///
   /// In ru, this message translates to:
-  /// **'Избранное...'**
+  /// **'Избранное'**
   String get favorites;
 }
 

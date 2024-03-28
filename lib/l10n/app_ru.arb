@@ -12,5 +12,7 @@
   "paymentsType" : "Тип ежемесячных платежей",
   "annuity" : "Аннуитетные",
   "differentiated" : "Дифференцированные",
-  "calculate" : "Рассчитать"
+  "calculate" : "Рассчитать",
+  "langName": "Русский",
+  "shortLangName": "RUS"
 }

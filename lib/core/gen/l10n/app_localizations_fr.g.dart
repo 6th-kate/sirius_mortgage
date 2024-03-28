@@ -45,4 +45,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get calculate => 'Calculer';
+
+  @override
+  String get langName => 'Français';
+
+  @override
+  String get shortLangName => 'FR';
 }

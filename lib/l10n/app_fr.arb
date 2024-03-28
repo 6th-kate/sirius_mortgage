@@ -12,5 +12,7 @@
 	"paymentsType": "Type de paiements mensuels",
 	"annuity": "Annuité",
 	"differentiated": "Différencié",
-	"calculate": "Calculer"
+	"calculate": "Calculer",
+	"langName": "Français",
+	"shortLangName": "FR"
 }

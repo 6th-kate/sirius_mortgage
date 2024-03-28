@@ -7,8 +7,8 @@ import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.g.dart';
 import 'app_localizations_fr.g.dart';
+import 'app_localizations_it.g.dart';
 import 'app_localizations_ru.g.dart';
-import 'app_localizations_tt.g.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations
 /// returned by `AppLocalizations.of(context)`.
@@ -93,8 +93,8 @@ abstract class AppLocalizations {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
     Locale('fr'),
-    Locale('ru'),
-    Locale('tt')
+    Locale('it'),
+    Locale('ru')
   ];
 
   /// No description provided for @currency.
@@ -180,6 +180,18 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Рассчитать'**
   String get calculate;
+
+  /// No description provided for @langName.
+  ///
+  /// In ru, this message translates to:
+  /// **'Русский'**
+  String get langName;
+
+  /// No description provided for @shortLangName.
+  ///
+  /// In ru, this message translates to:
+  /// **'RUS'**
+  String get shortLangName;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -191,7 +203,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'fr', 'ru', 'tt'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'fr', 'it', 'ru'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -204,8 +216,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   switch (locale.languageCode) {
     case 'en': return AppLocalizationsEn();
     case 'fr': return AppLocalizationsFr();
+    case 'it': return AppLocalizationsIt();
     case 'ru': return AppLocalizationsRu();
-    case 'tt': return AppLocalizationsTt();
   }
 
   throw FlutterError(

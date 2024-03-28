@@ -12,5 +12,7 @@
 	"paymentsType": "Айлык түләүләр төре",
 	"annuity": "Аннуитлы (Tигез зурлыклы түләүләр)",
 	"differentiated": "Аерымланган түләүләр",
-	"calculate": "Исәпләү"
+	"calculate": "Исәпләү",
+	"langName": "Татар",
+	"shortLangName": "TAT"
 }

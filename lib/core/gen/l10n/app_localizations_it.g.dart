@@ -1,8 +1,8 @@
 import 'app_localizations.g.dart';
 
-/// The translations for Tatar (`tt`).
-class AppLocalizationsTt extends AppLocalizations {
-  AppLocalizationsTt([String locale = 'tt']) : super(locale);
+/// The translations for Italian (`it`).
+class AppLocalizationsIt extends AppLocalizations {
+  AppLocalizationsIt([String locale = 'it']) : super(locale);
 
   @override
   String get currency => 'RUB';
@@ -45,4 +45,10 @@ class AppLocalizationsTt extends AppLocalizations {
 
   @override
   String get calculate => 'Исәпләү';
+
+  @override
+  String get langName => 'Татар';
+
+  @override
+  String get shortLangName => 'TAT';
 }

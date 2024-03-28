@@ -45,4 +45,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get calculate => 'Рассчитать';
+
+  @override
+  String get langName => 'Русский';
+
+  @override
+  String get shortLangName => 'RUS';
 }

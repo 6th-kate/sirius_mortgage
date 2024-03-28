@@ -45,4 +45,64 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get calculate => 'Рассчитать';
+
+  @override
+  String get result => 'Результат';
+
+  @override
+  String get totalPayoutResult => 'Общая сумма: ';
+
+  @override
+  String get loanAmountResult => 'Основной долг: ';
+
+  @override
+  String get interestAmountResult => 'Начисленные проценты: ';
+
+  @override
+  String get interestAmountAgenda => 'Начисленные проценты';
+
+  @override
+  String get loanAmountAgenda => 'Основной долг';
+
+  @override
+  String get payoutChart => 'График погашения: ';
+
+  @override
+  String get openTable => '+ Посмотреть полную таблицу';
+
+  @override
+  String get table => 'Таблица';
+
+  @override
+  String get tableShort => 'Кратко';
+
+  @override
+  String get tableDetail => 'Детально';
+
+  @override
+  String get tableDate => 'Дата';
+
+  @override
+  String get tablePayment => 'Платёж';
+
+  @override
+  String get tableResidue => 'Остаток';
+
+  @override
+  String get tableInterest => 'Проценты:';
+
+  @override
+  String get tablePrincipal => 'Осн. долг:';
+
+  @override
+  String get settings => 'Настройки';
+
+  @override
+  String get language => 'Язык';
+
+  @override
+  String get theme => 'Тема';
+
+  @override
+  String get loading => 'Загрузка...';
 }

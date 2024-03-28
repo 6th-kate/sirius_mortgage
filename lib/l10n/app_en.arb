@@ -1,5 +1,5 @@
 {
-	"currency": "Rub",
+	"currency": "USD",
 	"mortgageCalculator": "Mortgage calculator",
 	"calculateMortgage": "Calculate the mortgage",
 	"calculateMortgageLabel" : "Find out how much you will overpay",
@@ -12,5 +12,25 @@
 	"paymentsType": "Type of monthly payments",
 	"annuity": "Annuite",
 	"differentiated": "Differentiated",
-	"calculate": "Calculate"
+	"calculate": "Calculate",
+	"result": "Result",
+	"totalPayoutResult": "Total amount: ",
+	"loanAmountResult": "Main debt: ",
+	"interestAmountResult": "Interest charges: ",
+	"interestAmountAgenda": "Interest charges",
+	"loanAmountAgenda": "Main debt",
+	"payoutChart": "Repayment schedule: ",
+	"openTable": "+ View full table",
+	"table": "Table",
+	"tableShort": "Briefly",
+	"tableDetail": "Details",
+	"tableDate": "Date",
+	"tablePayment": "Payment",
+	"tableResidue": "Remainder",
+	"tableInterest" : "Percent:",
+	"tablePrincipal": "Main debt:",
+	"settings": "Settings",
+	"language": "Language",
+	"theme": "Theme",
+	"loading": "Loading..."
 }

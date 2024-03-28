@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../domain/form_bloc/form_bloc.dart';
 import '../../../../../locale/locale.dart';
 import '../../../../domain/calculator_bloc/calculator_bloc.dart';
-import '../../../../domain/form_bloc/form_bloc.dart';
 import '../../../../route/route.dart';
 
 class CalculateButton extends StatelessWidget {
@@ -37,7 +36,11 @@ class CalculateButton extends StatelessWidget {
                         );
                   }
                 : null,
-            child: Text(AppLocaleScope.of(context).calculate),
+            child: Text(
+              context.watch<CalculatorBloc>().state is InProcessCalculatorState
+                  ? AppLocaleScope.of(context).loading
+                  : AppLocaleScope.of(context).calculate,
+            ),
           ),
         ),
       ),

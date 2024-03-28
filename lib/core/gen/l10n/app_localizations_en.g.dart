@@ -5,7 +5,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get currency => 'Rub';
+  String get currency => 'USD';
 
   @override
   String get mortgageCalculator => 'Mortgage calculator';
@@ -45,4 +45,64 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get calculate => 'Calculate';
+
+  @override
+  String get result => 'Result';
+
+  @override
+  String get totalPayoutResult => 'Total amount: ';
+
+  @override
+  String get loanAmountResult => 'Main debt: ';
+
+  @override
+  String get interestAmountResult => 'Interest charges: ';
+
+  @override
+  String get interestAmountAgenda => 'Interest charges';
+
+  @override
+  String get loanAmountAgenda => 'Main debt';
+
+  @override
+  String get payoutChart => 'Repayment schedule: ';
+
+  @override
+  String get openTable => '+ View full table';
+
+  @override
+  String get table => 'Table';
+
+  @override
+  String get tableShort => 'Briefly';
+
+  @override
+  String get tableDetail => 'Details';
+
+  @override
+  String get tableDate => 'Date';
+
+  @override
+  String get tablePayment => 'Payment';
+
+  @override
+  String get tableResidue => 'Remainder';
+
+  @override
+  String get tableInterest => 'Percent:';
+
+  @override
+  String get tablePrincipal => 'Main debt:';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get loading => 'Loading...';
 }

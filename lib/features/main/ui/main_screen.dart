@@ -45,7 +45,7 @@ class MainScreen extends StatelessWidget {
               },
             ),
           ),
-          Expanded(child: const LeadersWidget()),
+          const Expanded(child: LeadersWidget()),
         ],
       ),
     );

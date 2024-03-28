@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorites_repository.dart';
 
 import '../../../core/widget/mortgage_card.dart';
+import '../../calculator/domain/model/calculator_dataclass.dart';
 import '../../theme/model/theme_extensions.dart';
 
 class LeadersWidget extends StatefulWidget {
@@ -13,6 +15,7 @@ class LeadersWidget extends StatefulWidget {
 
 class _LeadersWidgetState extends State<LeadersWidget> {
   int _groupValue = 0;
+  // final IFavoritesRepository _repository;
 
   @override
   Widget build(BuildContext context) {
@@ -47,40 +50,54 @@ class _LeadersWidgetState extends State<LeadersWidget> {
           ),
         ),
         Expanded(
-          child: ListView.builder(
-            itemCount: 10,
-            // _groupValue == 0
-            //     ? TrendIndexLeaders.buy.length
-            //     : TrendIndexLeaders.sell.length,
-            itemBuilder: (BuildContext context, int index) {
-              return SingleChildScrollView(
-                child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    child: _groupValue == 0
-                        ? MortgageItem(
-                            backgroundColor: Theme.of(context)
-                                .extension<ThemeColors>()!
-                                .history,
-                            key: ValueKey<int>(_groupValue),
-                            title: 'Дом какой то',
-                            loanAmount: 2000000,
-                            downPayment: 200000,
-                            loanTerm: 20,
-                            rate: 7,
-                          )
-                        : MortgageItem(
-                            backgroundColor: Theme.of(context)
-                                .extension<ThemeColors>()!
-                                .liked,
-                            key: ValueKey<int>(_groupValue),
-                            title: 'Дом какой то',
-                            loanAmount: 10000,
-                            downPayment: 2543700,
-                            loanTerm: 54,
-                            rate: 3.5,
-                          )),
-              );
+          child: FutureBuilder<List<SummaryInformationInput>>(
+            initialData: const <SummaryInformationInput>[],
+            future: null,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState != ConnectionState.waiting) {
+                return ListView.builder(
+                  itemCount: snapshot.data == null ? 0 : snapshot.data!.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 8.0),
+                      child: _groupValue == 0
+                          ? MortgageItem(
+                              backgroundColor: Theme.of(context)
+                                  .extension<ThemeColors>()!
+                                  .history,
+                              key: ValueKey<int>(_groupValue),
+                              title: 'Дом какой то',
+                              loanAmount: 2000000,
+                              downPayment: 200000,
+                              loanTerm: 20,
+                              rate: 7,
+                            )
+                          : MortgageItem(
+                              backgroundColor: Theme.of(context)
+                                  .extension<ThemeColors>()!
+                                  .liked,
+                              key: ValueKey<int>(_groupValue),
+                              title: 'Дом какой то',
+                              loanAmount: 10000,
+                              downPayment: 2543700,
+                              loanTerm: 54,
+                              rate: 3.5,
+                            ),
+                    );
+                  },
+                );
+              } else {
+                return Align(
+                  alignment: Alignment.topCenter,
+                  child: CircularProgressIndicator(
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context)
+                        .extension<ThemeColors>()!
+                        .switchBackground,
+                  ),
+                );
+              }
             },
           ),
         ),

@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/main/ui/calc_button_widget.dart';
 import 'package:sirius_mortgage/features/main/ui/compare_button_widget.dart';
 import 'package:sirius_mortgage/features/main/ui/settings_button_widget.dart';
+import 'package:sirius_mortgage/features/main/ui/switch_widget.dart';
 
 import '../../locale/locale.dart';
 
@@ -20,6 +22,7 @@ class MainScreen extends StatelessWidget {
         actions: const [SettingButton()],
       ),
       body: Column(
+        mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
@@ -33,6 +36,7 @@ class MainScreen extends StatelessWidget {
             padding: EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
             child: CompareButton(),
           ),
+          Expanded(child: const LeadersWidget()),
         ],
       ),
     );

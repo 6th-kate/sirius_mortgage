@@ -5,7 +5,7 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get currency => 'EUR';
+  String get currency => 'Валюта';
 
   @override
   String get mortgageCalculator => 'Calculateur d\'hypothèque';
@@ -14,7 +14,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get calculateMortgage => 'Calculer l\'hypothèque';
 
   @override
-  String get calculateMortgageLabel => 'Découvrez combien vous allez payer en trop';
+  String get calculateMortgageLabel =>
+      'Découvrez combien vous allez payer en trop';
 
   @override
   String get compareMortgage => 'Comparer les programmes';
@@ -47,7 +48,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get calculate => 'Calculer';
 
   @override
-  String get result => 'Résultat';
+  String get langName => 'Français';
+
+  @override
+  String get shortLangName => 'FR';
 
   @override
   String get totalPayoutResult => 'Montant total: ';
@@ -117,4 +121,24 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get save => 'Sauvegarder';
+
+  @override
+  String get variantFirst => 'Option 1';
+
+  @override
+  String get variantSecond => 'Option 2';
+
+  @override
+  String get plotFirst =>
+      'Calendrier de remboursement pour la première option:';
+
+  @override
+  String get plotSecond =>
+      'Calendrier de remboursement pour la deuxième option:';
+
+  @override
+  String get result => 'Résultat';
+
+  @override
+  String get favorites => 'Favoris';
 }

@@ -15,7 +15,8 @@ Route onGenerateRoute(BuildContext context, RouteSettings settings) {
   switch (settings.name) {
     case routeCalc:
       page = const CalculatorFormPage(
-        button: CalculateButton(),);
+        button: CalculateButton(),
+      );
       break;
     case routeResult:
       final output = settings.arguments as OutputDomainModel;

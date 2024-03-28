@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
+import 'package:sirius_mortgage/features/favorites/data/favorites_repository_impl.dart';
+import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorite_change_notifier.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
 import '../../../../locale/locale.dart';
@@ -19,9 +22,8 @@ class ResultPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(AppLocaleScope.of(context).result),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.star_border_outlined),
+          AddFavoriteButton(
+            input: result.input,
           ),
         ],
       ),
@@ -75,6 +77,48 @@ class ResultPage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AddFavoriteButton extends StatefulWidget {
+  const AddFavoriteButton({super.key, required this.input});
+  final SummaryInformationInput input;
+
+  @override
+  State<AddFavoriteButton> createState() => _AddFavoriteButtonState();
+}
+
+class _AddFavoriteButtonState extends State<AddFavoriteButton> {
+  late final FavoriteNotifier favoriteNotifier;
+
+  @override
+  void initState() {
+    super.initState();
+    favoriteNotifier = FavoriteNotifier(
+      repository: FavoritesRepository(),
+    );
+  }
+
+  @override
+  void dispose() {
+    favoriteNotifier.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: favoriteNotifier,
+      builder: (context, child) => IconButton(
+        onPressed: () {
+          if (favoriteNotifier.isfavorite || favoriteNotifier.isloading) {
+            return;
+          }
+          favoriteNotifier.addfavorite(widget.input);
+        },
+        icon: const Icon(Icons.star_border_outlined),
       ),
     );
   }

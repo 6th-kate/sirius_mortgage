@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sirius_mortgage/features/count/domain/domain_models/output_model.dart';
 
 import '../../../count/domain/calculator_bloc/calculator_bloc.dart';
 import '../../../count/domain/form_bloc/form_bloc.dart';
@@ -7,7 +8,8 @@ import '../../../locale/widget/app_locale_scope.dart';
 //TODO: update buttons like in last bug fixes
 
 class CompareFormSaveButton extends StatelessWidget {
-  const CompareFormSaveButton({super.key});
+  final ValueNotifier<OutputDomainModel?> output;
+  const CompareFormSaveButton({super.key, required this.output});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +18,8 @@ class CompareFormSaveButton extends StatelessWidget {
     return BlocListener<CalculatorBloc, CalculatorState>(
       listenWhen: (context, state) => state is SuccessCalculatorState,
       listener: (context, state) {
-        if (state is SuccessCalculatorState) { //TODO:right handle
-          //save state.outputModel and
+        if (state is SuccessCalculatorState) {
+          output.value = state.outputModel;
           Navigator.of(context).pop();
         }
       },
@@ -29,12 +31,12 @@ class CompareFormSaveButton extends StatelessWidget {
           child: ElevatedButton(
             onPressed: isFormValid
                 ? () {
-              context.read<CalculatorBloc>().add(
-                StartCalculationEvent(
-                  context.read<FormBloc>().state.model,
-                ),
-              );
-            }
+                    context.read<CalculatorBloc>().add(
+                          StartCalculationEvent(
+                            context.read<FormBloc>().state.model,
+                          ),
+                        );
+                  }
                 : null,
             child: Text(
               context.watch<CalculatorBloc>().state is InProcessCalculatorState

@@ -1,11 +1,11 @@
 import 'app_localizations.g.dart';
 
-/// The translations for Tatar (`tt`).
-class AppLocalizationsTt extends AppLocalizations {
-  AppLocalizationsTt([String locale = 'tt']) : super(locale);
+/// The translations for Italian (`it`).
+class AppLocalizationsIt extends AppLocalizations {
+  AppLocalizationsIt([String locale = 'it']) : super(locale);
 
   @override
-  String get currency => 'RUB';
+  String get currency => 'Валюта';
 
   @override
   String get mortgageCalculator => 'Ипотека калькуляторы';
@@ -47,7 +47,10 @@ class AppLocalizationsTt extends AppLocalizations {
   String get calculate => 'Исәпләү';
 
   @override
-  String get result => 'Нәтиҗә';
+  String get langName => 'Татар';
+
+  @override
+  String get shortLangName => 'TAT';
 
   @override
   String get totalPayoutResult => 'Гомуми түләү: ';
@@ -117,4 +120,22 @@ class AppLocalizationsTt extends AppLocalizations {
 
   @override
   String get save => 'Саклау';
+
+  @override
+  String get variantFirst => '1нче вариант';
+
+  @override
+  String get variantSecond => '2нче вариант';
+
+  @override
+  String get plotFirst => 'Беренче вариант өчен түләү графигы:';
+
+  @override
+  String get plotSecond => 'Икенче вариант өчен түләү графигы:';
+
+  @override
+  String get result => 'Нәтиҗә';
+
+  @override
+  String get favorites => 'Favorites';
 }

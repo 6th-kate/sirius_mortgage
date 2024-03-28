@@ -1,34 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:sirius_mortgage/features/locale/locale.dart';
 
-import '../../../../core/widget/mortgage_card.dart';
+import '../../../count/domain/domain_models/output_model.dart';
+import '../../../locale/locale.dart';
 import 'compare_button.dart';
+import 'compare_card.dart';
 
-class ComparePage extends StatelessWidget {
+class ComparePage extends StatefulWidget {
   const ComparePage({super.key});
+
+  @override
+  State<ComparePage> createState() => _ComparePageState();
+}
+
+class _ComparePageState extends State<ComparePage> {
+  final ValueNotifier<OutputDomainModel?> varFirst =
+      ValueNotifier<OutputDomainModel?>(null);
+  final ValueNotifier<OutputDomainModel?> varSecond =
+      ValueNotifier<OutputDomainModel?>(null);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocaleScope.of(context).compare),
+        title: Text(
+          AppLocaleScope.of(context).compare,
+        ),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CompareItem(
-                title: 'Вариант 1',
+              ValueListenableBuilder(
+                valueListenable: varFirst,
+                builder: (
+                  BuildContext context,
+                  OutputDomainModel? value,
+                  Widget? child,
+                ) {
+                  return CompareCard(
+                    title: AppLocaleScope.of(context).variantFirst,
+                    loanAmount: value?.input.data.loanAmount,
+                    downPayment: value?.input.data.initialPayment,
+                    loanTerm: value?.input.data.loanTermMonth,
+                    rate: value?.input.data.interestRate,
+                    output: varFirst,
+                  );
+                },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
-              CompareItem(
-                title: 'Вариант 2',
+              ValueListenableBuilder(
+                valueListenable: varSecond,
+                builder: (BuildContext context, OutputDomainModel? value,
+                    Widget? child) {
+                  return CompareCard(
+                    title: AppLocaleScope.of(context).variantSecond,
+                    loanAmount: value?.input.data.loanAmount,
+                    downPayment: value?.input.data.initialPayment,
+                    loanTerm: value?.input.data.loanTermMonth,
+                    rate: value?.input.data.interestRate,
+                    output: varSecond,
+                  );
+                },
               ),
-              CompareButton(),
+              CompareButton(
+                first: varFirst,
+                second: varSecond,
+              ),
             ],
           ),
         ),

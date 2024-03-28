@@ -5,7 +5,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get currency => 'USD';
+  String get currency => 'Currency';
 
   @override
   String get mortgageCalculator => 'Mortgage calculator';
@@ -47,7 +47,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get calculate => 'Calculate';
 
   @override
-  String get result => 'Result';
+  String get langName => 'English';
+
+  @override
+  String get shortLangName => 'ENG';
 
   @override
   String get totalPayoutResult => 'Total amount: ';
@@ -117,4 +120,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get save => 'Save';
+
+  @override
+  String get variantFirst => 'Option 1';
+
+  @override
+  String get variantSecond => 'Option 2';
+
+  @override
+  String get plotFirst => 'Repayment schedule for the first option:';
+
+  @override
+  String get plotSecond => 'Repayment schedule for the second option';
+
+  @override
+  String get result => 'Result';
+
+  @override
+  String get favorites => 'Favorites';
 }

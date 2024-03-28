@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$InputDomainModel {
   SummaryInformationInput get input => throw _privateConstructorUsedError;
+  CurrencyType get currency => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $InputDomainModelCopyWith<InputDomainModel> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $InputDomainModelCopyWith<$Res> {
           InputDomainModel value, $Res Function(InputDomainModel) then) =
       _$InputDomainModelCopyWithImpl<$Res, InputDomainModel>;
   @useResult
-  $Res call({SummaryInformationInput input});
+  $Res call({SummaryInformationInput input, CurrencyType currency});
 }
 
 /// @nodoc
@@ -46,12 +47,17 @@ class _$InputDomainModelCopyWithImpl<$Res, $Val extends InputDomainModel>
   @override
   $Res call({
     Object? input = null,
+    Object? currency = null,
   }) {
     return _then(_value.copyWith(
       input: null == input
           ? _value.input
           : input // ignore: cast_nullable_to_non_nullable
               as SummaryInformationInput,
+      currency: null == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as CurrencyType,
     ) as $Val);
   }
 }
@@ -64,7 +70,7 @@ abstract class _$$InputDomainModelImplCopyWith<$Res>
       __$$InputDomainModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({SummaryInformationInput input});
+  $Res call({SummaryInformationInput input, CurrencyType currency});
 }
 
 /// @nodoc
@@ -79,12 +85,17 @@ class __$$InputDomainModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? input = null,
+    Object? currency = null,
   }) {
     return _then(_$InputDomainModelImpl(
       input: null == input
           ? _value.input
           : input // ignore: cast_nullable_to_non_nullable
               as SummaryInformationInput,
+      currency: null == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as CurrencyType,
     ));
   }
 }
@@ -92,14 +103,16 @@ class __$$InputDomainModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InputDomainModelImpl implements _InputDomainModel {
-  const _$InputDomainModelImpl({required this.input});
+  const _$InputDomainModelImpl({required this.input, required this.currency});
 
   @override
   final SummaryInformationInput input;
+  @override
+  final CurrencyType currency;
 
   @override
   String toString() {
-    return 'InputDomainModel(input: $input)';
+    return 'InputDomainModel(input: $input, currency: $currency)';
   }
 
   @override
@@ -107,11 +120,13 @@ class _$InputDomainModelImpl implements _InputDomainModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InputDomainModelImpl &&
-            (identical(other.input, input) || other.input == input));
+            (identical(other.input, input) || other.input == input) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, input);
+  int get hashCode => Object.hash(runtimeType, input, currency);
 
   @JsonKey(ignore: true)
   @override
@@ -123,10 +138,13 @@ class _$InputDomainModelImpl implements _InputDomainModel {
 
 abstract class _InputDomainModel implements InputDomainModel {
   const factory _InputDomainModel(
-      {required final SummaryInformationInput input}) = _$InputDomainModelImpl;
+      {required final SummaryInformationInput input,
+      required final CurrencyType currency}) = _$InputDomainModelImpl;
 
   @override
   SummaryInformationInput get input;
+  @override
+  CurrencyType get currency;
   @override
   @JsonKey(ignore: true)
   _$$InputDomainModelImplCopyWith<_$InputDomainModelImpl> get copyWith =>

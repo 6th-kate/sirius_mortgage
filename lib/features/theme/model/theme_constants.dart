@@ -111,7 +111,7 @@ abstract class AppColors {
 
   //onCard == buttonTitle
   static const onPrimary = Color(0xFF1E2620);
-  static const shadow = Color(0x44000000);
+  static const shadow = Color(0x331E2620);
   static const label = Color(0xFF38473D);
   static const veryLightGreen = Color(0xFFF3FBF3);
   static const likedLight = Color(0xFFFAFBF2);

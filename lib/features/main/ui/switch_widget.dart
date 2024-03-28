@@ -58,7 +58,7 @@ class _LeadersWidgetState extends State<LeadersWidget> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16.0, vertical: 8.0),
                     child: _groupValue == 0
-                        ? CompareItem(
+                        ? MortgageItem(
                             backgroundColor: Theme.of(context)
                                 .extension<ThemeColors>()!
                                 .history,
@@ -69,7 +69,7 @@ class _LeadersWidgetState extends State<LeadersWidget> {
                             loanTerm: 20,
                             rate: 7,
                           )
-                        : CompareItem(
+                        : MortgageItem(
                             backgroundColor: Theme.of(context)
                                 .extension<ThemeColors>()!
                                 .liked,

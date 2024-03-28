@@ -29,7 +29,7 @@ class MortgageCompareStat extends StatelessWidget {
       children: [
         Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               AppLocaleScope.of(context).totalPayoutResult,
@@ -68,6 +68,10 @@ class MortgageCompareStat extends StatelessWidget {
               ],
             ),
           ],
+        ),
+        //
+        const SizedBox(
+          height: 16,
         ),
         //second
         Column(
@@ -111,6 +115,10 @@ class MortgageCompareStat extends StatelessWidget {
               ],
             ),
           ],
+        ),
+        //
+        const SizedBox(
+          height: 16,
         ),
         //third
         Column(

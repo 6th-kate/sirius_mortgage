@@ -7,8 +7,8 @@ import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.g.dart';
 import 'app_localizations_fr.g.dart';
+import 'app_localizations_it.g.dart';
 import 'app_localizations_ru.g.dart';
-import 'app_localizations_tt.g.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations
 /// returned by `AppLocalizations.of(context)`.
@@ -62,7 +62,8 @@ import 'app_localizations_tt.g.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale)
+      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -70,7 +71,8 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -82,7 +84,8 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -93,240 +96,283 @@ abstract class AppLocalizations {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
     Locale('fr'),
-    Locale('ru'),
-    Locale('tt')
+    Locale('it'),
+    Locale('ru')
   ];
 
   /// No description provided for @currency.
   ///
-  /// In ru, this message translates to:
-  /// **'RUB'**
+  /// In en, this message translates to:
+  /// **'Currency'**
   String get currency;
 
   /// No description provided for @mortgageCalculator.
   ///
-  /// In ru, this message translates to:
-  /// **'Ипотечный калькулятор'**
+  /// In en, this message translates to:
+  /// **'Mortgage calculator'**
   String get mortgageCalculator;
 
   /// No description provided for @calculateMortgage.
   ///
-  /// In ru, this message translates to:
-  /// **'Рассчитать ипотеку'**
+  /// In en, this message translates to:
+  /// **'Calculate the mortgage'**
   String get calculateMortgage;
 
   /// No description provided for @calculateMortgageLabel.
   ///
-  /// In ru, this message translates to:
-  /// **'Узнайте, сколько переплатите'**
+  /// In en, this message translates to:
+  /// **'Find out how much you will overpay'**
   String get calculateMortgageLabel;
 
   /// No description provided for @compareMortgage.
   ///
-  /// In ru, this message translates to:
-  /// **'Сравнить программы'**
+  /// In en, this message translates to:
+  /// **'Compare mortgage programs'**
   String get compareMortgage;
 
   /// No description provided for @compareMortgageLabel.
   ///
-  /// In ru, this message translates to:
-  /// **'Найдите выгодный вариант'**
+  /// In en, this message translates to:
+  /// **'Find the best deal'**
   String get compareMortgageLabel;
 
   /// No description provided for @loanAmount.
   ///
-  /// In ru, this message translates to:
-  /// **'Стоимость имущества'**
+  /// In en, this message translates to:
+  /// **'The value of property'**
   String get loanAmount;
 
   /// No description provided for @downpayment.
   ///
-  /// In ru, this message translates to:
-  /// **'Первоначальный взнос'**
+  /// In en, this message translates to:
+  /// **'An initial fee'**
   String get downpayment;
 
   /// No description provided for @loanTerm.
   ///
-  /// In ru, this message translates to:
-  /// **'Срок (месяцев)'**
+  /// In en, this message translates to:
+  /// **'Term (months)'**
   String get loanTerm;
 
   /// No description provided for @rate.
   ///
-  /// In ru, this message translates to:
-  /// **'Ставка в год'**
+  /// In en, this message translates to:
+  /// **'Rate per year'**
   String get rate;
 
   /// No description provided for @paymentsType.
   ///
-  /// In ru, this message translates to:
-  /// **'Тип ежемесячных платежей'**
+  /// In en, this message translates to:
+  /// **'Type of monthly payments'**
   String get paymentsType;
 
   /// No description provided for @annuity.
   ///
-  /// In ru, this message translates to:
-  /// **'Аннуитетные'**
+  /// In en, this message translates to:
+  /// **'Annuite'**
   String get annuity;
 
   /// No description provided for @differentiated.
   ///
-  /// In ru, this message translates to:
-  /// **'Дифференцированные'**
+  /// In en, this message translates to:
+  /// **'Differentiated'**
   String get differentiated;
 
   /// No description provided for @calculate.
   ///
-  /// In ru, this message translates to:
-  /// **'Рассчитать'**
+  /// In en, this message translates to:
+  /// **'Calculate'**
   String get calculate;
 
-  /// No description provided for @result.
+  /// No description provided for @langName.
   ///
-  /// In ru, this message translates to:
-  /// **'Результат'**
-  String get result;
+  /// In en, this message translates to:
+  /// **'English'**
+  String get langName;
+
+  /// No description provided for @shortLangName.
+  ///
+  /// In en, this message translates to:
+  /// **'ENG'**
+  String get shortLangName;
 
   /// No description provided for @totalPayoutResult.
   ///
-  /// In ru, this message translates to:
-  /// **'Общая сумма: '**
+  /// In en, this message translates to:
+  /// **'Total amount: '**
   String get totalPayoutResult;
 
   /// No description provided for @loanAmountResult.
   ///
-  /// In ru, this message translates to:
-  /// **'Основной долг: '**
+  /// In en, this message translates to:
+  /// **'Main debt: '**
   String get loanAmountResult;
 
   /// No description provided for @interestAmountResult.
   ///
-  /// In ru, this message translates to:
-  /// **'Начисленные проценты: '**
+  /// In en, this message translates to:
+  /// **'Interest charges: '**
   String get interestAmountResult;
 
   /// No description provided for @interestAmountAgenda.
   ///
-  /// In ru, this message translates to:
-  /// **'Начисленные проценты'**
+  /// In en, this message translates to:
+  /// **'Interest charges'**
   String get interestAmountAgenda;
 
   /// No description provided for @loanAmountAgenda.
   ///
-  /// In ru, this message translates to:
-  /// **'Основной долг'**
+  /// In en, this message translates to:
+  /// **'Main debt'**
   String get loanAmountAgenda;
 
   /// No description provided for @payoutChart.
   ///
-  /// In ru, this message translates to:
-  /// **'График погашения: '**
+  /// In en, this message translates to:
+  /// **'Repayment schedule: '**
   String get payoutChart;
 
   /// No description provided for @openTable.
   ///
-  /// In ru, this message translates to:
-  /// **'+ Посмотреть полную таблицу'**
+  /// In en, this message translates to:
+  /// **'+ View full table'**
   String get openTable;
 
   /// No description provided for @table.
   ///
-  /// In ru, this message translates to:
-  /// **'Таблица'**
+  /// In en, this message translates to:
+  /// **'Table'**
   String get table;
 
   /// No description provided for @tableShort.
   ///
-  /// In ru, this message translates to:
-  /// **'Кратко'**
+  /// In en, this message translates to:
+  /// **'Briefly'**
   String get tableShort;
 
   /// No description provided for @tableDetail.
   ///
-  /// In ru, this message translates to:
-  /// **'Детально'**
+  /// In en, this message translates to:
+  /// **'Details'**
   String get tableDetail;
 
   /// No description provided for @tableDate.
   ///
-  /// In ru, this message translates to:
-  /// **'Дата'**
+  /// In en, this message translates to:
+  /// **'Date'**
   String get tableDate;
 
   /// No description provided for @tablePayment.
   ///
-  /// In ru, this message translates to:
-  /// **'Платёж'**
+  /// In en, this message translates to:
+  /// **'Payment'**
   String get tablePayment;
 
   /// No description provided for @tableResidue.
   ///
-  /// In ru, this message translates to:
-  /// **'Остаток'**
+  /// In en, this message translates to:
+  /// **'Remainder'**
   String get tableResidue;
 
   /// No description provided for @tableInterest.
   ///
-  /// In ru, this message translates to:
-  /// **'Проценты:'**
+  /// In en, this message translates to:
+  /// **'Percent:'**
   String get tableInterest;
 
   /// No description provided for @tablePrincipal.
   ///
-  /// In ru, this message translates to:
-  /// **'Осн. долг:'**
+  /// In en, this message translates to:
+  /// **'Main debt:'**
   String get tablePrincipal;
 
   /// No description provided for @settings.
   ///
-  /// In ru, this message translates to:
-  /// **'Настройки'**
+  /// In en, this message translates to:
+  /// **'Settings'**
   String get settings;
 
   /// No description provided for @language.
   ///
-  /// In ru, this message translates to:
-  /// **'Язык'**
+  /// In en, this message translates to:
+  /// **'Language'**
   String get language;
 
   /// No description provided for @theme.
   ///
-  /// In ru, this message translates to:
-  /// **'Тема'**
+  /// In en, this message translates to:
+  /// **'Theme'**
   String get theme;
 
   /// No description provided for @loading.
   ///
-  /// In ru, this message translates to:
-  /// **'Загрузка...'**
+  /// In en, this message translates to:
+  /// **'Loading...'**
   String get loading;
 
   /// No description provided for @compareResultFirst.
   ///
-  /// In ru, this message translates to:
-  /// **'Вариант 1: '**
+  /// In en, this message translates to:
+  /// **'Option 1: '**
   String get compareResultFirst;
 
   /// No description provided for @compareResultSecond.
   ///
-  /// In ru, this message translates to:
-  /// **'Вариант 2: '**
+  /// In en, this message translates to:
+  /// **'Option 2: '**
   String get compareResultSecond;
 
   /// No description provided for @compare.
   ///
-  /// In ru, this message translates to:
-  /// **'Сравнить'**
+  /// In en, this message translates to:
+  /// **'Compare'**
   String get compare;
 
   /// No description provided for @save.
   ///
-  /// In ru, this message translates to:
-  /// **'Сохранить'**
+  /// In en, this message translates to:
+  /// **'Save'**
   String get save;
+
+  /// No description provided for @variantFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Option 1'**
+  String get variantFirst;
+
+  /// No description provided for @variantSecond.
+  ///
+  /// In en, this message translates to:
+  /// **'Option 2'**
+  String get variantSecond;
+
+  /// No description provided for @plotFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Repayment schedule for the first option:'**
+  String get plotFirst;
+
+  /// No description provided for @plotSecond.
+  ///
+  /// In en, this message translates to:
+  /// **'Repayment schedule for the second option'**
+  String get plotSecond;
+
+  /// No description provided for @result.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get result;
+
+  /// No description provided for @favorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get favorites;
 }
 
-class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -335,27 +381,29 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'fr', 'ru', 'tt'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      <String>['en', 'fr', 'it', 'ru'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
-
-
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en': return AppLocalizationsEn();
-    case 'fr': return AppLocalizationsFr();
-    case 'ru': return AppLocalizationsRu();
-    case 'tt': return AppLocalizationsTt();
+    case 'en':
+      return AppLocalizationsEn();
+    case 'fr':
+      return AppLocalizationsFr();
+    case 'it':
+      return AppLocalizationsIt();
+    case 'ru':
+      return AppLocalizationsRu();
   }
 
   throw FlutterError(
-    'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-    'an issue with the localizations generation tool. Please file an issue '
-    'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
-  );
+      'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'an issue with the localizations generation tool. Please file an issue '
+      'on GitHub with a reproducible sample app and the gen-l10n configuration '
+      'that was used.');
 }

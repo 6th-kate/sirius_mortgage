@@ -3,16 +3,16 @@ import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
 import '../../features/locale/locale.dart';
 
-class CompareItem extends StatelessWidget {
+class MortgageItem extends StatelessWidget {
   final String? title;
   final int? loanAmount;
   final int? downPayment;
   final int? loanTerm;
   final double? rate;
-  final void Function()? onTap;
   final Color? backgroundColor;
+  final void Function()? onTap;
 
-  const CompareItem({
+  const MortgageItem({
     super.key,
     this.title,
     this.loanAmount,
@@ -27,7 +27,7 @@ class CompareItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -45,7 +45,6 @@ class CompareItem extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
                 title == null
@@ -53,6 +52,7 @@ class CompareItem extends StatelessWidget {
                     : Text(
                         title!,
                         style: Theme.of(context).textTheme.headlineMedium,
+                        textAlign: TextAlign.start,
                       ),
                 Padding(
                   padding: const EdgeInsets.only(left: 4),

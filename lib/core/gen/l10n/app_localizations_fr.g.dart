@@ -113,5 +113,31 @@ class AppLocalizationsFr extends AppLocalizations {
   String get loading => 'Chargement...';
 
   @override
+  String get compareResultFirst => 'Option 1: ';
+
+  @override
+  String get compareResultSecond => 'Option 2: ';
+
+  @override
+  String get compare => 'Comparer';
+
+  @override
+  String get save => 'Sauvegarder';
+
+  @override
+  String get variantFirst => 'Option 1';
+
+  @override
+  String get variantSecond => 'Option 2';
+
+  @override
+  String get plotFirst =>
+      'Calendrier de remboursement pour la première option:';
+
+  @override
+  String get plotSecond =>
+      'Calendrier de remboursement pour la deuxième option:';
+
+  @override
   String get favorites => 'Favoris';
 }

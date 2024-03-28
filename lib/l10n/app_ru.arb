@@ -35,5 +35,13 @@
   "language": "Язык",
   "theme": "Тема",
   "loading": "Загрузка...",
+  "compareResultFirst": "Вариант 1: ",
+  "compareResultSecond": "Вариант 2: ",
+  "compare": "Сравнить",
+  "save": "Сохранить",
+  "variantFirst": "Вариант 1",
+  "variantSecond": "Вариант 2",
+  "plotFirst": "График погашения для первого варианта:",
+  "plotSecond": "График погашения для второго варианта:",
 	"favorites": "Избранное"
 }

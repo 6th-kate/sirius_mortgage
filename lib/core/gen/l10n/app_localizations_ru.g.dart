@@ -113,5 +113,29 @@ class AppLocalizationsRu extends AppLocalizations {
   String get loading => 'Загрузка...';
 
   @override
+  String get compareResultFirst => 'Вариант 1: ';
+
+  @override
+  String get compareResultSecond => 'Вариант 2: ';
+
+  @override
+  String get compare => 'Сравнить';
+
+  @override
+  String get save => 'Сохранить';
+
+  @override
+  String get variantFirst => 'Вариант 1';
+
+  @override
+  String get variantSecond => 'Вариант 2';
+
+  @override
+  String get plotFirst => 'График погашения для первого варианта:';
+
+  @override
+  String get plotSecond => 'График погашения для второго варианта:';
+
+  @override
   String get favorites => 'Избранное';
 }

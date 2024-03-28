@@ -10,12 +10,14 @@ class MortgagePlot extends StatelessWidget {
   final List<CalculatorResultData> data;
   final Color loanAmountColor;
   final Color interestAmountColor;
+  final String? title;
 
   const MortgagePlot(
     this.data, {
     super.key,
     required this.loanAmountColor,
     required this.interestAmountColor,
+    this.title,
   });
 
   @override
@@ -25,7 +27,7 @@ class MortgagePlot extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          AppLocaleScope.of(context).payoutChart,
+          title ?? AppLocaleScope.of(context).payoutChart,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         Padding(

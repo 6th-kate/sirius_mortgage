@@ -31,12 +31,12 @@ class CompareFormSaveButton extends StatelessWidget {
           child: ElevatedButton(
             onPressed: isFormValid
                 ? () {
-              context.read<CalculatorBloc>().add(
-                StartCalculationEvent(
-                  context.read<FormBloc>().state.model,
-                ),
-              );
-            }
+                    context.read<CalculatorBloc>().add(
+                          StartCalculationEvent(
+                            context.read<FormBloc>().state.model,
+                          ),
+                        );
+                  }
                 : null,
             child: Text(
               context.watch<CalculatorBloc>().state is InProcessCalculatorState

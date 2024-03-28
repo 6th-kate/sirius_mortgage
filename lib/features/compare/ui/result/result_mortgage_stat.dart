@@ -70,7 +70,9 @@ class MortgageCompareStat extends StatelessWidget {
           ],
         ),
         //
-        const SizedBox(height: 16,),
+        const SizedBox(
+          height: 16,
+        ),
         //second
         Column(
           mainAxisSize: MainAxisSize.min,
@@ -115,7 +117,9 @@ class MortgageCompareStat extends StatelessWidget {
           ],
         ),
         //
-        const SizedBox(height: 16,),
+        const SizedBox(
+          height: 16,
+        ),
         //third
         Column(
           mainAxisSize: MainAxisSize.min,

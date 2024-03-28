@@ -17,7 +17,7 @@ class MortgagePlot extends StatelessWidget {
     super.key,
     required this.loanAmountColor,
     required this.interestAmountColor,
-        this.title,
+    this.title,
   });
 
   @override

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
-
 import '../../../count/domain/domain_models/output_model.dart';
 import '../../../count/ui/screens/result/widgets/result_mortgage_chart.dart';
 import '../../../count/ui/screens/result/widgets/result_mortgage_plot.dart';
 import '../../../count/ui/screens/table/table_screen.dart';
 import '../../../locale/locale.dart';
 import 'result_mortgage_stat.dart';
-
 
 class CompareResultPage extends StatelessWidget {
   const CompareResultPage(this.result1, this.result2, {super.key});
@@ -20,9 +18,7 @@ class CompareResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocaleScope
-            .of(context)
-            .result),
+        title: Text(AppLocaleScope.of(context).result),
         actions: [
           IconButton(
             onPressed: () {},
@@ -45,8 +41,8 @@ class CompareResultPage extends StatelessWidget {
                     child: MortgageChart(
                       loanAmount: result1.output.loanAmount,
                       interestAmount: result1.output.interestPayout,
-                      loanAmountColor:
-                      Theme.of(context).extension<ThemeColors>()!
+                      loanAmountColor: Theme.of(context)
+                          .extension<ThemeColors>()!
                           .chartColorFirst,
                       interestAmountColor: Theme.of(context)
                           .extension<ThemeColors>()!
@@ -58,8 +54,8 @@ class CompareResultPage extends StatelessWidget {
                     child: MortgageChart(
                       loanAmount: result2.output.loanAmount,
                       interestAmount: result2.output.interestPayout,
-                      loanAmountColor:
-                      Theme.of(context).extension<ThemeColors>()!
+                      loanAmountColor: Theme.of(context)
+                          .extension<ThemeColors>()!
                           .chartColorFirst,
                       interestAmountColor: Theme.of(context)
                           .extension<ThemeColors>()!
@@ -84,13 +80,11 @@ class CompareResultPage extends StatelessWidget {
               MortgagePlot(
                 result1.tableInfo,
                 loanAmountColor:
-                Theme.of(context).extension<ThemeColors>()!.chartColorFirst,
+                    Theme.of(context).extension<ThemeColors>()!.chartColorFirst,
                 interestAmountColor: Theme.of(context)
                     .extension<ThemeColors>()!
                     .chartColorSecond,
-                title: AppLocaleScope
-                    .of(context)
-                    .plotFirst,
+                title: AppLocaleScope.of(context).plotFirst,
               ),
               //get table text button
               Center(
@@ -102,9 +96,9 @@ class CompareResultPage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Text(AppLocaleScope
-                      .of(context)
-                      .openTable,),
+                  child: Text(
+                    AppLocaleScope.of(context).openTable,
+                  ),
                 ),
               ),
               const SizedBox(height: 16),
@@ -112,13 +106,11 @@ class CompareResultPage extends StatelessWidget {
               MortgagePlot(
                 result2.tableInfo,
                 loanAmountColor:
-                Theme.of(context).extension<ThemeColors>()!.chartColorFirst,
+                    Theme.of(context).extension<ThemeColors>()!.chartColorFirst,
                 interestAmountColor: Theme.of(context)
                     .extension<ThemeColors>()!
                     .chartColorSecond,
-                title: AppLocaleScope
-                    .of(context)
-                    .plotSecond,
+                title: AppLocaleScope.of(context).plotSecond,
               ),
               //get table text button
               Center(
@@ -130,9 +122,9 @@ class CompareResultPage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Text(AppLocaleScope
-                      .of(context)
-                      .openTable,),
+                  child: Text(
+                    AppLocaleScope.of(context).openTable,
+                  ),
                 ),
               ),
             ],

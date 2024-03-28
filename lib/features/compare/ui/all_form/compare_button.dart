@@ -13,12 +13,18 @@ class CompareButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: first,
-      builder: (BuildContext context, OutputDomainModel? value,
-          Widget? child,) {
+      builder: (
+        BuildContext context,
+        OutputDomainModel? value,
+        Widget? child,
+      ) {
         return ValueListenableBuilder(
           valueListenable: second,
-          builder: (BuildContext context, OutputDomainModel? value,
-              Widget? child,) {
+          builder: (
+            BuildContext context,
+            OutputDomainModel? value,
+            Widget? child,
+          ) {
             bool isValid = (first.value != null) && (second.value != null);
             return SizedBox(
               width: double.maxFinite,
@@ -26,17 +32,18 @@ class CompareButton extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: ElevatedButton(
-                  onPressed: isValid ? () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => CompareResultPage(first.value!, second.value!),
-                      ),
-                    );
-                  } : null,
+                  onPressed: isValid
+                      ? () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => CompareResultPage(
+                                  first.value!, second.value!),
+                            ),
+                          );
+                        }
+                      : null,
                   child: Text(
-                    AppLocaleScope
-                        .of(context)
-                        .compare,
+                    AppLocaleScope.of(context).compare,
                   ),
                 ),
               ),

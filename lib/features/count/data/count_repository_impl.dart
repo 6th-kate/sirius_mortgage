@@ -17,6 +17,6 @@ class CountRepositoryImpl implements CountRepository {
         input.input.type == CalculateType.annuity
             ? await calculator.annuityPayments(input.input.data)
             : await calculator.differentiatedPayments(input.input.data);
-    return OutputDomainModel(output: summary, tableInfo: tableInfo);
+    return OutputDomainModel(output: summary, tableInfo: tableInfo, input:input.input);
   }
 }

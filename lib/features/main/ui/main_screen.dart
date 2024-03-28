@@ -39,15 +39,6 @@ class MainScreen extends StatelessWidget {
             padding: EdgeInsets.only(top: 20.0, left: 15.0, right: 15.0),
             child: FavoritesButton(),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 20.0, left: 15.0, right: 15.0),
-            child: FavoriteCard(
-              loanAmountD: 2500000,
-              downpaymentD: 200000,
-              rateD: 15,
-              termD: 24,
-            ),
-          )
         ],
       ),
     );

@@ -23,6 +23,8 @@ dependencies:
   freezed_annotation: ^2.4.1
   shared_preferences: ^2.2.2
   json_annotation: ^4.8.1
+  firebase_core: ^2.27.2
+  firebase_crashlytics: ^3.4.20
   fl_chart: ^0.66.2
   firebase_core: ^2.27.2
   firebase_crashlytics: ^3.4.20

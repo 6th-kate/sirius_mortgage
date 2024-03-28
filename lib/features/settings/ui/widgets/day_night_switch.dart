@@ -3,8 +3,6 @@ library day_night_switch;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../../theme/model/theme_constants.dart';
-
 const double _kTrackHeight = 30.0;
 const double _kTrackWidth = 60.0;
 const double _kTrackRadius = _kTrackHeight / 2.0;
@@ -141,10 +139,14 @@ class _DayNightSwitchState extends State<DayNightSwitch>
         MaterialStateProperty.resolveWith<MouseCursor>(
             (Set<MaterialState> states) {
       return MaterialStateProperty.resolveAs<MouseCursor?>(
-              widget.mouseCursor, states) ??
+            widget.mouseCursor,
+            states,
+          ) ??
           switchTheme.mouseCursor?.resolve(states) ??
           MaterialStateProperty.resolveAs<MouseCursor>(
-              MaterialStateMouseCursor.clickable, states);
+            MaterialStateMouseCursor.clickable,
+            states,
+          );
     });
 
     return Semantics(
@@ -174,14 +176,13 @@ class _DayNightSwitchState extends State<DayNightSwitch>
             ..inactiveColor = Colors.yellow
             ..sunImage = widget.sunImage
             ..moonImage = widget.moonImage
-            ..sunColor = widget.sunColor //TODO FIX COLORS
-            ..moonColor = widget.moonColor //TODO FIX COLORS
+            ..sunColor = widget.sunColor
+            ..moonColor = widget.moonColor
             ..dayColor = Theme.of(context)
                 .colorScheme
                 .tertiary
                 .withOpacity(0.8) // FIX COLORS
-            ..nightColor =
-                Theme.of(context).colorScheme.onPrimary //TODO FIX COLORS
+            ..nightColor = Colors.black
             ..configuration = createLocalImageConfiguration(context)
             ..textDirection = Directionality.of(context)
             ..isInteractive = isInteractive
@@ -292,10 +293,16 @@ class _DayNightSwitchPainter extends ToggleablePainter {
   BoxPainter? _cachedThumbPainter;
 
   BoxDecoration _createDefaultThumbDecoration(
-      Color color, ImageProvider? image) {
+    Color color,
+    ImageProvider? image,
+  ) {
     return BoxDecoration(
       color: color,
-      image: image == null ? null : DecorationImage(image: image),
+      image: image == null
+          ? null
+          : DecorationImage(
+              image: image,
+            ),
       shape: BoxShape.circle,
       boxShadow: kElevationToShadow[1],
     );
@@ -337,7 +344,7 @@ class _DayNightSwitchPainter extends ToggleablePainter {
 
     final Offset trackPaintOffset =
         _computeTrackPaintOffset(size, _kTrackWidth, _kTrackHeight);
-    final double thumbRadius = _kThumbRadius;
+    const double thumbRadius = _kThumbRadius;
     final Offset thumbPaintOffset =
         _computeThumbPaintOffset(trackPaintOffset, visualPosition, thumbRadius);
     final Offset radialReactionOrigin =
@@ -345,7 +352,12 @@ class _DayNightSwitchPainter extends ToggleablePainter {
 
     _paintTrack(canvas, trackPaint, trackPaintOffset);
     _paintBackground(
-        canvas, linePaint, starPaint, trackPaintOffset, currentValue);
+      canvas,
+      linePaint,
+      starPaint,
+      trackPaintOffset,
+      currentValue,
+    );
     paintRadialReaction(canvas: canvas, origin: radialReactionOrigin);
     _paintThumb(
       canvas,
@@ -360,7 +372,10 @@ class _DayNightSwitchPainter extends ToggleablePainter {
 
   /// Computes canvas offset for track's upper left corner
   Offset _computeTrackPaintOffset(
-      Size canvasSize, double trackWidth, double trackHeight) {
+    Size canvasSize,
+    double trackWidth,
+    double trackHeight,
+  ) {
     final double horizontalOffset = (canvasSize.width - _kTrackWidth) / 2.0;
     final double verticalOffset = (canvasSize.height - _kTrackHeight) / 2.0;
 
@@ -370,7 +385,10 @@ class _DayNightSwitchPainter extends ToggleablePainter {
   /// Computes canvas offset for thumb's upper left corner as if it were a
   /// square
   Offset _computeThumbPaintOffset(
-      Offset trackPaintOffset, double visualPosition, double thumbRadius) {
+    Offset trackPaintOffset,
+    double visualPosition,
+    double thumbRadius,
+  ) {
     // How much thumb radius extends beyond the track
     final double additionalThumbRadius = thumbRadius - _kTrackRadius;
 
@@ -397,8 +415,13 @@ class _DayNightSwitchPainter extends ToggleablePainter {
     canvas.drawRRect(trackRRect, paint);
   }
 
-  void _paintBackground(Canvas canvas, Paint paint, Paint starPaint,
-      Offset offset, double currentValue) {
+  void _paintBackground(
+    Canvas canvas,
+    Paint paint,
+    Paint starPaint,
+    Offset offset,
+    double currentValue,
+  ) {
     canvas.drawLine(
       Offset(
         offset.dx + _kTrackWidth * 0.2,
@@ -468,7 +491,7 @@ class _DayNightSwitchPainter extends ToggleablePainter {
 
       thumbPainter.paint(
         canvas,
-        thumbPaintOffset - Offset(0, 0),
+        thumbPaintOffset - const Offset(0, 0),
         configuration.copyWith(size: Size.fromRadius(radius)),
       );
 
@@ -479,7 +502,11 @@ class _DayNightSwitchPainter extends ToggleablePainter {
   }
 
   void _paintForegroundLines(
-      Canvas canvas, Paint paint, Offset offset, double currentValue) {
+    Canvas canvas,
+    Paint paint,
+    Offset offset,
+    double currentValue,
+  ) {
     canvas.drawLine(
       Offset(
         offset.dx + _kTrackWidth * 0.35,

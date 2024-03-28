@@ -51,4 +51,64 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get shortLangName => 'TAT';
+
+  @override
+  String get result => 'Нәтиҗә';
+
+  @override
+  String get totalPayoutResult => 'Гомуми түләү: ';
+
+  @override
+  String get loanAmountResult => 'Төп бурыч: ';
+
+  @override
+  String get interestAmountResult => 'Исәпләнгән процентлар: ';
+
+  @override
+  String get interestAmountAgenda => 'Исәпләнгән процентлар';
+
+  @override
+  String get loanAmountAgenda => 'Төп бурыч';
+
+  @override
+  String get payoutChart => 'Түләү графигы: ';
+
+  @override
+  String get openTable => '+ Тулы таблицаны карагыз';
+
+  @override
+  String get table => ' Таблица';
+
+  @override
+  String get tableShort => 'Кыска';
+
+  @override
+  String get tableDetail => 'Тәфсилле';
+
+  @override
+  String get tableDate => 'Датасы';
+
+  @override
+  String get tablePayment => 'Түләү';
+
+  @override
+  String get tableResidue => 'Калдык';
+
+  @override
+  String get tableInterest => 'Процентлар:';
+
+  @override
+  String get tablePrincipal => 'Төп бурыч:';
+
+  @override
+  String get settings => 'Көйләнешләр';
+
+  @override
+  String get language => 'Тел';
+
+  @override
+  String get theme => 'Бизәк';
+
+  @override
+  String get loading => 'Йөкләү...';
 }

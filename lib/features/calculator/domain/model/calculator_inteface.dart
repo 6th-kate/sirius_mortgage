@@ -19,7 +19,9 @@ abstract interface class ICalculator {
   );
 
   /// Расчет всех выплат на заданном периоде по дифференцированному методу.
-  Future<List<CalculatorResultData>> differentiatedPayments(CalculatorInputData data);
+  Future<List<CalculatorResultData>> differentiatedPayments(
+    CalculatorInputData data,
+  );
 
   /// Расчет всех выплат на заданном периоде по аннуитентному методу.
   Future<List<CalculatorResultData>> annuityPayments(CalculatorInputData data);

@@ -11,7 +11,7 @@ class LocaleSetting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SettingTemplate(
-      title: 'Язык',
+      title: AppLocaleScope.of(context).language,
       suffixChild: FilledButton(
         onPressed: () {
           onLanguageSheetOpen(context);

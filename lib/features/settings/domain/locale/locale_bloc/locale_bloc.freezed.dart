@@ -20,21 +20,21 @@ mixin _$LocaleEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String languageCode) localeChanged,
     required TResult Function() needLocaleLoad,
-    required TResult Function(dynamic response) reload,
+    required TResult Function(SimpleResponse<String> response) reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String languageCode)? localeChanged,
     TResult? Function()? needLocaleLoad,
-    TResult? Function(dynamic response)? reload,
+    TResult? Function(SimpleResponse<String> response)? reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String languageCode)? localeChanged,
     TResult Function()? needLocaleLoad,
-    TResult Function(dynamic response)? reload,
+    TResult Function(SimpleResponse<String> response)? reload,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,7 +147,7 @@ class _$LocaleChangedImpl implements LocaleChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String languageCode) localeChanged,
     required TResult Function() needLocaleLoad,
-    required TResult Function(dynamic response) reload,
+    required TResult Function(SimpleResponse<String> response) reload,
   }) {
     return localeChanged(languageCode);
   }
@@ -157,7 +157,7 @@ class _$LocaleChangedImpl implements LocaleChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String languageCode)? localeChanged,
     TResult? Function()? needLocaleLoad,
-    TResult? Function(dynamic response)? reload,
+    TResult? Function(SimpleResponse<String> response)? reload,
   }) {
     return localeChanged?.call(languageCode);
   }
@@ -167,7 +167,7 @@ class _$LocaleChangedImpl implements LocaleChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String languageCode)? localeChanged,
     TResult Function()? needLocaleLoad,
-    TResult Function(dynamic response)? reload,
+    TResult Function(SimpleResponse<String> response)? reload,
     required TResult orElse(),
   }) {
     if (localeChanged != null) {
@@ -260,7 +260,7 @@ class _$NeedLocaleLoadImpl implements NeedLocaleLoad {
   TResult when<TResult extends Object?>({
     required TResult Function(String languageCode) localeChanged,
     required TResult Function() needLocaleLoad,
-    required TResult Function(dynamic response) reload,
+    required TResult Function(SimpleResponse<String> response) reload,
   }) {
     return needLocaleLoad();
   }
@@ -270,7 +270,7 @@ class _$NeedLocaleLoadImpl implements NeedLocaleLoad {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String languageCode)? localeChanged,
     TResult? Function()? needLocaleLoad,
-    TResult? Function(dynamic response)? reload,
+    TResult? Function(SimpleResponse<String> response)? reload,
   }) {
     return needLocaleLoad?.call();
   }
@@ -280,7 +280,7 @@ class _$NeedLocaleLoadImpl implements NeedLocaleLoad {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String languageCode)? localeChanged,
     TResult Function()? needLocaleLoad,
-    TResult Function(dynamic response)? reload,
+    TResult Function(SimpleResponse<String> response)? reload,
     required TResult orElse(),
   }) {
     if (needLocaleLoad != null) {
@@ -334,7 +334,9 @@ abstract class _$$LocaleReloadImplCopyWith<$Res> {
           _$LocaleReloadImpl value, $Res Function(_$LocaleReloadImpl) then) =
       __$$LocaleReloadImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({dynamic response});
+  $Res call({SimpleResponse<String> response});
+
+  $SimpleResponseCopyWith<String, $Res> get response;
 }
 
 /// @nodoc
@@ -348,11 +350,22 @@ class __$$LocaleReloadImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? response = freezed,
+    Object? response = null,
   }) {
     return _then(_$LocaleReloadImpl(
-      freezed == response ? _value.response! : response,
+      null == response
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as SimpleResponse<String>,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SimpleResponseCopyWith<String, $Res> get response {
+    return $SimpleResponseCopyWith<String, $Res>(_value.response, (value) {
+      return _then(_value.copyWith(response: value));
+    });
   }
 }
 
@@ -362,7 +375,7 @@ class _$LocaleReloadImpl implements LocaleReload {
   _$LocaleReloadImpl(this.response);
 
   @override
-  final dynamic response;
+  final SimpleResponse<String> response;
 
   @override
   String toString() {
@@ -374,12 +387,12 @@ class _$LocaleReloadImpl implements LocaleReload {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LocaleReloadImpl &&
-            const DeepCollectionEquality().equals(other.response, response));
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(response));
+  int get hashCode => Object.hash(runtimeType, response);
 
   @JsonKey(ignore: true)
   @override
@@ -392,7 +405,7 @@ class _$LocaleReloadImpl implements LocaleReload {
   TResult when<TResult extends Object?>({
     required TResult Function(String languageCode) localeChanged,
     required TResult Function() needLocaleLoad,
-    required TResult Function(dynamic response) reload,
+    required TResult Function(SimpleResponse<String> response) reload,
   }) {
     return reload(response);
   }
@@ -402,7 +415,7 @@ class _$LocaleReloadImpl implements LocaleReload {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String languageCode)? localeChanged,
     TResult? Function()? needLocaleLoad,
-    TResult? Function(dynamic response)? reload,
+    TResult? Function(SimpleResponse<String> response)? reload,
   }) {
     return reload?.call(response);
   }
@@ -412,7 +425,7 @@ class _$LocaleReloadImpl implements LocaleReload {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String languageCode)? localeChanged,
     TResult Function()? needLocaleLoad,
-    TResult Function(dynamic response)? reload,
+    TResult Function(SimpleResponse<String> response)? reload,
     required TResult orElse(),
   }) {
     if (reload != null) {
@@ -457,9 +470,10 @@ class _$LocaleReloadImpl implements LocaleReload {
 }
 
 abstract class LocaleReload implements LocaleEvent {
-  factory LocaleReload(final dynamic response) = _$LocaleReloadImpl;
+  factory LocaleReload(final SimpleResponse<String> response) =
+      _$LocaleReloadImpl;
 
-  dynamic get response;
+  SimpleResponse<String> get response;
   @JsonKey(ignore: true)
   _$$LocaleReloadImplCopyWith<_$LocaleReloadImpl> get copyWith =>
       throw _privateConstructorUsedError;

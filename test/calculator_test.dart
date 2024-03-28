@@ -15,7 +15,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 100000,
       initialPayment: 0,
-      loanTermYears: 2,
+      loanTermMonth: 24,
       interestRate: 4.5,
       date: DateTime(2024, 02, 23),
     );
@@ -38,7 +38,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 120000,
       initialPayment: 20000,
-      loanTermYears: 1,
+      loanTermMonth: 12,
       interestRate: 15,
       date: DateTime(2024, 02, 23),
     );
@@ -60,7 +60,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 120000,
       initialPayment: 20000,
-      loanTermYears: 1,
+      loanTermMonth: 12,
       interestRate: 15,
       date: DateTime(2024, 02, 23),
     );
@@ -82,7 +82,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 120000,
       initialPayment: 20000,
-      loanTermYears: 1,
+      loanTermMonth: 12,
       interestRate: 15,
       date: DateTime(2024, 01, 1),
     );
@@ -105,7 +105,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 120000,
       initialPayment: 0,
-      loanTermYears: 1,
+      loanTermMonth: 12,
       interestRate: 15,
       date: DateTime(2024, 01, 1),
     );
@@ -127,7 +127,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 120000,
       initialPayment: 10000,
-      loanTermYears: 5,
+      loanTermMonth: 60,
       interestRate: 15,
       date: DateTime(2024, 01, 1),
     );
@@ -151,7 +151,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 90000,
       initialPayment: 0,
-      loanTermYears: 2,
+      loanTermMonth: 24,
       interestRate: 15,
       date: DateTime(2024, 1, 1),
     );
@@ -173,7 +173,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 90000,
       initialPayment: 0,
-      loanTermYears: 2,
+      loanTermMonth: 24,
       interestRate: 15,
       date: DateTime(2024, 1, 1),
     );
@@ -195,7 +195,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 90000,
       initialPayment: 0,
-      loanTermYears: 2,
+      loanTermMonth: 24,
       interestRate: 15,
       date: DateTime(2024, 1, 1),
     );
@@ -217,7 +217,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 30000000,
       initialPayment: 1000000,
-      loanTermYears: 10,
+      loanTermMonth: 120,
       interestRate: 15,
       date: DateTime(2024, 1, 1),
     );
@@ -239,7 +239,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 30000000,
       initialPayment: 1000000,
-      loanTermYears: 10,
+      loanTermMonth: 120,
       interestRate: 15,
       date: DateTime(2024, 1, 1),
     );
@@ -263,7 +263,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 100000,
       initialPayment: 0,
-      loanTermYears: 1,
+      loanTermMonth: 12,
       interestRate: 15,
       date: DateTime(2024, 1, 1),
     );
@@ -288,7 +288,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 100000,
       initialPayment: 0,
-      loanTermYears: 1,
+      loanTermMonth: 12,
       interestRate: 15,
       date: DateTime(2024, 1, 1),
     );
@@ -313,7 +313,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 100000,
       initialPayment: 20000,
-      loanTermYears: 3,
+      loanTermMonth: 36,
       interestRate: 4,
       date: DateTime(2024, 1, 1),
     );
@@ -338,7 +338,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 1000000,
       initialPayment: 0,
-      loanTermYears: 7,
+      loanTermMonth: 7 * 12,
       interestRate: 15,
       date: DateTime(2024, 1, 1),
     );
@@ -363,7 +363,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 1000000,
       initialPayment: 0,
-      loanTermYears: 1,
+      loanTermMonth: 12,
       interestRate: 15,
       date: DateTime(2024, 1, 1),
     );
@@ -388,7 +388,7 @@ void main() {
     final input = CalculatorInputData(
       loanAmount: 566678,
       initialPayment: 0,
-      loanTermYears: 2,
+      loanTermMonth: 24,
       interestRate: 40,
       date: DateTime(2024, 1, 1),
     );
@@ -407,5 +407,63 @@ void main() {
     expect(output.totalPayout, equals(response.totalPayout));
     expect(output.loanAmount, equals(response.loanAmount));
     expect(output.interestPayout, equals(response.interestPayout));
+  });
+
+  /// Tests for serialization functions
+  test('Tests for serialization functions [test-1].', () async {
+    // Serialize CalculatorResultData instance to JSON
+    final resultData = CalculatorResultData(
+      date: DateTime.now(),
+      payment: 1000000.0,
+      principal: 0.0,
+      interest: 20.0,
+      residue: 5000.0,
+    );
+    Map<String, dynamic> json = resultData.toJson();
+    // Deserialize JSON back to CalculatorResultData instance
+    final deserializedResultData = CalculatorResultData.fromJson(json);
+    expect(resultData, deserializedResultData);
+  });
+
+  test('Tests for serialization functions [test-2].', () async {
+    // Serialize CalculatorResultData instance to JSON
+    final resultData = CalculatorResultData(
+      date: DateTime(2024, 03, 23),
+      payment: 4541.67,
+      principal: 4166.67,
+      interest: 12.00,
+      residue: 95833.33,
+    );
+    Map<String, dynamic> json = resultData.toJson();
+    // Deserialize JSON back to CalculatorResultData instance
+    final deserializedResultData = CalculatorResultData.fromJson(json);
+    expect(resultData, deserializedResultData);
+  });
+
+  test('Tests for serialization functions [test-3].', () async {
+    // Serialize CalculatorResultData instance to JSON
+    const resultData = CalculatorSummaryInformation(
+      totalPayout: 108309.97,
+      loanAmount: 100000,
+      interestPayout: 8309.97,
+    );
+    Map<String, dynamic> json = resultData.toJson();
+    // Deserialize JSON back to CalculatorResultData instance
+    final deserializedResultData = CalculatorSummaryInformation.fromJson(json);
+    expect(resultData, deserializedResultData);
+  });
+  test('Tests for serialization functions [test-4].', () async {
+    // Serialize CalculatorResultData instance to JSON
+    final resultData = CalculatorResultData(
+      date: DateTime.now(),
+      payment: 1000.0,
+      principal: 800.0,
+      interest: 20.0,
+      residue: 5000.0,
+    );
+    Map<String, dynamic> json = resultData.toJson();
+    // Deserialize JSON back to CalculatorResultData instance
+    final deserializedResultData = CalculatorResultData.fromJson(json);
+    expect(resultData, deserializedResultData);
   });
 }

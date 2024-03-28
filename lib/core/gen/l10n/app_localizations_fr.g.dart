@@ -5,7 +5,7 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get currency => 'EUR';
+  String get currency => 'Валюта';
 
   @override
   String get mortgageCalculator => 'Calculateur d\'hypothèque';
@@ -46,6 +46,12 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get calculate => 'Calculer';
+
+  @override
+  String get langName => 'Français';
+
+  @override
+  String get shortLangName => 'FR';
 
   @override
   String get result => 'Résultat';

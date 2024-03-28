@@ -6,7 +6,7 @@ import '../utils/simple_response.dart';
 
 class LocaleRepositoryImpl implements LocaleRepository {
   @override
-  Future<SimpleResponse<String>> getTheme() async {
+  Future<SimpleResponse<String>> getLocale() async {
     final sharedPrefs = await SharedPreferences.getInstance();
 
     final result = sharedPrefs.getString(KeyStore.selectedLocale);
@@ -22,7 +22,7 @@ class LocaleRepositoryImpl implements LocaleRepository {
   }
 
   @override
-  Future<SimpleResponse<String>> setTheme(
+  Future<SimpleResponse<String>> setLocale(
     String languageCode,
   ) async {
     final sharedPrefs = await SharedPreferences.getInstance();

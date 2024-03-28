@@ -54,6 +54,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     }
 
     InputDomainModel inputModel = InputDomainModel(
+      currency: event.model.currency,
       input: SummaryInformationInput(
         data: CalculatorInputData(
           loanAmount: loanAmount,

@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../../../settings/domain/currency/currency_enum.dart';
 import '../domain_models/form_model.dart';
 
 part 'form_event.dart';
@@ -8,10 +9,10 @@ part 'form_event.dart';
 part 'form_state.dart';
 
 class FormBloc extends Bloc<FormEvent, ValidationFormState> {
-  FormBloc()
+  FormBloc(CurrencyType initCurrency)
       : super(
           ValidationFormState.notValid(
-            FormModel(),
+            FormModel(currency: initCurrency),
             '',
           ),
         ) {
@@ -23,8 +24,15 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
         BetChangedEvent() => _betChangedEvent(event, emit),
         AnnuityPaymentTypeChangeEvent() =>
           _annuityPaymentTypeChangeEvent(event, emit),
+        CurrencyChangedEvent() => _currencyChangedEvent(event, emit),
       },
     );
+  }
+
+  void _currencyChangedEvent(CurrencyChangedEvent event, Emitter emit) {
+    final model = state.model.copyWith(currency: event.currency);
+
+    fullyFilledCheck(model, emit);
   }
 
   void fullyFilledCheck(FormModel model, Emitter emit) {
@@ -137,7 +145,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     final model = state.model.copyWith(bet: event.bet);
     if (event.bet.isNotEmpty) {
       final value = double.tryParse(event.bet);
-      if (value == null || value <= 0) {
+      if (value == null || value <= 0 || value > 30) {
         emit(
           ValidationFormState.notValid(
             model,

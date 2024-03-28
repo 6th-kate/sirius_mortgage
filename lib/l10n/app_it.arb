@@ -1,5 +1,5 @@
 {
-	"currency": "RUB",
+	"currency": "Валюта",
 	"mortgageCalculator": "Ипотека калькуляторы",
 	"calculateMortgage": "Ипотеканы исәпләү",
 	"calculateMortgageLabel" : "Күпме түләгәнегезне ачыклагыз",
@@ -32,5 +32,7 @@
 	"settings": "Көйләнешләр",
 	"language": "Тел",
 	"theme": "Бизәк",
-	"loading": "Йөкләү..."
+	"loading": "Йөкләү...",
+	"langName": "Татар",
+	"shortLangName": "TAT"
 }

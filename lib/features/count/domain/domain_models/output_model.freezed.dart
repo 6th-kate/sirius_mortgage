@@ -16,6 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$OutputDomainModel {
+  CurrencyType get currency => throw _privateConstructorUsedError;
+  SummaryInformationInput get input => throw _privateConstructorUsedError;
   CalculatorSummaryInformation get output => throw _privateConstructorUsedError;
   List<CalculatorResultData> get tableInfo =>
       throw _privateConstructorUsedError;
@@ -32,7 +34,9 @@ abstract class $OutputDomainModelCopyWith<$Res> {
       _$OutputDomainModelCopyWithImpl<$Res, OutputDomainModel>;
   @useResult
   $Res call(
-      {CalculatorSummaryInformation output,
+      {CurrencyType currency,
+      SummaryInformationInput input,
+      CalculatorSummaryInformation output,
       List<CalculatorResultData> tableInfo});
 }
 
@@ -49,10 +53,20 @@ class _$OutputDomainModelCopyWithImpl<$Res, $Val extends OutputDomainModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? currency = null,
+    Object? input = null,
     Object? output = null,
     Object? tableInfo = null,
   }) {
     return _then(_value.copyWith(
+      currency: null == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as CurrencyType,
+      input: null == input
+          ? _value.input
+          : input // ignore: cast_nullable_to_non_nullable
+              as SummaryInformationInput,
       output: null == output
           ? _value.output
           : output // ignore: cast_nullable_to_non_nullable
@@ -74,7 +88,9 @@ abstract class _$$OutputDomainModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CalculatorSummaryInformation output,
+      {CurrencyType currency,
+      SummaryInformationInput input,
+      CalculatorSummaryInformation output,
       List<CalculatorResultData> tableInfo});
 }
 
@@ -89,10 +105,20 @@ class __$$OutputDomainModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? currency = null,
+    Object? input = null,
     Object? output = null,
     Object? tableInfo = null,
   }) {
     return _then(_$OutputDomainModelImpl(
+      currency: null == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as CurrencyType,
+      input: null == input
+          ? _value.input
+          : input // ignore: cast_nullable_to_non_nullable
+              as SummaryInformationInput,
       output: null == output
           ? _value.output
           : output // ignore: cast_nullable_to_non_nullable
@@ -109,10 +135,16 @@ class __$$OutputDomainModelImplCopyWithImpl<$Res>
 
 class _$OutputDomainModelImpl implements _OutputDomainModel {
   const _$OutputDomainModelImpl(
-      {required this.output,
+      {required this.currency,
+      required this.input,
+      required this.output,
       required final List<CalculatorResultData> tableInfo})
       : _tableInfo = tableInfo;
 
+  @override
+  final CurrencyType currency;
+  @override
+  final SummaryInformationInput input;
   @override
   final CalculatorSummaryInformation output;
   final List<CalculatorResultData> _tableInfo;
@@ -125,7 +157,7 @@ class _$OutputDomainModelImpl implements _OutputDomainModel {
 
   @override
   String toString() {
-    return 'OutputDomainModel(output: $output, tableInfo: $tableInfo)';
+    return 'OutputDomainModel(currency: $currency, input: $input, output: $output, tableInfo: $tableInfo)';
   }
 
   @override
@@ -133,14 +165,17 @@ class _$OutputDomainModelImpl implements _OutputDomainModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutputDomainModelImpl &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.input, input) || other.input == input) &&
             (identical(other.output, output) || other.output == output) &&
             const DeepCollectionEquality()
                 .equals(other._tableInfo, _tableInfo));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, output, const DeepCollectionEquality().hash(_tableInfo));
+  int get hashCode => Object.hash(runtimeType, currency, input, output,
+      const DeepCollectionEquality().hash(_tableInfo));
 
   @JsonKey(ignore: true)
   @override
@@ -152,10 +187,16 @@ class _$OutputDomainModelImpl implements _OutputDomainModel {
 
 abstract class _OutputDomainModel implements OutputDomainModel {
   const factory _OutputDomainModel(
-          {required final CalculatorSummaryInformation output,
+          {required final CurrencyType currency,
+          required final SummaryInformationInput input,
+          required final CalculatorSummaryInformation output,
           required final List<CalculatorResultData> tableInfo}) =
       _$OutputDomainModelImpl;
 
+  @override
+  CurrencyType get currency;
+  @override
+  SummaryInformationInput get input;
   @override
   CalculatorSummaryInformation get output;
   @override

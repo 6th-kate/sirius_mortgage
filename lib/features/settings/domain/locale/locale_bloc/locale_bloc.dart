@@ -52,7 +52,7 @@ class LocaleBloc extends Bloc<LocaleEvent, LocaleState> {
   }
 
   void _changeLocale(LocaleChanged event, Emitter emit) {
-    _repository.setTheme(event.languageCode).then((result) {
+    _repository.setLocale(event.languageCode).then((result) {
       result.map(
         ok: (_) {
           add(
@@ -76,7 +76,7 @@ class LocaleBloc extends Bloc<LocaleEvent, LocaleState> {
   }
 
   void _loadLocale(NeedLocaleLoad event, Emitter emit) {
-    _repository.getTheme().then((result) {
+    _repository.getLocale().then((result) {
       result.map(
         ok: (response) {
           add(

@@ -28,6 +28,12 @@ class CalculatorFormPage extends StatelessWidget {
       ],
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).pop();
+            },
+          ),
           title: Text(AppLocaleScope.of(context).calculateMortgage),
         ),
         body: LayoutBuilder(

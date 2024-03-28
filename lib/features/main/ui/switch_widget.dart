@@ -48,20 +48,38 @@ class _LeadersWidgetState extends State<LeadersWidget> {
         ),
         Expanded(
           child: ListView.builder(
-            itemCount: 1,
+            itemCount: 10,
             // _groupValue == 0
             //     ? TrendIndexLeaders.buy.length
             //     : TrendIndexLeaders.sell.length,
             itemBuilder: (BuildContext context, int index) {
-              return const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: CompareItem(
-                  title: 'Дом какой то',
-                  loanAmount: 2000000,
-                  downPayment: 200000,
-                  loanTerm: 20,
-                  rate: 7,
-                ),
+              return SingleChildScrollView(
+                child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8.0),
+                    child: _groupValue == 0
+                        ? CompareItem(
+                            backgroundColor: Theme.of(context)
+                                .extension<ThemeColors>()!
+                                .history,
+                            key: ValueKey<int>(_groupValue),
+                            title: 'Дом какой то',
+                            loanAmount: 2000000,
+                            downPayment: 200000,
+                            loanTerm: 20,
+                            rate: 7,
+                          )
+                        : CompareItem(
+                            backgroundColor: Theme.of(context)
+                                .extension<ThemeColors>()!
+                                .liked,
+                            key: ValueKey<int>(_groupValue),
+                            title: 'Дом какой то',
+                            loanAmount: 10000,
+                            downPayment: 2543700,
+                            loanTerm: 54,
+                            rate: 3.5,
+                          )),
               );
             },
           ),

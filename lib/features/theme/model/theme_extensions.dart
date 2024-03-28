@@ -48,13 +48,17 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color label;
   final Color tableLabel;
   final Color switchBackground;
+  final Color history;
+  final Color liked;
 
   const ThemeColors({
     required this.chartColorFirst,
     required this.chartColorSecond,
     required this.label,
     required this.tableLabel,
-    required this.switchBackground
+    required this.switchBackground,
+    required this.history,
+    required this.liked,
   });
 
   @override
@@ -64,6 +68,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     Color? label,
     Color? tableLabel,
     Color? switchBackground,
+    Color? history,
+    Color? liked,
   }) {
     return ThemeColors(
       chartColorFirst: chartColorFirst ?? this.chartColorFirst,
@@ -71,6 +77,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       label: label ?? this.label,
       tableLabel: tableLabel ?? this.tableLabel,
       switchBackground: switchBackground ?? this.switchBackground,
+      history: history ?? this.history,
+      liked: liked ?? this.liked,
     );
   }
 
@@ -89,7 +97,10 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
           Color.lerp(chartColorSecond, other.chartColorSecond, t)!,
       label: Color.lerp(label, other.label, t)!,
       tableLabel: Color.lerp(tableLabel, other.tableLabel, t)!,
-      switchBackground: Color.lerp(switchBackground, other.switchBackground, t)!,
+      switchBackground:
+          Color.lerp(switchBackground, other.switchBackground, t)!,
+      history: Color.lerp(history, other.history, t)!,
+      liked: Color.lerp(liked, other.liked, t)!,
     );
   }
 
@@ -98,7 +109,9 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
         chartColorSecond: AppColors.secondDiagramColor,
         label: AppColors.label,
         tableLabel: AppColors.form,
-      switchBackground: AppColors.switchBackground,
+        switchBackground: AppColors.switchBackground,
+        history: AppColors.veryLightGreen,
+        liked: AppColors.likedLight,
       );
 
   static get dark => const ThemeColors(
@@ -106,6 +119,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
         chartColorSecond: AppColorsDark.secondDiagramColor,
         label: AppColorsDark.label,
         tableLabel: AppColorsDark.tableLabel,
-    switchBackground: AppColorsDark.switchBackground,
+        switchBackground: AppColorsDark.switchBackground,
+        history: AppColorsDark.historyDark,
+        liked: AppColorsDark.likedDark,
       );
 }

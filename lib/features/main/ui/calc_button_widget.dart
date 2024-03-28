@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../common/core.dart';
+import '../../../core/core.dart';
 import '../../locale/locale.dart';
 import 'main_screen_button_template.dart';
 

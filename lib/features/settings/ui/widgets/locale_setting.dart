@@ -16,7 +16,7 @@ class LocaleSetting extends StatelessWidget {
         onPressed: () {
           onLanguageSheetOpen(context);
         },
-        child: Text(AppLocaleScope.localeOf(context).languageCode),
+        child: Text(AppLocaleScope.of(context).shortLangName),
       ),
     );
   }
@@ -31,6 +31,7 @@ class LocaleSetting extends StatelessWidget {
             height: AppLocaleScope.supportedLocalesOf(context).length * 50,
             child: Scaffold(
               body: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: AppLocaleScope.supportedLocalesOf(context)
                     .map(
                       (locale) => SizedBox(
@@ -45,7 +46,7 @@ class LocaleSetting extends StatelessWidget {
                             Navigator.of(context).pop();
                           },
                           child: Text(
-                            locale.languageCode,
+                            langNameFromLocale(locale),
                           ),
                         ),
                       ),
@@ -57,5 +58,23 @@ class LocaleSetting extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+// REWRITE AS IT STAYS HARDCODED
+// otherwise it should call localizations asynchronously
+// thus in terms of speed was not implemented correctly
+String langNameFromLocale(Locale locale) {
+  switch (locale.languageCode) {
+    case 'en':
+      return 'English';
+    case 'ru':
+      return 'Русский';
+    case 'fr':
+      return 'Français';
+    case 'it':
+      return 'Татар';
+    default:
+      return 'Unsupported';
   }
 }

@@ -1,10 +1,13 @@
 import 'package:sirius_mortgage/features/count/domain/form_bloc/form_bloc.dart';
 
 enum TextFieldType {
-  cost,
-  contribution,
-  term,
-  bet,
+  cost(12),
+  contribution(12),
+  term(3),
+  bet(5);
+
+  final int maxCharacters;
+  const TextFieldType(this.maxCharacters);
 }
 
 extension TextFieldTypeMap on TextFieldType {

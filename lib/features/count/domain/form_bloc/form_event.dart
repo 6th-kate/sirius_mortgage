@@ -11,6 +11,12 @@ class CostChangedEvent extends FormEvent {
   final String cost;
 }
 
+class CurrencyChangedEvent extends FormEvent {
+  const CurrencyChangedEvent(this.currency);
+
+  final CurrencyType currency;
+}
+
 class ContributionChangedEvent extends FormEvent {
   final String contribution;
 

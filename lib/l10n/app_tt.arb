@@ -32,5 +32,9 @@
 	"settings": "Көйләнешләр",
 	"language": "Тел",
 	"theme": "Бизәк",
-	"loading": "Йөкләү..."
+	"loading": "Йөкләү...",
+	"compareResultFirst": "1нче вариант: ",
+	"compareResultSecond": "2нче вариант: ",
+	"compare": "Чагыштыру",
+	"save": "Саклау"
 }

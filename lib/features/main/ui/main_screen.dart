@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sirius_mortgage/features/compare/ui/all_form/compare_main_screen.dart';
 import 'package:sirius_mortgage/features/main/ui/calc_button_widget.dart';
 import 'package:sirius_mortgage/features/main/ui/compare_button_widget.dart';
 import 'package:sirius_mortgage/features/main/ui/settings_button_widget.dart';
@@ -29,9 +30,17 @@ class MainScreen extends StatelessWidget {
               },
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
-            child: CompareButton(),
+          Padding(
+            padding: const EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
+            child: CompareButton(
+              onClick: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ComparePage(),
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),

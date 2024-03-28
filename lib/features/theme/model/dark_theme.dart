@@ -50,6 +50,8 @@ class DarkAppTheme implements AppTheme {
         hintColor: AppColorsDark.tableLabel,
         splashColor: AppColorsDark.splash,
         textTheme: textTheme,
+        cardColor: AppColorsDark.background,
+        shadowColor: AppColorsDark.shadow,
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
             textStyle: MaterialStateProperty.all(
@@ -207,6 +209,7 @@ class DarkAppTheme implements AppTheme {
 
   @override
   TextTheme get textTheme => TextTheme(
+        headlineMedium: AppTextStyles.cardHeadline,
         headlineSmall: AppTextStyles.headline,
         titleLarge: AppTextStyles.tableTitle,
         titleMedium: AppTextStyles.subtitle,

@@ -105,4 +105,16 @@ class AppLocalizationsTt extends AppLocalizations {
 
   @override
   String get loading => 'Йөкләү...';
+
+  @override
+  String get compareResultFirst => '1нче вариант: ';
+
+  @override
+  String get compareResultSecond => '2нче вариант: ';
+
+  @override
+  String get compare => 'Чагыштыру';
+
+  @override
+  String get save => 'Саклау';
 }

@@ -32,5 +32,9 @@
   "settings": "Настройки",
   "language": "Язык",
   "theme": "Тема",
-  "loading": "Загрузка..."
+  "loading": "Загрузка...",
+  "compareResultFirst": "Вариант 1: ",
+  "compareResultSecond": "Вариант 2: ",
+  "compare": "Сравнить",
+  "save": "Сохранить"
 }

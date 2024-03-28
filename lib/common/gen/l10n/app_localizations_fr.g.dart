@@ -14,8 +14,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get calculateMortgage => 'Calculer l\'hypothèque';
 
   @override
-  String get calculateMortgageLabel =>
-      'Découvrez combien vous allez payer en trop';
+  String get calculateMortgageLabel => 'Découvrez combien vous allez payer en trop';
 
   @override
   String get compareMortgage => 'Comparer les programmes';
@@ -106,4 +105,16 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get loading => 'Chargement...';
+
+  @override
+  String get compareResultFirst => 'Option 1: ';
+
+  @override
+  String get compareResultSecond => 'Option 2: ';
+
+  @override
+  String get compare => 'Comparer';
+
+  @override
+  String get save => 'Sauvegarder';
 }

@@ -32,5 +32,9 @@
 	"settings": "Paramètres",
 	"language": "Langue",
 	"theme": "Thème",
-	"loading": "Chargement..."
+	"loading": "Chargement...",
+	"compareResultFirst": "Option 1: ",
+	"compareResultSecond": "Option 2: ",
+	"compare": "Comparer",
+	"save": "Sauvegarder"
 }

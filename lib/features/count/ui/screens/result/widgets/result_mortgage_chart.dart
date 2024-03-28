@@ -38,7 +38,8 @@ class MortgageChart extends StatelessWidget {
                     return PieChartSectionData(
                       color: i == 0 ? interestAmountColor : loanAmountColor,
                       value: i == 0 ? interestAmount : loanAmount,
-                      title: '',
+                      title:
+                          '${((i == 0 ? interestAmount : loanAmount) * 100 / (interestAmount + loanAmount)).toStringAsFixed(2)} %',
                       radius:
                           min(constraints.maxHeight, constraints.maxWidth) / 2,
                     );

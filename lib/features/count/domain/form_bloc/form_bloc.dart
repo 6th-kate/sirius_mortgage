@@ -125,7 +125,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
 
   void _betChangedEvent(BetChangedEvent event, Emitter emit) {
     if (event.bet.isNotEmpty) {
-      final value = int.tryParse(event.bet);
+      final value = double.tryParse(event.bet);
       if (value == null || value <= 0) {
         emit(
           ValidationFormState.notValid(

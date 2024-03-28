@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/favorites/ui/favorites_widget.dart';
+import 'package:sirius_mortgage/features/favorites/ui/widgets/favorite_card.dart';
 import 'package:sirius_mortgage/features/main/ui/calc_button_widget.dart';
 import 'package:sirius_mortgage/features/main/ui/compare_button_widget.dart';
 import 'package:sirius_mortgage/features/main/ui/settings_button_widget.dart';
@@ -34,10 +35,19 @@ class MainScreen extends StatelessWidget {
             padding: EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
             child: CompareButton(),
           ),
-           const Padding(
-            padding: EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
-            child: FavoriteButton(),
+          const Padding(
+            padding: EdgeInsets.only(top: 20.0, left: 15.0, right: 15.0),
+            child: FavoritesButton(),
           ),
+          const Padding(
+            padding: EdgeInsets.only(top: 20.0, left: 15.0, right: 15.0),
+            child: FavoriteCard(
+              loanAmountD: 2500000,
+              downpaymentD: 200000,
+              rateD: 15,
+              termD: 24,
+            ),
+          )
         ],
       ),
     );

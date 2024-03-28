@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "195639935770",
+    "project_id": "com-example-sirius-mortgage",
+    "storage_bucket": "com-example-sirius-mortgage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195639935770:android:7f4b6b1ab39e3c0dd322a3",
+        "android_client_info": {
+          "package_name": "com.example.sirius_mortgage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjwXHP31mh2-DlI6d38UyGm7brgnX0GrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

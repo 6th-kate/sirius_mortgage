@@ -5,7 +5,7 @@ class AppLocalizationsIt extends AppLocalizations {
   AppLocalizationsIt([String locale = 'it']) : super(locale);
 
   @override
-  String get currency => 'RUB';
+  String get currency => 'Валюта';
 
   @override
   String get mortgageCalculator => 'Ипотека калькуляторы';

@@ -1,5 +1,5 @@
 {
-  "currency": "RUB",
+  "currency": "Валюта",
   "mortgageCalculator" : "Ипотечный калькулятор",
   "calculateMortgage" : "Рассчитать ипотеку",
   "calculateMortgageLabel" : "Узнайте, сколько переплатите",
@@ -15,7 +15,6 @@
   "calculate" : "Рассчитать",
   "langName": "Русский",
   "shortLangName": "RUS",
-  "calculate" : "Рассчитать",
   "result": "Результат",
   "totalPayoutResult": "Общая сумма: ",
   "loanAmountResult": "Основной долг: ",

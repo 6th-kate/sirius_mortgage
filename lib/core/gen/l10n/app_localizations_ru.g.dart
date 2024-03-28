@@ -5,7 +5,7 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get currency => 'RUB';
+  String get currency => 'Валюта';
 
   @override
   String get mortgageCalculator => 'Ипотечный калькулятор';

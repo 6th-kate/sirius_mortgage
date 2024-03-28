@@ -1,5 +1,5 @@
 {
-	"currency": "USD",
+	"currency": "Currency",
 	"mortgageCalculator": "Mortgage calculator",
 	"calculateMortgage": "Calculate the mortgage",
 	"calculateMortgageLabel" : "Find out how much you will overpay",
@@ -15,7 +15,6 @@
 	"calculate": "Calculate",
 	"langName": "English",
 	"shortLangName": "ENG",
-	"calculate": "Calculate",
 	"result": "Result",
 	"totalPayoutResult": "Total amount: ",
 	"loanAmountResult": "Main debt: ",

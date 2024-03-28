@@ -100,7 +100,7 @@ abstract class AppLocalizations {
   /// No description provided for @currency.
   ///
   /// In ru, this message translates to:
-  /// **'RUB'**
+  /// **'Валюта'**
   String get currency;
 
   /// No description provided for @mortgageCalculator.

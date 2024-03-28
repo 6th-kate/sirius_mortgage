@@ -1,5 +1,5 @@
 {
-	"currency": "EUR",
+	"currency": "Валюта",
 	"mortgageCalculator": "Calculateur d'hypothèque",
 	"calculateMortgage": "Calculer l'hypothèque",
 	"calculateMortgageLabel" : "Découvrez combien vous allez payer en trop",
@@ -15,7 +15,6 @@
 	"calculate": "Calculer",
 	"langName": "Français",
 	"shortLangName": "FR",
-	"calculate": "Calculer",
 	"result": "Résultat",
 	"totalPayoutResult": "Montant total: ",
 	"loanAmountResult": "Dette principale: ",

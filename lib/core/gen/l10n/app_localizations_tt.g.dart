@@ -38,7 +38,7 @@ class AppLocalizationsTt extends AppLocalizations {
   String get paymentsType => 'Айлык түләүләр төре';
 
   @override
-  String get annuity => 'Аннуитлы (Тигез зурлыклы түләүләр)';
+  String get annuity => 'Аннуитлы (Tигез зурлыклы түләүләр)';
 
   @override
   String get differentiated => 'Аерымланган түләүләр';

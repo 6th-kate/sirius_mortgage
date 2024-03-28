@@ -32,5 +32,7 @@
 	"settings": "Paramètres",
 	"language": "Langue",
 	"theme": "Thème",
-	"loading": "Chargement..."
+	"loading": "Chargement...",
+	"favorites": "Favoris"
+
 }

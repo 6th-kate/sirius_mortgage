@@ -32,5 +32,6 @@
 	"settings": "Settings",
 	"language": "Language",
 	"theme": "Theme",
-	"loading": "Loading..."
+	"loading": "Loading...",
+	"favorites": "Favorites"
 }

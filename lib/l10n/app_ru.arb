@@ -32,5 +32,6 @@
   "settings": "Настройки",
   "language": "Язык",
   "theme": "Тема",
-  "loading": "Загрузка..."
+  "loading": "Загрузка...",
+	"favorites": "Избранное"
 }

@@ -31,7 +31,7 @@ class FavoritesButtonTemplate extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 25, top: 20),
+                        padding: const EdgeInsets.only(left: 50, top: 20),
                         child: Text(
                           title,
                           style: Theme.of(context).textTheme.headlineSmall,

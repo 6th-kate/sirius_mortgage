@@ -22,7 +22,7 @@ class CalculatorForm extends StatelessWidget {
         children: [
           CalculatorTextField(
             label: AppLocaleScope.of(context).loanAmount,
-            placeholder: '0',
+            placeholder: '0Р',
             suffix: SuffixButton(
               text: context.watch<FormBloc>().state.model.currency.currencyName,
               onPressed: () {
@@ -33,7 +33,7 @@ class CalculatorForm extends StatelessWidget {
           ),
           CalculatorTextField(
             label: AppLocaleScope.of(context).downpayment,
-            placeholder: '0',
+            placeholder: '0Р',
             textFieldType: TextFieldType.contribution,
           ),
           Row(

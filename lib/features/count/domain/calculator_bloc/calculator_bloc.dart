@@ -61,7 +61,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
         ),
         type: event.model.isAnnuityPaymentType
             ? CalculateType.annuity
-            : CalculateType.annuity,
+            : CalculateType.differentiated,
       ),
     );
 

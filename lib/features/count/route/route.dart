@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/output_model.dart';
 
 import '../ui/screens/calculator/calc_form_sheet.dart';
+import '../ui/screens/calculator/widgets/calc_button.dart';
+import '../ui/screens/result/result_screen.dart';
+import '../ui/screens/table/table_screen.dart';
 
 const routeCalc = '/';
 const routeResult = '/result';
@@ -11,14 +14,16 @@ Route onGenerateRoute(BuildContext context, RouteSettings settings) {
   late Widget page;
   switch (settings.name) {
     case routeCalc:
-      page = const CalculatorFormPage();
+      page = const CalculatorFormPage(
+        button: CalculateButton(),);
       break;
     case routeResult:
       final output = settings.arguments as OutputDomainModel;
-      page = const Placeholder();
+      page = ResultPage(output);
       break;
     case routeTable:
-      page = const Placeholder();
+      final output = settings.arguments as OutputDomainModel;
+      page = TablePage(output.tableInfo);
       break;
     default:
       throw Exception('Unknown route: ${settings.name}');

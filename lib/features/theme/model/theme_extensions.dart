@@ -46,11 +46,15 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color chartColorFirst;
   final Color chartColorSecond;
   final Color label;
+  final Color tableLabel;
+  final Color switchBackground;
 
   const ThemeColors({
     required this.chartColorFirst,
     required this.chartColorSecond,
     required this.label,
+    required this.tableLabel,
+    required this.switchBackground
   });
 
   @override
@@ -58,11 +62,15 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     Color? chartColorFirst,
     Color? chartColorSecond,
     Color? label,
+    Color? tableLabel,
+    Color? switchBackground,
   }) {
     return ThemeColors(
       chartColorFirst: chartColorFirst ?? this.chartColorFirst,
       chartColorSecond: chartColorSecond ?? this.chartColorFirst,
       label: label ?? this.label,
+      tableLabel: tableLabel ?? this.tableLabel,
+      switchBackground: switchBackground ?? this.switchBackground,
     );
   }
 
@@ -80,6 +88,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       chartColorSecond:
           Color.lerp(chartColorSecond, other.chartColorSecond, t)!,
       label: Color.lerp(label, other.label, t)!,
+      tableLabel: Color.lerp(tableLabel, other.tableLabel, t)!,
+      switchBackground: Color.lerp(switchBackground, other.switchBackground, t)!,
     );
   }
 
@@ -87,11 +97,15 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
         chartColorFirst: AppColors.coldGreen,
         chartColorSecond: AppColors.secondDiagramColor,
         label: AppColors.label,
+        tableLabel: AppColors.form,
+      switchBackground: AppColors.switchBackground,
       );
 
   static get dark => const ThemeColors(
         chartColorFirst: AppColorsDark.coldGreen,
         chartColorSecond: AppColorsDark.secondDiagramColor,
         label: AppColorsDark.label,
+        tableLabel: AppColorsDark.tableLabel,
+    switchBackground: AppColorsDark.switchBackground,
       );
 }

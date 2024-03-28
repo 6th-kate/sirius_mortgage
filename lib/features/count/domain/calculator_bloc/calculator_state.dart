@@ -8,11 +8,11 @@ sealed class CalculatorState {
       InProcessCalculatorState;
 
   const factory CalculatorState.success(
-          InputDomainModel model, OutputDomainModel outputModel) =
-      SuccessCalculatorState;
+    InputDomainModel model,
+    OutputDomainModel outputModel,
+  ) = SuccessCalculatorState;
 
   const factory CalculatorState.error(
-    InputDomainModel model,
     String errorMessage,
   ) = ErrorCalculatorState;
 }
@@ -36,7 +36,6 @@ final class SuccessCalculatorState implements CalculatorState {
 
 final class ErrorCalculatorState implements CalculatorState {
   final String errorMessage;
-  final InputDomainModel inputModel;
 
-  const ErrorCalculatorState(this.inputModel, this.errorMessage);
+  const ErrorCalculatorState(this.errorMessage);
 }

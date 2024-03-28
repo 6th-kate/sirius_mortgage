@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../model/form_model.dart';
+import '../domain_models/form_model.dart';
 
 part 'form_event.dart';
+
 part 'form_state.dart';
 
 class FormBloc extends Bloc<FormEvent, ValidationFormState> {

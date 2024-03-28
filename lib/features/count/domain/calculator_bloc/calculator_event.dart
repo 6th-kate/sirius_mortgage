@@ -10,3 +10,19 @@ class StartCalculationEvent extends CalculatorEvent {
 
   final FormModel model;
 }
+
+class ReloadCalculationEvent extends CalculatorEvent {
+  const ReloadCalculationEvent(
+    this.input,
+    this.output,
+  );
+
+  final InputDomainModel input;
+  final OutputDomainModel output;
+}
+
+class ErrorCalculationEvent extends CalculatorEvent {
+  const ErrorCalculationEvent(this.message);
+
+  final String message;
+}

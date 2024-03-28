@@ -6,7 +6,7 @@ import 'package:sirius_mortgage/features/count/domain/count_repository.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/input_model.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/output_model.dart';
 
-import '../model/form_model.dart';
+import '../domain_models/form_model.dart';
 
 part 'calculator_event.dart';
 
@@ -19,35 +19,58 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     on<CalculatorEvent>(
       (event, emit) => switch (event) {
         StartCalculationEvent() => _startCalculationEvent(event, emit),
+        ReloadCalculationEvent() => _reloadSuccessCalculation(event, emit),
+        ErrorCalculationEvent() => _errorSuccessCalculation(event, emit),
       },
     );
+  }
+
+  void _reloadSuccessCalculation(ReloadCalculationEvent event, Emitter emit) {
+    emit(SuccessCalculatorState(event.input, event.output));
+  }
+
+  void _errorSuccessCalculation(ErrorCalculationEvent event, Emitter emit) {
+    emit(ErrorCalculatorState(event.message));
   }
 
   void _startCalculationEvent(
     StartCalculationEvent event,
     Emitter emit,
   ) {
+    final loanAmount = double.tryParse(event.model.cost!);
+    final loanTermMonths = int.tryParse(event.model.term!);
+    final interestRate = double.tryParse(event.model.bet!);
+    final date = DateTime.now();
+    final initialPayment = double.tryParse(event.model.contribution!);
+    if (loanAmount == null ||
+        loanTermMonths == null ||
+        interestRate == null ||
+        initialPayment == null) {
+      add(const ErrorCalculationEvent('Incorrect data'));
+      return;
+    }
+
     InputDomainModel inputModel = InputDomainModel(
       input: SummaryInformationInput(
         data: CalculatorInputData(
-          loanAmount: double.parse(event.model.cost!),
-          loanTermYears: int.parse(event.model.term!),
-          interestRate: double.parse(event.model.bet!),
-          date: DateTime.now(),
-          initialPayment: double.parse(event.model.contribution!),
+          loanAmount: loanAmount,
+          loanTermMonth: loanTermMonths,
+          interestRate: interestRate,
+          date: date,
+          initialPayment: initialPayment,
         ),
         type: event.model.isAnnuityPaymentType
             ? CalculateType.annuity
-            : CalculateType.annuity,
+            : CalculateType.differentiated,
       ),
     );
 
     emit(InProcessCalculatorState(inputModel));
 
     _repository.calculate(inputModel).then((output) {
-      emit(SuccessCalculatorState(inputModel, output));
-    }).onError((error, stackTrace) {
-      emit(ErrorCalculatorState(inputModel, error.toString()));
+      add(ReloadCalculationEvent(inputModel, output));
+    }).catchError((err) {
+      add(ErrorCalculationEvent(err.toString()));
     });
   }
 }

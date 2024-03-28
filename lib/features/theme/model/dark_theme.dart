@@ -50,10 +50,20 @@ class DarkAppTheme implements AppTheme {
         hintColor: AppColorsDark.tableLabel,
         splashColor: AppColorsDark.splash,
         textTheme: textTheme,
+        cardColor: AppColorsDark.background,
+        shadowColor: AppColorsDark.shadow,
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-            textStyle: MaterialStateProperty.all(AppTextStyles.bodyLarge),
-            foregroundColor: MaterialStateProperty.all(AppColorsDark.focus),
+            textStyle: MaterialStateProperty.all(
+              AppTextStyles.bodyLarge.apply(
+                decoration: TextDecoration.underline,
+              ),
+            ),
+            foregroundColor: MaterialStateProperty.resolveWith((states) {
+              return states.contains(MaterialState.pressed)
+                  ? AppColorsDark.disabled
+                  : AppColorsDark.focus;
+            }),
             elevation: MaterialStateProperty.all(0),
             overlayColor: MaterialStateProperty.resolveWith(
               (states) {
@@ -114,7 +124,7 @@ class DarkAppTheme implements AppTheme {
         dividerTheme: const DividerThemeData(
           color: AppColorsDark.tableLabel,
           thickness: 1,
-          space: 9,
+          space: 1,
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: AppColorsDark.background,
@@ -199,6 +209,7 @@ class DarkAppTheme implements AppTheme {
 
   @override
   TextTheme get textTheme => TextTheme(
+        headlineMedium: AppTextStyles.cardHeadline,
         headlineSmall: AppTextStyles.headline,
         titleLarge: AppTextStyles.tableTitle,
         titleMedium: AppTextStyles.subtitle,

@@ -25,6 +25,7 @@ dependencies:
   json_annotation: ^4.8.1
   firebase_core: ^2.27.2
   firebase_crashlytics: ^3.4.20
+  fl_chart: ^0.66.2
 
 dev_dependencies:
   # Lints

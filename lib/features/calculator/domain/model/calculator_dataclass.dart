@@ -1,6 +1,10 @@
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_inteface.dart';
+import 'package:sirius_mortgage/features/settings/domain/currency/currency_enum.dart';
 
 class CalculatorInputData {
+
+  // Валюта
+  final CurrencyType currency;
   /// Кредит
   final double loanAmount;
 
@@ -17,6 +21,7 @@ class CalculatorInputData {
   final double initialPayment;
 
   const CalculatorInputData({
+    required this.currency,
     required this.loanAmount,
     required this.loanTermMonth,
     required this.interestRate,
@@ -26,6 +31,7 @@ class CalculatorInputData {
   // Convert CalculatorInputData instance to JSON
   Map<String, dynamic> toJson() {
     return {
+      'currency': currency,
       'loanAmount': loanAmount,
       'loanTermMonth': loanTermMonth,
       'interestRate': interestRate,
@@ -37,6 +43,7 @@ class CalculatorInputData {
   // Create CalculatorInputData instance from JSON
   factory CalculatorInputData.fromJson(Map<String, dynamic> json) {
     return CalculatorInputData(
+      currency: json['currency'],
       loanAmount: json['loanAmount'],
       loanTermMonth: json['loanTermMonth'],
       interestRate: json['interestRate'],
@@ -50,6 +57,7 @@ class CalculatorInputData {
       identical(this, other) ||
       other is CalculatorInputData &&
           runtimeType == other.runtimeType &&
+          currency == other.currency &&
           loanAmount == other.loanAmount &&
           loanTermMonth == other.loanTermMonth &&
           interestRate == other.interestRate &&
@@ -58,6 +66,7 @@ class CalculatorInputData {
 
   @override
   int get hashCode =>
+      currency.hashCode ^
       loanAmount.hashCode ^
       loanTermMonth.hashCode ^
       interestRate.hashCode ^
@@ -66,6 +75,7 @@ class CalculatorInputData {
 }
 
 class SummaryInformationInput {
+ 
   final CalculatorInputData data;
 
   final CalculateType type;

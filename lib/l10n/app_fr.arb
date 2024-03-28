@@ -15,7 +15,6 @@
   "calculate": "Calculer",
 	"langName": "Français",
 	"shortLangName": "FR",
-  "result": "Résultat",
   "totalPayoutResult": "Montant total: ",
   "loanAmountResult": "Dette principale: ",
   "interestAmountResult": "Frais d'intérêt: ",
@@ -42,7 +41,7 @@
   "variantFirst": "Option 1",
   "variantSecond": "Option 2",
   "plotFirst": "Calendrier de remboursement pour la première option:",
-  "plotSecond": "Calendrier de remboursement pour la deuxième option:"
+  "plotSecond": "Calendrier de remboursement pour la deuxième option:",
 	"result": "Résultat",
 	"totalPayoutResult": "Montant total: ",
 	"loanAmountResult": "Dette principale: ",

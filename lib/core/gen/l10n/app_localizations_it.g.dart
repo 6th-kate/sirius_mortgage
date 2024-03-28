@@ -38,7 +38,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get paymentsType => 'Айлык түләүләр төре';
 
   @override
-  String get annuity => 'Аннуитлы (Тигез зурлыклы түләүләр)';
+  String get annuity => 'Аннуитлы (Tигез зурлыклы түләүләр)';
 
   @override
   String get differentiated => 'Аерымланган түләүләр';
@@ -51,9 +51,6 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get shortLangName => 'TAT';
-
-  @override
-  String get result => 'Нәтиҗә';
 
   @override
   String get totalPayoutResult => 'Гомуми түләү: ';
@@ -137,5 +134,8 @@ class AppLocalizationsIt extends AppLocalizations {
   String get plotSecond => 'Икенче вариант өчен түләү графигы:';
 
   @override
-  String get favorites => 'Сайланма';
+  String get result => 'Нәтиҗә';
+
+  @override
+  String get favorites => 'Favorites';
 }

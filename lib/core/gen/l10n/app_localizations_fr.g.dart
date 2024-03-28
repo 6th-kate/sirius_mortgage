@@ -53,9 +53,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get shortLangName => 'FR';
 
   @override
-  String get result => 'Résultat';
-
-  @override
   String get totalPayoutResult => 'Montant total: ';
 
   @override
@@ -131,12 +128,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get variantSecond => 'Option 2';
 
   @override
-  String get plotFirst =>
-      'Calendrier de remboursement pour la première option:';
+  String get plotFirst => 'Calendrier de remboursement pour la première option:';
 
   @override
-  String get plotSecond =>
-      'Calendrier de remboursement pour la deuxième option:';
+  String get plotSecond => 'Calendrier de remboursement pour la deuxième option:';
+
+  @override
+  String get result => 'Résultat';
 
   @override
   String get favorites => 'Favoris';

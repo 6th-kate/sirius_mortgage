@@ -57,6 +57,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
       currency: event.model.currency,
       input: SummaryInformationInput(
         data: CalculatorInputData(
+          currency: event.model.currency,
           loanAmount: loanAmount,
           loanTermMonth: loanTermMonths,
           interestRate: interestRate,

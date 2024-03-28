@@ -15,7 +15,6 @@
   "calculate": "Calculate",
 	"langName": "English",
 	"shortLangName": "ENG",
-  "result": "Result",
   "totalPayoutResult": "Total amount: ",
   "loanAmountResult": "Main debt: ",
   "interestAmountResult": "Interest charges: ",
@@ -42,7 +41,7 @@
   "variantFirst": "Option 1",
   "variantSecond": "Option 2",
   "plotFirst": "Repayment schedule for the first option:",
-  "plotSecond": "Repayment schedule for the second option"
+  "plotSecond": "Repayment schedule for the second option",
 	"result": "Result",
 	"totalPayoutResult": "Total amount: ",
 	"loanAmountResult": "Main debt: ",

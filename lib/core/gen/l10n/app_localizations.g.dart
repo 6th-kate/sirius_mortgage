@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:core';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
@@ -100,6 +99,8 @@ abstract class AppLocalizations {
 
   /// No description provided for @currency.
   ///
+  /// In en, this message translates to:
+  /// **'Currency'**
   String get currency;
 
   /// No description provided for @mortgageCalculator.
@@ -182,21 +183,15 @@ abstract class AppLocalizations {
 
   /// No description provided for @langName.
   ///
-  /// In ru, this message translates to:
-  /// **'Русский'**
+  /// In en, this message translates to:
+  /// **'English'**
   String get langName;
 
   /// No description provided for @shortLangName.
   ///
-  /// In ru, this message translates to:
-  /// **'RUS'**
-  String get shortLangName;
-
-  /// No description provided for @result.
-  ///
   /// In en, this message translates to:
-  /// **'Result'**
-  String get result;
+  /// **'ENG'**
+  String get shortLangName;
 
   /// No description provided for @totalPayoutResult.
   ///
@@ -360,10 +355,16 @@ abstract class AppLocalizations {
   /// **'Repayment schedule for the second option'**
   String get plotSecond;
 
+  /// No description provided for @result.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get result;
+
   /// No description provided for @favorites.
   ///
-  /// In ru, this message translates to:
-  /// **'Избранное'**
+  /// In en, this message translates to:
+  /// **'Favorites'**
   String get favorites;
 }
 
@@ -376,8 +377,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'fr', 'it', 'ru'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'fr', 'it', 'ru'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -388,14 +388,10 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en':
-      return AppLocalizationsEn();
-    case 'fr':
-      return AppLocalizationsFr();
-    case 'it':
-      return AppLocalizationsIt();
-    case 'ru':
-      return AppLocalizationsRu();
+    case 'en': return AppLocalizationsEn();
+    case 'fr': return AppLocalizationsFr();
+    case 'it': return AppLocalizationsIt();
+    case 'ru': return AppLocalizationsRu();
   }
 
   throw FlutterError(

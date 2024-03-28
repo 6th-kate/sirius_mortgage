@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
 import 'package:sirius_mortgage/features/favorites/data/shared_prefs_service/keystore.dart';
-import 'package:sirius_mortgage/features/favorites/domain/favorites_repository.dart';
+import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorites_repository.dart';
 
 class FavoritesRepository implements IFavoritesRepository {
   @override

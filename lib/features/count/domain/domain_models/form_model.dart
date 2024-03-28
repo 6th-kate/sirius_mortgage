@@ -16,6 +16,12 @@ class FormModel {
   bool get isFullyFilled =>
       cost != null && contribution != null && term != null && bet != null;
 
+  bool get isFullyParsed =>
+      int.tryParse(cost ?? '') != null &&
+      int.tryParse(contribution ?? '') != null &&
+      int.tryParse(term ?? '') != null &&
+      double.tryParse(bet ?? '') != null;
+
   FormModel copyWith({
     String? cost,
     String? contribution,

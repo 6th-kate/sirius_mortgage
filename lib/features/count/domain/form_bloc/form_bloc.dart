@@ -29,6 +29,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
 
   void fullyFilledCheck(FormModel model, Emitter emit) {
     final isFilled = model.isFullyFilled;
+    final isFullyParsed = model.isFullyParsed;
 
     if (!isFilled) {
       emit(
@@ -39,17 +40,27 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
       );
       return;
     }
+    if (!isFullyParsed) {
+      emit(
+        ValidationFormState.notValid(
+          model,
+          'Не все данные корректны',
+        ),
+      );
+      return;
+    }
 
     emit(ValidationFormState.valid(model));
   }
 
   void _costChangedEvent(CostChangedEvent event, Emitter emit) {
+    final model = state.model.copyWith(cost: event.cost);
     if (event.cost.isNotEmpty) {
       final value = int.tryParse(event.cost);
       if (value == null || value <= 0) {
         emit(
           ValidationFormState.notValid(
-            state.model,
+            model,
             'Некорректная стоимость имущества',
           ),
         );
@@ -58,13 +69,12 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     } else {
       emit(
         ValidationFormState.notValid(
-          state.model,
+          model,
           '',
         ),
       );
     }
 
-    final model = state.model.copyWith(cost: event.cost);
     fullyFilledCheck(model, emit);
   }
 
@@ -72,6 +82,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     final cost =
         state.model.cost != null ? int.tryParse(state.model.cost!) : null;
 
+    final model = state.model.copyWith(contribution: event.contribution);
     if (event.contribution.isNotEmpty) {
       final value = int.tryParse(event.contribution);
       if (value == null ||
@@ -80,7 +91,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
           cost == null) {
         emit(
           ValidationFormState.notValid(
-            state.model,
+            model,
             'Некорректный первоначальный взнос',
           ),
         );
@@ -89,23 +100,23 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     } else {
       emit(
         ValidationFormState.notValid(
-          state.model,
+          model,
           '',
         ),
       );
     }
 
-    final model = state.model.copyWith(contribution: event.contribution);
     fullyFilledCheck(model, emit);
   }
 
   void _termChangedEvent(TermChangedEvent event, Emitter emit) {
+    final model = state.model.copyWith(term: event.term);
     if (event.term.isNotEmpty) {
       final value = int.tryParse(event.term);
       if (value == null || value <= 0) {
         emit(
           ValidationFormState.notValid(
-            state.model,
+            model,
             'Некорректный срок',
           ),
         );
@@ -114,22 +125,22 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     } else {
       emit(
         ValidationFormState.notValid(
-          state.model,
+          model,
           '',
         ),
       );
     }
-    final model = state.model.copyWith(term: event.term);
     fullyFilledCheck(model, emit);
   }
 
   void _betChangedEvent(BetChangedEvent event, Emitter emit) {
+    final model = state.model.copyWith(bet: event.bet);
     if (event.bet.isNotEmpty) {
-      final value = int.tryParse(event.bet);
+      final value = double.tryParse(event.bet);
       if (value == null || value <= 0) {
         emit(
           ValidationFormState.notValid(
-            state.model,
+            model,
             'Некорректная ставка',
           ),
         );
@@ -138,12 +149,11 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     } else {
       emit(
         ValidationFormState.notValid(
-          state.model,
+          model,
           '',
         ),
       );
     }
-    final model = state.model.copyWith(bet: event.bet);
     fullyFilledCheck(model, emit);
   }
 

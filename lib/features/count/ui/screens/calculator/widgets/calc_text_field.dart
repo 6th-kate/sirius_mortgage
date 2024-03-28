@@ -55,12 +55,14 @@ class _CalculatorTextFieldState extends State<CalculatorTextField> {
           ),
           TextFormField(
             controller: widget.controller,
-            cursorColor: const Color.fromARGB(255, 101, 199, 134),
             decoration: InputDecoration(
               floatingLabelBehavior: FloatingLabelBehavior.always,
               hintText: widget.placeholder,
               suffixIcon: widget.suffix,
+              counterText: '',
             ),
+            keyboardType: TextInputType.number,
+            maxLength: widget.textFieldType.maxCharacters,
           ),
         ],
       ),

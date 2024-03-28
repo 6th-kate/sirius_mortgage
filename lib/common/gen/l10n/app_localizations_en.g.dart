@@ -117,4 +117,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get save => 'Save';
+
+  @override
+  String get variantFirst => 'Option 1';
+
+  @override
+  String get variantSecond => 'Option 2';
+
+  @override
+  String get plotFirst => 'Repayment schedule for the first option:';
+
+  @override
+  String get plotSecond => 'Repayment schedule for the second option';
 }

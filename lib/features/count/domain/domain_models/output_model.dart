@@ -7,6 +7,7 @@ part 'output_model.freezed.dart';
 @freezed
 class OutputDomainModel with _$OutputDomainModel {
   const factory OutputDomainModel({
+    required SummaryInformationInput input,
     required CalculatorSummaryInformation output,
     required List<CalculatorResultData> tableInfo,
   }) = _OutputDomainModel;

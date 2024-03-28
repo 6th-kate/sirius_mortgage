@@ -4,6 +4,7 @@ import 'package:sirius_mortgage/features/count/domain/form_bloc/textfield_type_t
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_text_field.dart';
 import '../../../../../locale/locale.dart';
 
+import 'calc_payments.dart';
 import 'calc_suffix_button.dart';
 
 class CalculatorForm extends StatelessWidget {
@@ -54,6 +55,7 @@ class CalculatorForm extends StatelessWidget {
               ),
             ],
           ),
+          const CalcPayments(),
         ],
       ),
     );

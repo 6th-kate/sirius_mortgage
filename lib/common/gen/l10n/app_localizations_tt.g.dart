@@ -117,4 +117,16 @@ class AppLocalizationsTt extends AppLocalizations {
 
   @override
   String get save => 'Саклау';
+
+  @override
+  String get variantFirst => '1нче вариант';
+
+  @override
+  String get variantSecond => '2нче вариант';
+
+  @override
+  String get plotFirst => 'Беренче вариант өчен түләү графигы:';
+
+  @override
+  String get plotSecond => 'Икенче вариант өчен түләү графигы:';
 }

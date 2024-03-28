@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
-import '../../features/locale/locale.dart';
+import '../../../count/domain/domain_models/output_model.dart';
+import '../../../locale/locale.dart';
+import 'compare_form.dart';
 
-class MortgageItem extends StatelessWidget {
+
+class CompareCard extends StatelessWidget {
   final String? title;
-  final int? loanAmount;
-  final int? downPayment;
+  final double? loanAmount;
+  final double? downPayment;
   final int? loanTerm;
   final double? rate;
-  final void Function()? onTap;
+  final ValueNotifier<OutputDomainModel?> output;
 
-  const MortgageItem(
-      {super.key, this.title, this.loanAmount, this.downPayment, this.loanTerm, this.rate, this.onTap,});
+  const CompareCard(
+      {super.key, this.title, this.loanAmount, this.downPayment, this.loanTerm, this.rate, required this.output,});
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +35,13 @@ class MortgageItem extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: onTap,
+          onTap: () => _onTap(context),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                title == null ? const SizedBox.shrink() : Text(title!, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.start,),
+                title == null ? const SizedBox.shrink() : Text(title!, style: Theme.of(context).textTheme.headlineMedium,),
                 Padding(
                   padding: const EdgeInsets.only(left: 4),
                   child: Row(
@@ -148,5 +151,9 @@ class MortgageItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _onTap(BuildContext context) {
+    showCompareFormBottomSheet(context, output);
   }
 }

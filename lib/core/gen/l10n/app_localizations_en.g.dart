@@ -107,5 +107,5 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loading => 'Loading...';
 
   @override
-  String get favorites => 'Favorites...';
+  String get favorites => 'Favorites';
 }

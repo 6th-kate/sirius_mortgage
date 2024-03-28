@@ -40,7 +40,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
       );
       return;
     }
-    if (!isFullyParsed){
+    if (!isFullyParsed) {
       emit(
         ValidationFormState.notValid(
           model,

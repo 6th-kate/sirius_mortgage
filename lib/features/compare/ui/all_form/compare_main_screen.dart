@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/locale/locale.dart';
 
-import '../../../../common/widget/mortgage_card.dart';
+import '../../../../core/widget/mortgage_card.dart';
 import 'compare_button.dart';
 
 class ComparePage extends StatelessWidget {
@@ -19,9 +19,15 @@ class ComparePage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CompareItem(title: 'Вариант 1',),
-              SizedBox(height: 16,),
-              CompareItem(title: 'Вариант 2',),
+              CompareItem(
+                title: 'Вариант 1',
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              CompareItem(
+                title: 'Вариант 2',
+              ),
               CompareButton(),
             ],
           ),

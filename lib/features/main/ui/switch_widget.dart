@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common/widget/mortgage_card.dart';
+import '../../../core/widget/mortgage_card.dart';
 import '../../theme/model/theme_extensions.dart';
 
 class LeadersWidget extends StatefulWidget {

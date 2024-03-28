@@ -53,9 +53,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get shortLangName => 'RUS';
 
   @override
-  String get result => 'Результат';
-
-  @override
   String get totalPayoutResult => 'Общая сумма: ';
 
   @override
@@ -135,4 +132,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get plotSecond => 'График погашения для второго варианта:';
+
+  @override
+  String get result => 'Результат';
+
+  @override
+  String get favorites => 'Избранное';
 }

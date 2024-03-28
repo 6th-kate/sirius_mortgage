@@ -53,9 +53,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get shortLangName => 'TAT';
 
   @override
-  String get result => 'Нәтиҗә';
-
-  @override
   String get totalPayoutResult => 'Гомуми түләү: ';
 
   @override
@@ -135,4 +132,10 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get plotSecond => 'Икенче вариант өчен түләү графигы:';
+
+  @override
+  String get result => 'Нәтиҗә';
+
+  @override
+  String get favorites => 'Favorites';
 }

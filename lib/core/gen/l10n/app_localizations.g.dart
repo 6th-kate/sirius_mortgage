@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:core';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
@@ -103,6 +102,8 @@ abstract class AppLocalizations {
 
   /// No description provided for @currency.
   ///
+  /// In en, this message translates to:
+  /// **'Currency'**
   String get currency;
 
   /// No description provided for @mortgageCalculator.
@@ -185,21 +186,15 @@ abstract class AppLocalizations {
 
   /// No description provided for @langName.
   ///
-  /// In ru, this message translates to:
-  /// **'Русский'**
+  /// In en, this message translates to:
+  /// **'English'**
   String get langName;
 
   /// No description provided for @shortLangName.
   ///
-  /// In ru, this message translates to:
-  /// **'RUS'**
-  String get shortLangName;
-
-  /// No description provided for @result.
-  ///
   /// In en, this message translates to:
-  /// **'Result'**
-  String get result;
+  /// **'ENG'**
+  String get shortLangName;
 
   /// No description provided for @totalPayoutResult.
   ///
@@ -362,6 +357,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Repayment schedule for the second option'**
   String get plotSecond;
+
+  /// No description provided for @result.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get result;
+
+  /// No description provided for @favorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get favorites;
 }
 
 class _AppLocalizationsDelegate

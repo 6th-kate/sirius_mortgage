@@ -1,5 +1,7 @@
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_inteface.dart';
 import 'package:sirius_mortgage/features/calculator/domain/mortgage_calculator.dart';
+import 'package:sirius_mortgage/features/settings/domain/currency/currency_enum.dart';
+import 'package:sirius_mortgage/features/settings/utils/defaults.dart';
 import 'package:test/test.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
 
@@ -13,6 +15,7 @@ void main() {
   /// Tests for calculateDifferentiatedPayment method
   test('Differentiated calculations method [Test-1]', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 100000,
       initialPayment: 0,
       loanTermMonth: 24,
@@ -36,6 +39,7 @@ void main() {
 
   test('Differentiated calculations method [Test-2]', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 120000,
       initialPayment: 20000,
       loanTermMonth: 12,
@@ -58,6 +62,7 @@ void main() {
   });
   test('Differentiated calculations method [Test-3]', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 120000,
       initialPayment: 20000,
       loanTermMonth: 12,
@@ -80,6 +85,7 @@ void main() {
   });
   test('Differentiated calculations method [Test-4]', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 120000,
       initialPayment: 20000,
       loanTermMonth: 12,
@@ -103,6 +109,7 @@ void main() {
 
   test('Differentiated calculations method [Test-5]', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 120000,
       initialPayment: 0,
       loanTermMonth: 12,
@@ -125,6 +132,7 @@ void main() {
   });
   test('Differentiated calculations method [Test-6]', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 120000,
       initialPayment: 10000,
       loanTermMonth: 60,
@@ -149,6 +157,7 @@ void main() {
   /// Tests for calculateAnnuityPayment method
   test('Annuity calculations method [test-1].', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 90000,
       initialPayment: 0,
       loanTermMonth: 24,
@@ -171,6 +180,7 @@ void main() {
   });
   test('Annuity calculations method [test-2].', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 90000,
       initialPayment: 0,
       loanTermMonth: 24,
@@ -193,6 +203,7 @@ void main() {
   });
   test('Annuity calculations method [test-3].', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 90000,
       initialPayment: 0,
       loanTermMonth: 24,
@@ -215,6 +226,7 @@ void main() {
   });
   test('Annuity calculations method [test-4].', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 30000000,
       initialPayment: 1000000,
       loanTermMonth: 120,
@@ -237,6 +249,7 @@ void main() {
   });
   test('Annuity calculations method [test-5].', () {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 30000000,
       initialPayment: 1000000,
       loanTermMonth: 120,
@@ -261,6 +274,7 @@ void main() {
   /// Tests for summaryInformation method
   test('Summary information method [test-1].', () async {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 100000,
       initialPayment: 0,
       loanTermMonth: 12,
@@ -286,6 +300,7 @@ void main() {
 
   test('Summary information method [test-2].', () async {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 100000,
       initialPayment: 0,
       loanTermMonth: 12,
@@ -311,6 +326,7 @@ void main() {
 
   test('Summary information method [test-3].', () async {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 100000,
       initialPayment: 20000,
       loanTermMonth: 36,
@@ -336,6 +352,7 @@ void main() {
 
   test('Summary information method [test-4].', () async {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 1000000,
       initialPayment: 0,
       loanTermMonth: 7 * 12,
@@ -361,6 +378,7 @@ void main() {
 
   test('Summary information method [test-5].', () async {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 1000000,
       initialPayment: 0,
       loanTermMonth: 12,
@@ -386,6 +404,7 @@ void main() {
 
   test('Summary information method [test-6].', () async {
     final input = CalculatorInputData(
+      currency: CurrencyType.values[SettingDefaults.selectedCurrencyDefault],
       loanAmount: 566678,
       initialPayment: 0,
       loanTermMonth: 24,

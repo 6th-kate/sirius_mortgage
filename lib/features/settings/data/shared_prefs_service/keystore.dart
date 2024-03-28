@@ -11,7 +11,7 @@ class KeyStore {
   static const String selectedLocaleDefault =
       SettingDefaults.selectedLocaleDefault;
 
-  static const String selectedCurrency = 'selectedLocale';
+  static const String selectedCurrency = 'selectedCurrency';
   static final int selectedCurrencyDefault =
       SettingDefaults.selectedCurrencyDefault;
 }

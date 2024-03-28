@@ -21,9 +21,8 @@ class CalculatorForm extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           CalculatorTextField(
-            controller: TextEditingController(),
             label: AppLocaleScope.of(context).loanAmount,
-            placeholder: '0Р',
+            placeholder: '0',
             suffix: SuffixButton(
               text: context.watch<FormBloc>().state.model.currency.currencyName,
               onPressed: () {
@@ -33,16 +32,14 @@ class CalculatorForm extends StatelessWidget {
             textFieldType: TextFieldType.cost,
           ),
           CalculatorTextField(
-            controller: TextEditingController(),
             label: AppLocaleScope.of(context).downpayment,
-            placeholder: '0Р',
+            placeholder: '0',
             textFieldType: TextFieldType.contribution,
           ),
           Row(
             children: [
               Expanded(
                 child: CalculatorTextField(
-                  controller: TextEditingController(),
                   placeholder: '0',
                   textFieldType: TextFieldType.term,
                   label: AppLocaleScope.of(context).loanTerm,
@@ -51,7 +48,6 @@ class CalculatorForm extends StatelessWidget {
               const SizedBox(width: 8.0),
               Expanded(
                 child: CalculatorTextField(
-                  controller: TextEditingController(),
                   label: AppLocaleScope.of(context).rate,
                   placeholder: '0%',
                   textFieldType: TextFieldType.bet,

@@ -1,9 +1,10 @@
 enum CurrencyType {
-  rub('RUB'),
-  usd('USD'),
-  eur('EUR');
+  rub('RUB', 'Р'),
+  usd('USD', '\$'),
+  eur('EUR', '€');
 
   final String currencyName;
+  final String shortSymbol;
 
-  const CurrencyType(this.currencyName);
+  const CurrencyType(this.currencyName, this.shortSymbol);
 }

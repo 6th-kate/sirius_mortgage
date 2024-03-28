@@ -1,8 +1,8 @@
 import 'package:sirius_mortgage/features/count/domain/form_bloc/form_bloc.dart';
 
 enum TextFieldType {
-  cost(15),
-  contribution(15),
+  cost(12),
+  contribution(12),
   term(3),
   bet(5);
 

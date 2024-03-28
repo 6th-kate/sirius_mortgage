@@ -145,7 +145,7 @@ class FormBloc extends Bloc<FormEvent, ValidationFormState> {
     final model = state.model.copyWith(bet: event.bet);
     if (event.bet.isNotEmpty) {
       final value = double.tryParse(event.bet);
-      if (value == null || value <= 0) {
+      if (value == null || value <= 0 || value > 30) {
         emit(
           ValidationFormState.notValid(
             model,

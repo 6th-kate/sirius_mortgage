@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sirius_mortgage/features/settings/ui/widgets/currency_setting.dart';
 import 'package:sirius_mortgage/features/settings/ui/widgets/locale_setting.dart';
 import 'package:sirius_mortgage/features/settings/ui/widgets/theme_setting.dart';
 
@@ -20,6 +21,7 @@ class SettingsScreen extends StatelessWidget {
             children: [
               ThemeSetting(),
               LocaleSetting(),
+              CurrencySetting(),
             ],
           ),
         ),

@@ -7,6 +7,7 @@ import 'package:sirius_mortgage/features/count/domain/calculator_bloc/calculator
 import 'package:sirius_mortgage/features/count/domain/form_bloc/form_bloc.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_button.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_form.dart';
+import 'package:sirius_mortgage/features/settings/domain/currency/currency_bloc/currency_bloc.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_constants.dart';
 
 import '../../../../locale/locale.dart';
@@ -19,7 +20,8 @@ class CalculatorFormPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => FormBloc(),
+          create: (context) =>
+              FormBloc(context.read<CurrencyBloc>().state.currency),
         ),
         BlocProvider(
           create: (context) => // TODO: Replace with DI
@@ -28,6 +30,12 @@ class CalculatorFormPage extends StatelessWidget {
       ],
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).pop();
+            },
+          ),
           title: Text(AppLocaleScope.of(context).calculateMortgage),
         ),
         body: LayoutBuilder(

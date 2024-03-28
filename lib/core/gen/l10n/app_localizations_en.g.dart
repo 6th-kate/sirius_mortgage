@@ -5,7 +5,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get currency => 'USD';
+  String get currency => 'Currency';
 
   @override
   String get mortgageCalculator => 'Mortgage calculator';
@@ -45,6 +45,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get calculate => 'Calculate';
+
+  @override
+  String get langName => 'English';
+
+  @override
+  String get shortLangName => 'ENG';
 
   @override
   String get result => 'Result';

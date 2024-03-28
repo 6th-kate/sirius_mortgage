@@ -1,5 +1,5 @@
 {
-	"currency": "RUB",
+	"currency": "Валюта",
 	"mortgageCalculator": "Ипотека калькуляторы",
 	"calculateMortgage": "Ипотеканы исәпләү",
 	"calculateMortgageLabel" : "Күпме түләгәнегезне ачыклагыз",
@@ -10,7 +10,7 @@
 	"loanTerm": "Вакыт (айлар)",
 	"rate": "Ел саен ставкасы",
 	"paymentsType": "Айлык түләүләр төре",
-	"annuity": "Аннуитлы (Тигез зурлыклы түләүләр)",
+	"annuity": "Аннуитлы (Tигез зурлыклы түләүләр)",
 	"differentiated": "Аерымланган түләүләр",
 	"calculate": "Исәпләү",
 	"result": "Нәтиҗә",
@@ -33,5 +33,6 @@
 	"language": "Тел",
 	"theme": "Бизәк",
 	"loading": "Йөкләү...",
-	"favorites": "Сайланма"
+	"langName": "Татар",
+	"shortLangName": "TAT"
 }

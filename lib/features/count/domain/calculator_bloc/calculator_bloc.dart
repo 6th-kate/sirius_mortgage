@@ -37,6 +37,9 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     StartCalculationEvent event,
     Emitter emit,
   ) {
+    if (state is InProcessCalculatorState) {
+      return;
+    }
     final loanAmount = double.tryParse(event.model.cost!);
     final loanTermMonths = int.tryParse(event.model.term!);
     final interestRate = double.tryParse(event.model.bet!);
@@ -51,6 +54,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     }
 
     InputDomainModel inputModel = InputDomainModel(
+      currency: event.model.currency,
       input: SummaryInformationInput(
         data: CalculatorInputData(
           loanAmount: loanAmount,

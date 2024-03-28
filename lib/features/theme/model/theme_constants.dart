@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppTextStyles {
+  static final cardHeadline = GoogleFonts.rubik(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 20,
+      letterSpacing: 0,
+      height: 1.4,
+    ),
+  );
+
   static final headline = GoogleFonts.rubik(
     textStyle: const TextStyle(
       fontWeight: FontWeight.w600,
@@ -102,6 +111,7 @@ abstract class AppColors {
 
   //onCard == buttonTitle
   static const onPrimary = Color(0xFF1E2620);
+  static const shadow = Color(0x331E2620);
   static const label = Color(0xFF38473D);
 
 //when focus/pressed -- cardLabel (label)
@@ -129,6 +139,7 @@ abstract class AppColors {
 abstract class AppColorsDark {
   static const background = Color(0xFF262827);
   static const onError = Color(0xFF000000);
+  static const shadow = Color(0xFF000000);
 
   static const leftGradient = Color(0xFF609B7E);
   static const rightGradient = Color(0xFFA0A395);
@@ -150,7 +161,7 @@ abstract class AppColorsDark {
   static const coldGreen = Color(0xFF7CD5AA); //active button + diagram 1
   static const secondDiagramColor = Color(0xFFBFDC9A);
 
-  static const switchBackground = Color(0xFFE5F5E5);
+  static const switchBackground = Color(0xFF53635B);
 
   static const splash = Color(0x331E2620);
   static const selection = Color(0x3365C786);

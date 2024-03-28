@@ -5,7 +5,6 @@ import 'package:sirius_mortgage/features/calculator/domain/mortgage_calculator.d
 import 'package:sirius_mortgage/features/count/data/count_repository_impl.dart';
 import 'package:sirius_mortgage/features/count/domain/calculator_bloc/calculator_bloc.dart';
 import 'package:sirius_mortgage/features/count/domain/form_bloc/form_bloc.dart';
-import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_button.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_form.dart';
 import 'package:sirius_mortgage/features/settings/domain/currency/currency_bloc/currency_bloc.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_constants.dart';
@@ -13,7 +12,8 @@ import 'package:sirius_mortgage/features/theme/model/theme_constants.dart';
 import '../../../../locale/locale.dart';
 
 class CalculatorFormPage extends StatelessWidget {
-  const CalculatorFormPage({super.key});
+  final Widget button;
+  const CalculatorFormPage({required this.button, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ class CalculatorFormPage extends StatelessWidget {
                         return const SizedBox.shrink();
                       },
                     ),
-                    const CalculateButton(),
+                    button,
                   ],
                 ),
               ),

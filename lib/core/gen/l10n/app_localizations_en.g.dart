@@ -53,9 +53,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shortLangName => 'ENG';
 
   @override
-  String get result => 'Result';
-
-  @override
   String get totalPayoutResult => 'Total amount: ';
 
   @override
@@ -111,4 +108,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loading => 'Loading...';
+
+  @override
+  String get compareResultFirst => 'Option 1: ';
+
+  @override
+  String get compareResultSecond => 'Option 2: ';
+
+  @override
+  String get compare => 'Compare';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get variantFirst => 'Option 1';
+
+  @override
+  String get variantSecond => 'Option 2';
+
+  @override
+  String get plotFirst => 'Repayment schedule for the first option:';
+
+  @override
+  String get plotSecond => 'Repayment schedule for the second option';
+
+  @override
+  String get result => 'Result';
+
+  @override
+  String get favorites => 'Favorites';
 }

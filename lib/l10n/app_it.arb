@@ -34,5 +34,14 @@
 	"theme": "Бизәк",
 	"loading": "Йөкләү...",
 	"langName": "Татар",
-	"shortLangName": "TAT"
+	"shortLangName": "TAT",
+	"compareResultFirst": "1нче вариант: ",
+	"compareResultSecond": "2нче вариант: ",
+	"compare": "Чагыштыру",
+	"save": "Саклау",
+	"variantFirst": "1нче вариант",
+	"variantSecond": "2нче вариант",
+	"plotFirst": "Беренче вариант өчен түләү графигы:",
+	"plotSecond": "Икенче вариант өчен түләү графигы:"
+
 }

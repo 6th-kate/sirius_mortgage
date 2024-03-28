@@ -52,6 +52,8 @@ class LightAppTheme implements AppTheme {
         secondaryHeaderColor: AppColors.onPrimary,
         hintColor: AppColors.form,
         textTheme: textTheme,
+        cardColor: AppColors.white,
+        shadowColor: AppColors.shadow,
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
             textStyle: MaterialStateProperty.all(
@@ -207,6 +209,7 @@ class LightAppTheme implements AppTheme {
 
   @override
   TextTheme get textTheme => TextTheme(
+        headlineMedium: AppTextStyles.cardHeadline,
         headlineSmall: AppTextStyles.headline,
         titleLarge: AppTextStyles.tableTitle,
         titleMedium: AppTextStyles.subtitle,

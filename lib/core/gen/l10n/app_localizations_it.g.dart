@@ -53,9 +53,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get shortLangName => 'TAT';
 
   @override
-  String get result => 'Нәтиҗә';
-
-  @override
   String get totalPayoutResult => 'Гомуми түләү: ';
 
   @override
@@ -111,4 +108,34 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get loading => 'Йөкләү...';
+
+  @override
+  String get compareResultFirst => '1нче вариант: ';
+
+  @override
+  String get compareResultSecond => '2нче вариант: ';
+
+  @override
+  String get compare => 'Чагыштыру';
+
+  @override
+  String get save => 'Саклау';
+
+  @override
+  String get variantFirst => '1нче вариант';
+
+  @override
+  String get variantSecond => '2нче вариант';
+
+  @override
+  String get plotFirst => 'Беренче вариант өчен түләү графигы:';
+
+  @override
+  String get plotSecond => 'Икенче вариант өчен түләү графигы:';
+
+  @override
+  String get result => 'Нәтиҗә';
+
+  @override
+  String get favorites => 'Favorites';
 }

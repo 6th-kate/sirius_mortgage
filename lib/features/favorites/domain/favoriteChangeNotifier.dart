@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
-import 'package:sirius_mortgage/features/favorites/domain/favorites_repository.dart';
+import 'package:sirius_mortgage/features/favorites/data/favorites_repository_impl.dart';
 
 class FavoriteNotifier extends ChangeNotifier {
-  final IFavoritesRepository repository;
+  final FavoritesRepository repository;
   bool isloading = false;
   bool isfavorite = false;
   FavoriteNotifier({required this.repository});

@@ -5,11 +5,10 @@ import 'package:sirius_mortgage/features/favorites/data/shared_prefs_service/key
 import 'package:sirius_mortgage/features/favorites/domain/favorites_repository.dart';
 
 class FavoritesRepository implements IFavoritesRepository {
-  
   @override
   Future<List<SummaryInformationInput>> getAllFavorites() async {
     final prefs = await SharedPreferences.getInstance();
-    final favoritesString = prefs.getString(KeyStore.favorites) ?? '[]';
+    final favoritesString = prefs.getString(KeyStore.favoritesKey) ?? KeyStore.favoritesDefault;
     final List<dynamic> favoritesJson = jsonDecode(favoritesString);
     return favoritesJson
         .map((json) => SummaryInformationInput.fromJson(json))
@@ -23,6 +22,6 @@ class FavoritesRepository implements IFavoritesRepository {
     favorites.add(favorite);
     final favoritesString =
         jsonEncode(favorites.map((e) => e.toJson()).toList());
-    await prefs.setString(KeyStore.favorites, favoritesString);
+    await prefs.setString(KeyStore.favoritesKey, favoritesString);
   }
 }

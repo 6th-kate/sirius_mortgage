@@ -5,6 +5,7 @@ import 'package:sirius_mortgage/features/settings/domain/currency/currency_bloc/
 import 'package:sirius_mortgage/features/settings/domain/locale/locale_bloc/locale_bloc.dart';
 
 import '../../../core/core.dart';
+import '../../../core/di/di.dart';
 import '../../settings/data/currency_repository_impl.dart';
 
 class AppLocaleScope extends StatelessWidget {
@@ -37,12 +38,10 @@ class AppLocaleScope extends StatelessWidget {
   Widget build(BuildContext context) => MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => LocaleBloc(LocaleRepositoryImpl())
-              ..add(LocaleEvent.needLocaleLoad()),
+            create: (context) => getIt<LocaleBloc>(),
           ),
           BlocProvider(
-            create: (context) => CurrencyBloc(CurrencyRepositoryImpl())
-              ..add(CurrencyEvent.needCurrencyLoad()),
+            create: (context) => getIt<CurrencyBloc>(),
           ),
         ],
         child: BlocBuilder<LocaleBloc, LocaleState>(

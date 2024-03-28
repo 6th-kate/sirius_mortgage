@@ -26,6 +26,8 @@ dependencies:
   fl_chart: ^0.66.2
   firebase_core: ^2.27.2
   firebase_crashlytics: ^3.4.20
+  injectable: ^2.4.1
+  get_it: ^7.6.7
 
 dev_dependencies:
   # Lints
@@ -37,6 +39,7 @@ dev_dependencies:
   # Codegeneration
   build_runner: ^2.4.8
   json_serializable: ^6.7.1
+  injectable_generator: ^2.6.1
 
 flutter_gen:
   output: lib/core/gen/resource

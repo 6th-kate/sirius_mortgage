@@ -19,21 +19,18 @@ mixin _$ThemeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CustomThemeMode themeMode) themeChanged,
-    required TResult Function() needThemeLoad,
     required TResult Function(SimpleResponse<CustomThemeMode> response) reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CustomThemeMode themeMode)? themeChanged,
-    TResult? Function()? needThemeLoad,
     TResult? Function(SimpleResponse<CustomThemeMode> response)? reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CustomThemeMode themeMode)? themeChanged,
-    TResult Function()? needThemeLoad,
     TResult Function(SimpleResponse<CustomThemeMode> response)? reload,
     required TResult orElse(),
   }) =>
@@ -41,21 +38,18 @@ mixin _$ThemeEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeChanged value) themeChanged,
-    required TResult Function(NeedThemeLoad value) needThemeLoad,
     required TResult Function(ThemeReload value) reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeChanged value)? themeChanged,
-    TResult? Function(NeedThemeLoad value)? needThemeLoad,
     TResult? Function(ThemeReload value)? reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeChanged value)? themeChanged,
-    TResult Function(NeedThemeLoad value)? needThemeLoad,
     TResult Function(ThemeReload value)? reload,
     required TResult orElse(),
   }) =>
@@ -146,7 +140,6 @@ class _$ThemeChangedImpl implements ThemeChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CustomThemeMode themeMode) themeChanged,
-    required TResult Function() needThemeLoad,
     required TResult Function(SimpleResponse<CustomThemeMode> response) reload,
   }) {
     return themeChanged(themeMode);
@@ -156,7 +149,6 @@ class _$ThemeChangedImpl implements ThemeChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CustomThemeMode themeMode)? themeChanged,
-    TResult? Function()? needThemeLoad,
     TResult? Function(SimpleResponse<CustomThemeMode> response)? reload,
   }) {
     return themeChanged?.call(themeMode);
@@ -166,7 +158,6 @@ class _$ThemeChangedImpl implements ThemeChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CustomThemeMode themeMode)? themeChanged,
-    TResult Function()? needThemeLoad,
     TResult Function(SimpleResponse<CustomThemeMode> response)? reload,
     required TResult orElse(),
   }) {
@@ -180,7 +171,6 @@ class _$ThemeChangedImpl implements ThemeChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeChanged value) themeChanged,
-    required TResult Function(NeedThemeLoad value) needThemeLoad,
     required TResult Function(ThemeReload value) reload,
   }) {
     return themeChanged(this);
@@ -190,7 +180,6 @@ class _$ThemeChangedImpl implements ThemeChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeChanged value)? themeChanged,
-    TResult? Function(NeedThemeLoad value)? needThemeLoad,
     TResult? Function(ThemeReload value)? reload,
   }) {
     return themeChanged?.call(this);
@@ -200,7 +189,6 @@ class _$ThemeChangedImpl implements ThemeChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeChanged value)? themeChanged,
-    TResult Function(NeedThemeLoad value)? needThemeLoad,
     TResult Function(ThemeReload value)? reload,
     required TResult orElse(),
   }) {
@@ -218,114 +206,6 @@ abstract class ThemeChanged implements ThemeEvent {
   @JsonKey(ignore: true)
   _$$ThemeChangedImplCopyWith<_$ThemeChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$NeedThemeLoadImplCopyWith<$Res> {
-  factory _$$NeedThemeLoadImplCopyWith(
-          _$NeedThemeLoadImpl value, $Res Function(_$NeedThemeLoadImpl) then) =
-      __$$NeedThemeLoadImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NeedThemeLoadImplCopyWithImpl<$Res>
-    extends _$ThemeEventCopyWithImpl<$Res, _$NeedThemeLoadImpl>
-    implements _$$NeedThemeLoadImplCopyWith<$Res> {
-  __$$NeedThemeLoadImplCopyWithImpl(
-      _$NeedThemeLoadImpl _value, $Res Function(_$NeedThemeLoadImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$NeedThemeLoadImpl implements NeedThemeLoad {
-  _$NeedThemeLoadImpl();
-
-  @override
-  String toString() {
-    return 'ThemeEvent.needThemeLoad()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NeedThemeLoadImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CustomThemeMode themeMode) themeChanged,
-    required TResult Function() needThemeLoad,
-    required TResult Function(SimpleResponse<CustomThemeMode> response) reload,
-  }) {
-    return needThemeLoad();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CustomThemeMode themeMode)? themeChanged,
-    TResult? Function()? needThemeLoad,
-    TResult? Function(SimpleResponse<CustomThemeMode> response)? reload,
-  }) {
-    return needThemeLoad?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CustomThemeMode themeMode)? themeChanged,
-    TResult Function()? needThemeLoad,
-    TResult Function(SimpleResponse<CustomThemeMode> response)? reload,
-    required TResult orElse(),
-  }) {
-    if (needThemeLoad != null) {
-      return needThemeLoad();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ThemeChanged value) themeChanged,
-    required TResult Function(NeedThemeLoad value) needThemeLoad,
-    required TResult Function(ThemeReload value) reload,
-  }) {
-    return needThemeLoad(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ThemeChanged value)? themeChanged,
-    TResult? Function(NeedThemeLoad value)? needThemeLoad,
-    TResult? Function(ThemeReload value)? reload,
-  }) {
-    return needThemeLoad?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ThemeChanged value)? themeChanged,
-    TResult Function(NeedThemeLoad value)? needThemeLoad,
-    TResult Function(ThemeReload value)? reload,
-    required TResult orElse(),
-  }) {
-    if (needThemeLoad != null) {
-      return needThemeLoad(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NeedThemeLoad implements ThemeEvent {
-  factory NeedThemeLoad() = _$NeedThemeLoadImpl;
 }
 
 /// @nodoc
@@ -405,7 +285,6 @@ class _$ThemeReloadImpl implements ThemeReload {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CustomThemeMode themeMode) themeChanged,
-    required TResult Function() needThemeLoad,
     required TResult Function(SimpleResponse<CustomThemeMode> response) reload,
   }) {
     return reload(response);
@@ -415,7 +294,6 @@ class _$ThemeReloadImpl implements ThemeReload {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CustomThemeMode themeMode)? themeChanged,
-    TResult? Function()? needThemeLoad,
     TResult? Function(SimpleResponse<CustomThemeMode> response)? reload,
   }) {
     return reload?.call(response);
@@ -425,7 +303,6 @@ class _$ThemeReloadImpl implements ThemeReload {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CustomThemeMode themeMode)? themeChanged,
-    TResult Function()? needThemeLoad,
     TResult Function(SimpleResponse<CustomThemeMode> response)? reload,
     required TResult orElse(),
   }) {
@@ -439,7 +316,6 @@ class _$ThemeReloadImpl implements ThemeReload {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeChanged value) themeChanged,
-    required TResult Function(NeedThemeLoad value) needThemeLoad,
     required TResult Function(ThemeReload value) reload,
   }) {
     return reload(this);
@@ -449,7 +325,6 @@ class _$ThemeReloadImpl implements ThemeReload {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeChanged value)? themeChanged,
-    TResult? Function(NeedThemeLoad value)? needThemeLoad,
     TResult? Function(ThemeReload value)? reload,
   }) {
     return reload?.call(this);
@@ -459,7 +334,6 @@ class _$ThemeReloadImpl implements ThemeReload {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeChanged value)? themeChanged,
-    TResult Function(NeedThemeLoad value)? needThemeLoad,
     TResult Function(ThemeReload value)? reload,
     required TResult orElse(),
   }) {

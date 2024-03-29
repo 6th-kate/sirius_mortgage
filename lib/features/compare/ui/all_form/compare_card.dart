@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/number_symbols_data.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
 import '../../../count/domain/domain_models/output_model.dart';
@@ -72,7 +71,9 @@ class CompareCard extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            loanAmount == null ? '____' : '$loanAmount ${output.value!.currency.shortSymbol}',
+                            loanAmount == null
+                                ? '____'
+                                : '$loanAmount ${output.value!.currency.shortSymbol}',
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ),
@@ -98,7 +99,9 @@ class CompareCard extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            downPayment == null ? '____' : '$downPayment ${output.value!.currency.shortSymbol}',
+                            downPayment == null
+                                ? '____'
+                                : '$downPayment ${output.value!.currency.shortSymbol}',
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ),

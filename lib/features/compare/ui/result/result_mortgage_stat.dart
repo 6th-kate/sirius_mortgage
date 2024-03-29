@@ -48,7 +48,8 @@ class MortgageCompareStat extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                       children: <TextSpan>[
                         TextSpan(
-                          text: '${totalFirst.toStringAsFixed(2)} $currencySymbolFirst',
+                          text:
+                              '${totalFirst.toStringAsFixed(2)} $currencySymbolFirst',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
@@ -62,7 +63,8 @@ class MortgageCompareStat extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                       children: <TextSpan>[
                         TextSpan(
-                          text: '${totalSecond.toStringAsFixed(2)} $currencySymbolSecond',
+                          text:
+                              '${totalSecond.toStringAsFixed(2)} $currencySymbolSecond',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
@@ -95,7 +97,8 @@ class MortgageCompareStat extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                       children: <TextSpan>[
                         TextSpan(
-                          text: '${loanAmountFirst.toStringAsFixed(2)} $currencySymbolFirst',
+                          text:
+                              '${loanAmountFirst.toStringAsFixed(2)} $currencySymbolFirst',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
@@ -109,7 +112,8 @@ class MortgageCompareStat extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                       children: <TextSpan>[
                         TextSpan(
-                          text: '${loanAmountSecond.toStringAsFixed(2)} $currencySymbolSecond',
+                          text:
+                              '${loanAmountSecond.toStringAsFixed(2)} $currencySymbolSecond',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
@@ -142,7 +146,8 @@ class MortgageCompareStat extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                       children: <TextSpan>[
                         TextSpan(
-                          text: '${interestAmountFirst.toStringAsFixed(2)} $currencySymbolFirst',
+                          text:
+                              '${interestAmountFirst.toStringAsFixed(2)} $currencySymbolFirst',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
@@ -156,7 +161,8 @@ class MortgageCompareStat extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                       children: <TextSpan>[
                         TextSpan(
-                          text: '${interestAmountSecond.toStringAsFixed(2)} $currencySymbolSecond',
+                          text:
+                              '${interestAmountSecond.toStringAsFixed(2)} $currencySymbolSecond',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],

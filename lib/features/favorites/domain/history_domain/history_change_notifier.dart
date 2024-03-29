@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
 
-import 'favorites_repository.dart';
+import 'history_repository.dart';
 
 @injectable
-class FavoriteNotifier extends ChangeNotifier {
-  final IFavoritesRepository repository;
+class HistoryNotifier extends ChangeNotifier {
+  final IHistoryRepository repository;
   bool isLoading = false;
-  bool isFavorite = false;
 
-  FavoriteNotifier({required this.repository});
+  HistoryNotifier({required this.repository});
 
-  Future<void> addFavorite(SummaryInformationInput favorite) async {
+  Future<void> addHistory(SummaryInformationInput history) async {
     if (isLoading) {
       return;
     }
@@ -20,8 +19,7 @@ class FavoriteNotifier extends ChangeNotifier {
     notifyListeners();
 
     try {
-      await repository.addFavorite(favorite);
-      isFavorite = true;
+      await repository.addHistory(history);
     } catch (e) {
       rethrow;
     } finally {

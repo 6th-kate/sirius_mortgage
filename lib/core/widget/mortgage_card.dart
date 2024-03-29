@@ -5,11 +5,12 @@ import '../../features/locale/locale.dart';
 
 class MortgageItem extends StatelessWidget {
   final String? title;
-  final int? loanAmount;
-  final int? downPayment;
+  final double? loanAmount;
+  final double? downPayment;
   final int? loanTerm;
   final double? rate;
   final String? currencySymbol;
+  final Color? backgroundColor;
   final void Function()? onTap;
 
   const MortgageItem({
@@ -21,6 +22,7 @@ class MortgageItem extends StatelessWidget {
     this.rate,
     this.onTap,
     this.currencySymbol,
+    this.backgroundColor,
   });
 
   @override

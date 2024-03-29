@@ -113,6 +113,8 @@ abstract class AppColors {
   static const onPrimary = Color(0xFF1E2620);
   static const shadow = Color(0x331E2620);
   static const label = Color(0xFF38473D);
+  static const veryLightGreen = Color(0xFFF3FBF3);
+  static const likedLight = Color(0xFFFAFBF2);
 
 //when focus/pressed -- cardLabel (label)
   static const radioButton = Color(0xFF607266);
@@ -140,6 +142,9 @@ abstract class AppColorsDark {
   static const background = Color(0xFF262827);
   static const onError = Color(0xFF000000);
   static const shadow = Color(0xFF000000);
+
+  static const likedDark = Color(0xFF454C3E);
+  static const historyDark = Color(0xFF374B41);
 
   static const leftGradient = Color(0xFF609B7E);
   static const rightGradient = Color(0xFFA0A395);

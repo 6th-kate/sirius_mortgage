@@ -49,6 +49,8 @@ class MortgageList extends StatelessWidget {
                       downPayment: snapshot.data?[index].data.initialPayment,
                       loanTerm: snapshot.data?[index].data.loanTermMonth,
                       rate: snapshot.data?[index].data.interestRate,
+                      currencySymbol:
+                          snapshot.data?[index].data.currency.shortSymbol,
                     ),
                   );
                 },

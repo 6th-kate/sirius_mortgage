@@ -6,9 +6,10 @@ import '../../../../calculator/domain/model/calculator_dataclass.dart';
 import '../../../../theme/theme.dart';
 
 class TablePage extends StatefulWidget {
-  const TablePage(this.table, {super.key});
+  const TablePage(this.table, {super.key, required this.currencySymbol});
 
   final List<CalculatorResultData> table;
+  final String currencySymbol;
 
   @override
   State<TablePage> createState() => _TablePageState();
@@ -115,7 +116,7 @@ class _TablePageState extends State<TablePage> {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(
-                    '${widget.table[index].payment.toStringAsFixed(2)} Р',
+                    '${widget.table[index].payment.toStringAsFixed(2)} ${widget.currencySymbol}',
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
                 ),
@@ -124,7 +125,7 @@ class _TablePageState extends State<TablePage> {
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: Text(
-                    '${widget.table[index].residue.toStringAsFixed(2)} Р',
+                    '${widget.table[index].residue.toStringAsFixed(2)} ${widget.currencySymbol}',
                     style: Theme.of(context).textTheme.labelMedium,
                   ),
                 ),
@@ -147,7 +148,7 @@ class _TablePageState extends State<TablePage> {
                           ),
                     ),
                     Text(
-                      '${widget.table[index].interest.toStringAsFixed(2)} Р',
+                      '${widget.table[index].interest.toStringAsFixed(2)} ${widget.currencySymbol}',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
@@ -170,7 +171,7 @@ class _TablePageState extends State<TablePage> {
                           ),
                     ),
                     Text(
-                      '${widget.table[index].principal.toStringAsFixed(2)} Р',
+                      '${widget.table[index].principal.toStringAsFixed(2)} ${widget.currencySymbol}',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
@@ -202,7 +203,7 @@ class _TablePageState extends State<TablePage> {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Text(
-                '${widget.table[index].payment.toStringAsFixed(2)} Р',
+                '${widget.table[index].payment.toStringAsFixed(2)} ${widget.currencySymbol}',
                 style: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -211,7 +212,7 @@ class _TablePageState extends State<TablePage> {
             child: Align(
               alignment: Alignment.bottomRight,
               child: Text(
-                '${widget.table[index].residue.toStringAsFixed(2)} Р',
+                '${widget.table[index].residue.toStringAsFixed(2)} ${widget.currencySymbol}',
                 style: Theme.of(context).textTheme.labelMedium,
               ),
             ),

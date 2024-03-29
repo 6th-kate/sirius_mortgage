@@ -73,6 +73,8 @@ class CompareResultPage extends StatelessWidget {
                 totalSecond: result2.output.totalPayout,
                 loanAmountSecond: result2.output.loanAmount,
                 interestAmountSecond: result2.output.interestPayout,
+                currencySymbolFirst: result1.currency.shortSymbol,
+                currencySymbolSecond: result2.currency.shortSymbol,
               ),
 
               const SizedBox(height: 16),
@@ -92,7 +94,8 @@ class CompareResultPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => TablePage(result1.tableInfo),
+                        builder: (context) => TablePage(result1.tableInfo,
+                            currencySymbol: result1.currency.shortSymbol),
                       ),
                     );
                   },
@@ -118,7 +121,8 @@ class CompareResultPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => TablePage(result2.tableInfo),
+                        builder: (context) => TablePage(result2.tableInfo,
+                            currencySymbol: result2.currency.shortSymbol),
                       ),
                     );
                   },

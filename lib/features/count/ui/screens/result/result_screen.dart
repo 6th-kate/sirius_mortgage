@@ -52,6 +52,7 @@ class ResultPage extends StatelessWidget {
                 total: result.output.totalPayout,
                 loanAmount: result.output.loanAmount,
                 interestAmount: result.output.interestPayout,
+                currencySymbol: result.currency.shortSymbol,
               ),
 
               const SizedBox(height: 8),

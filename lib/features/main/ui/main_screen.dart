@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/compare/ui/all_form/compare_main_screen.dart';
 import 'package:sirius_mortgage/features/main/ui/calc_button_widget.dart';

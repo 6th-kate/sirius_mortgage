@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:sirius_mortgage/features/settings/domain/theme/theme_repository.dart';
-import 'package:sirius_mortgage/features/settings/utils/defaults.dart';
 import 'package:sirius_mortgage/features/settings/utils/simple_response.dart';
 
 import '../../../../../core/di/di.dart';

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sirius_mortgage/features/settings/data/locale_repository_impl.dart';
 import 'package:sirius_mortgage/features/settings/domain/currency/currency_bloc/currency_bloc.dart';
 import 'package:sirius_mortgage/features/settings/domain/locale/locale_bloc/locale_bloc.dart';
 
 import '../../../core/core.dart';
 import '../../../core/di/di.dart';
-import '../../settings/data/currency_repository_impl.dart';
 
 class AppLocaleScope extends StatelessWidget {
   final Widget child;

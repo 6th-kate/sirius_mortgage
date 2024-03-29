@@ -17,11 +17,12 @@ class SettingLoadService {
   @factoryMethod
   static SettingLoadService init(SharedPreferences sharedPrefs) {
     return SettingLoadService(
-        CurrencyType.values[sharedPrefs.getInt(KeyStore.selectedCurrency) ??
-            SettingDefaults.selectedCurrencyDefault],
-        sharedPrefs.getString(KeyStore.selectedLocale) ??
-            SettingDefaults.selectedLocaleDefault,
-        CustomThemeMode.values[sharedPrefs.getInt(KeyStore.selectedThemeMode) ??
-            SettingDefaults.selectedThemeModeDefault]);
+      CurrencyType.values[sharedPrefs.getInt(KeyStore.selectedCurrency) ??
+          SettingDefaults.selectedCurrencyDefault],
+      sharedPrefs.getString(KeyStore.selectedLocale) ??
+          SettingDefaults.selectedLocaleDefault,
+      CustomThemeMode.values[sharedPrefs.getInt(KeyStore.selectedThemeMode) ??
+          SettingDefaults.selectedThemeModeDefault],
+    );
   }
 }

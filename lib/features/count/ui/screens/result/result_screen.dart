@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
-import 'package:sirius_mortgage/features/favorites/data/favorites_repository_impl.dart';
 import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorite_change_notifier.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 

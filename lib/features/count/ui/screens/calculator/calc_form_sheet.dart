@@ -1,18 +1,19 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:sirius_mortgage/features/calculator/domain/mortgage_calculator.dart';
-import 'package:sirius_mortgage/features/count/data/count_repository_impl.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sirius_mortgage/features/count/domain/calculator_bloc/calculator_bloc.dart';
 import 'package:sirius_mortgage/features/count/domain/form_bloc/form_bloc.dart';
 import 'package:sirius_mortgage/features/count/ui/screens/calculator/widgets/calc_form.dart';
 import 'package:sirius_mortgage/features/settings/domain/currency/currency_bloc/currency_bloc.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_constants.dart';
 
+import '../../../../../core/di/di.dart';
 import '../../../../locale/locale.dart';
 
 class CalculatorFormPage extends StatelessWidget {
   final Widget button;
+
   const CalculatorFormPage({required this.button, super.key});
 
   @override
@@ -20,12 +21,12 @@ class CalculatorFormPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) =>
-              FormBloc(context.read<CurrencyBloc>().state.currency),
+          create: (context) => FormBloc(
+            initCurrency: context.read<CurrencyBloc>().state.currency,
+          ),
         ),
         BlocProvider(
-          create: (context) => // TODO: Replace with DI
-              CalculatorBloc(const CountRepositoryImpl(MortgageCalculator())),
+          create: (context) => getIt<CalculatorBloc>(),
         ),
       ],
       child: Scaffold(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
-import 'package:sirius_mortgage/features/favorites/data/favorites_repository_impl.dart';
 import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorite_change_notifier.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
+import '../../../../../core/di/di.dart';
 import '../../../../locale/locale.dart';
 import '../../../domain/domain_models/output_model.dart';
 import '../../../route/route.dart';
@@ -84,6 +84,7 @@ class ResultPage extends StatelessWidget {
 
 class AddFavoriteButton extends StatefulWidget {
   const AddFavoriteButton({super.key, required this.input});
+
   final SummaryInformationInput input;
 
   @override
@@ -96,9 +97,7 @@ class _AddFavoriteButtonState extends State<AddFavoriteButton> {
   @override
   void initState() {
     super.initState();
-    favoriteNotifier = FavoriteNotifier(
-      repository: FavoritesRepository(),
-    );
+    favoriteNotifier = getIt<FavoriteNotifier>();
   }
 
   @override

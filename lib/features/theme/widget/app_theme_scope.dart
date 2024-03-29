@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sirius_mortgage/features/settings/data/theme_repository_impl.dart';
 import 'package:sirius_mortgage/features/settings/domain/theme/theme_bloc/theme_bloc.dart';
 import 'package:sirius_mortgage/features/settings/domain/theme/theme_mode_enum.dart';
 
+import '../../../core/di/di.dart';
 import '../model/app_theme.dart';
-import '../model/light_theme.dart';
 import '../model/dark_theme.dart';
+import '../model/light_theme.dart';
 
 class AppThemeScope extends StatelessWidget {
   final Widget child;
@@ -22,8 +22,7 @@ class AppThemeScope extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocProvider(
-        create: (context) =>
-            ThemeBloc(ThemeRepositoryImpl())..add(ThemeEvent.needThemeLoad()),
+        create: (context) => getIt<ThemeBloc>(),
         child: ContextualAppThemeProvider(child: child),
       );
 }

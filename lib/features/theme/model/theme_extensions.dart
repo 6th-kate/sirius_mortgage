@@ -49,12 +49,13 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color tableLabel;
   final Color switchBackground;
 
-  const ThemeColors(
-      {required this.chartColorFirst,
-      required this.chartColorSecond,
-      required this.label,
-      required this.tableLabel,
-      required this.switchBackground});
+  const ThemeColors({
+    required this.chartColorFirst,
+    required this.chartColorSecond,
+    required this.label,
+    required this.tableLabel,
+    required this.switchBackground,
+  });
 
   @override
   ThemeExtension<ThemeColors> copyWith({

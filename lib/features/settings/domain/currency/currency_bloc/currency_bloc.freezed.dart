@@ -19,21 +19,18 @@ mixin _$CurrencyEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CurrencyType currency) currencyChanged,
-    required TResult Function() needCurrencyLoad,
     required TResult Function(SimpleResponse<CurrencyType> response) reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CurrencyType currency)? currencyChanged,
-    TResult? Function()? needCurrencyLoad,
     TResult? Function(SimpleResponse<CurrencyType> response)? reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CurrencyType currency)? currencyChanged,
-    TResult Function()? needCurrencyLoad,
     TResult Function(SimpleResponse<CurrencyType> response)? reload,
     required TResult orElse(),
   }) =>
@@ -41,21 +38,18 @@ mixin _$CurrencyEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CurrencyChanged value) currencyChanged,
-    required TResult Function(NeedCurrencyLoad value) needCurrencyLoad,
     required TResult Function(CurrencyReload value) reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CurrencyChanged value)? currencyChanged,
-    TResult? Function(NeedCurrencyLoad value)? needCurrencyLoad,
     TResult? Function(CurrencyReload value)? reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CurrencyChanged value)? currencyChanged,
-    TResult Function(NeedCurrencyLoad value)? needCurrencyLoad,
     TResult Function(CurrencyReload value)? reload,
     required TResult orElse(),
   }) =>
@@ -147,7 +141,6 @@ class _$CurrencyChangedImpl implements CurrencyChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CurrencyType currency) currencyChanged,
-    required TResult Function() needCurrencyLoad,
     required TResult Function(SimpleResponse<CurrencyType> response) reload,
   }) {
     return currencyChanged(currency);
@@ -157,7 +150,6 @@ class _$CurrencyChangedImpl implements CurrencyChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CurrencyType currency)? currencyChanged,
-    TResult? Function()? needCurrencyLoad,
     TResult? Function(SimpleResponse<CurrencyType> response)? reload,
   }) {
     return currencyChanged?.call(currency);
@@ -167,7 +159,6 @@ class _$CurrencyChangedImpl implements CurrencyChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CurrencyType currency)? currencyChanged,
-    TResult Function()? needCurrencyLoad,
     TResult Function(SimpleResponse<CurrencyType> response)? reload,
     required TResult orElse(),
   }) {
@@ -181,7 +172,6 @@ class _$CurrencyChangedImpl implements CurrencyChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CurrencyChanged value) currencyChanged,
-    required TResult Function(NeedCurrencyLoad value) needCurrencyLoad,
     required TResult Function(CurrencyReload value) reload,
   }) {
     return currencyChanged(this);
@@ -191,7 +181,6 @@ class _$CurrencyChangedImpl implements CurrencyChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CurrencyChanged value)? currencyChanged,
-    TResult? Function(NeedCurrencyLoad value)? needCurrencyLoad,
     TResult? Function(CurrencyReload value)? reload,
   }) {
     return currencyChanged?.call(this);
@@ -201,7 +190,6 @@ class _$CurrencyChangedImpl implements CurrencyChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CurrencyChanged value)? currencyChanged,
-    TResult Function(NeedCurrencyLoad value)? needCurrencyLoad,
     TResult Function(CurrencyReload value)? reload,
     required TResult orElse(),
   }) {
@@ -219,114 +207,6 @@ abstract class CurrencyChanged implements CurrencyEvent {
   @JsonKey(ignore: true)
   _$$CurrencyChangedImplCopyWith<_$CurrencyChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$NeedCurrencyLoadImplCopyWith<$Res> {
-  factory _$$NeedCurrencyLoadImplCopyWith(_$NeedCurrencyLoadImpl value,
-          $Res Function(_$NeedCurrencyLoadImpl) then) =
-      __$$NeedCurrencyLoadImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NeedCurrencyLoadImplCopyWithImpl<$Res>
-    extends _$CurrencyEventCopyWithImpl<$Res, _$NeedCurrencyLoadImpl>
-    implements _$$NeedCurrencyLoadImplCopyWith<$Res> {
-  __$$NeedCurrencyLoadImplCopyWithImpl(_$NeedCurrencyLoadImpl _value,
-      $Res Function(_$NeedCurrencyLoadImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$NeedCurrencyLoadImpl implements NeedCurrencyLoad {
-  _$NeedCurrencyLoadImpl();
-
-  @override
-  String toString() {
-    return 'CurrencyEvent.needCurrencyLoad()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NeedCurrencyLoadImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CurrencyType currency) currencyChanged,
-    required TResult Function() needCurrencyLoad,
-    required TResult Function(SimpleResponse<CurrencyType> response) reload,
-  }) {
-    return needCurrencyLoad();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CurrencyType currency)? currencyChanged,
-    TResult? Function()? needCurrencyLoad,
-    TResult? Function(SimpleResponse<CurrencyType> response)? reload,
-  }) {
-    return needCurrencyLoad?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CurrencyType currency)? currencyChanged,
-    TResult Function()? needCurrencyLoad,
-    TResult Function(SimpleResponse<CurrencyType> response)? reload,
-    required TResult orElse(),
-  }) {
-    if (needCurrencyLoad != null) {
-      return needCurrencyLoad();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CurrencyChanged value) currencyChanged,
-    required TResult Function(NeedCurrencyLoad value) needCurrencyLoad,
-    required TResult Function(CurrencyReload value) reload,
-  }) {
-    return needCurrencyLoad(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CurrencyChanged value)? currencyChanged,
-    TResult? Function(NeedCurrencyLoad value)? needCurrencyLoad,
-    TResult? Function(CurrencyReload value)? reload,
-  }) {
-    return needCurrencyLoad?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CurrencyChanged value)? currencyChanged,
-    TResult Function(NeedCurrencyLoad value)? needCurrencyLoad,
-    TResult Function(CurrencyReload value)? reload,
-    required TResult orElse(),
-  }) {
-    if (needCurrencyLoad != null) {
-      return needCurrencyLoad(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NeedCurrencyLoad implements CurrencyEvent {
-  factory NeedCurrencyLoad() = _$NeedCurrencyLoadImpl;
 }
 
 /// @nodoc
@@ -407,7 +287,6 @@ class _$CurrencyReloadImpl implements CurrencyReload {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CurrencyType currency) currencyChanged,
-    required TResult Function() needCurrencyLoad,
     required TResult Function(SimpleResponse<CurrencyType> response) reload,
   }) {
     return reload(response);
@@ -417,7 +296,6 @@ class _$CurrencyReloadImpl implements CurrencyReload {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CurrencyType currency)? currencyChanged,
-    TResult? Function()? needCurrencyLoad,
     TResult? Function(SimpleResponse<CurrencyType> response)? reload,
   }) {
     return reload?.call(response);
@@ -427,7 +305,6 @@ class _$CurrencyReloadImpl implements CurrencyReload {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CurrencyType currency)? currencyChanged,
-    TResult Function()? needCurrencyLoad,
     TResult Function(SimpleResponse<CurrencyType> response)? reload,
     required TResult orElse(),
   }) {
@@ -441,7 +318,6 @@ class _$CurrencyReloadImpl implements CurrencyReload {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CurrencyChanged value) currencyChanged,
-    required TResult Function(NeedCurrencyLoad value) needCurrencyLoad,
     required TResult Function(CurrencyReload value) reload,
   }) {
     return reload(this);
@@ -451,7 +327,6 @@ class _$CurrencyReloadImpl implements CurrencyReload {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CurrencyChanged value)? currencyChanged,
-    TResult? Function(NeedCurrencyLoad value)? needCurrencyLoad,
     TResult? Function(CurrencyReload value)? reload,
   }) {
     return reload?.call(this);
@@ -461,7 +336,6 @@ class _$CurrencyReloadImpl implements CurrencyReload {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CurrencyChanged value)? currencyChanged,
-    TResult Function(NeedCurrencyLoad value)? needCurrencyLoad,
     TResult Function(CurrencyReload value)? reload,
     required TResult orElse(),
   }) {

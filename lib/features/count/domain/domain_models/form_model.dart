@@ -1,3 +1,5 @@
+import 'package:sirius_mortgage/features/count/domain/domain_models/input_model.dart';
+
 import '../../../settings/domain/currency/currency_enum.dart';
 
 class FormModel {
@@ -16,6 +18,15 @@ class FormModel {
     this.isAnnuityPaymentType = true,
     required this.currency,
   });
+
+  FormModel.fromInput(
+    InputDomainModel inputDomainModel,
+    this.currency,
+  )   : cost = inputDomainModel.input.data.loanAmount.toString(),
+        contribution = inputDomainModel.input.data.loanAmount.toString(),
+        term = inputDomainModel.input.data.loanAmount.toString(),
+        bet = inputDomainModel.input.data.loanAmount.toString(),
+        isAnnuityPaymentType = true;
 
   bool get isFullyFilled =>
       cost != null && contribution != null && term != null && bet != null;

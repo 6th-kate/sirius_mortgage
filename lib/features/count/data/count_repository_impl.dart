@@ -1,9 +1,11 @@
+import 'package:injectable/injectable.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_inteface.dart';
 import 'package:sirius_mortgage/features/count/domain/count_repository.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/input_model.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/output_model.dart';
 
+@Injectable(as: CountRepository)
 class CountRepositoryImpl implements CountRepository {
   final ICalculator calculator;
 

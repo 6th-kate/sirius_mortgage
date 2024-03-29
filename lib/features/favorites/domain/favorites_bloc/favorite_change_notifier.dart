@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
 import 'package:sirius_mortgage/features/favorites/data/favorites_repository_impl.dart';
 
+@injectable
 class FavoriteNotifier extends ChangeNotifier {
   final FavoritesRepository repository;
   bool isloading = false;

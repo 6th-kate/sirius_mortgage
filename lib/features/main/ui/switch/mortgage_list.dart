@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
 import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorite_change_notifier.dart';
 import 'package:sirius_mortgage/features/favorites/domain/history_domain/history_change_notifier.dart';
@@ -40,7 +41,10 @@ class MortgageList extends StatelessWidget {
                       backgroundColor: isHistory
                           ? Theme.of(context).extension<ThemeColors>()!.history
                           : Theme.of(context).extension<ThemeColors>()!.liked,
-                      title: 'Дом какой то',
+                      title: isHistory
+                          ? null
+                          : DateFormat('dd/MM/yyyy hh:mm')
+                              .format(DateTime.now()),
                       loanAmount: snapshot.data?[index].data.loanAmount,
                       downPayment: snapshot.data?[index].data.initialPayment,
                       loanTerm: snapshot.data?[index].data.loanTermMonth,

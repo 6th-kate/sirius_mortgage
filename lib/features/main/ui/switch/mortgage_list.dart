@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/input_model.dart';
 import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorite_change_notifier.dart';
@@ -45,7 +44,8 @@ class MortgageList extends StatelessWidget {
                       backgroundColor: isHistory
                           ? Theme.of(context).extension<ThemeColors>()!.history
                           : Theme.of(context).extension<ThemeColors>()!.liked,
-                      title: null, //isHistory ? null : DateFormat('dd/MM/yyyy hh:mm').format(DateTime.now()),
+                      title:
+                          null, //isHistory ? null : DateFormat('dd/MM/yyyy hh:mm').format(DateTime.now()),
                       loanAmount: snapshot.data?[index].data.loanAmount,
                       downPayment: snapshot.data?[index].data.initialPayment,
                       loanTerm: snapshot.data?[index].data.loanTermMonth,
@@ -56,12 +56,13 @@ class MortgageList extends StatelessWidget {
                         context.read<CalculatorBloc>().add(
                               StartCalculationEvent(
                                 FormModel.fromInput(
-                                    InputDomainModel(
-                                      input: snapshot.data![index],
-                                      currency:
-                                          snapshot.data![index].data.currency,
-                                    ),
-                                        snapshot.data![index].data.currency,),
+                                  InputDomainModel(
+                                    input: snapshot.data![index],
+                                    currency:
+                                        snapshot.data![index].data.currency,
+                                  ),
+                                  snapshot.data![index].data.currency,
+                                ),
                               ),
                             );
                       },

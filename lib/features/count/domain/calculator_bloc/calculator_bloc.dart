@@ -26,6 +26,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   }
 
   void _reloadSuccessCalculation(ReloadCalculationEvent event, Emitter emit) {
+    // repository.addHistory(InputDomainModel);
     emit(SuccessCalculatorState(event.input, event.output));
   }
 

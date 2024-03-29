@@ -19,12 +19,6 @@ class CompareResultPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocaleScope.of(context).result),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.star_border_outlined),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Padding(

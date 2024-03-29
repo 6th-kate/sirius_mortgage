@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sirius_mortgage/features/theme/model/theme_extensions.dart';
 
+import '../../features/count/domain/calculator_bloc/calculator_bloc.dart';
+import '../../features/count/route/route.dart';
+import '../../features/count/ui/screens/result/result_screen.dart';
 import '../../features/locale/locale.dart';
 
 class MortgageItem extends StatelessWidget {
@@ -29,11 +33,15 @@ class MortgageItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme
+            .of(context)
+            .cardColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Theme.of(context).shadowColor,
+            color: Theme
+                .of(context)
+                .shadowColor,
             blurRadius: 10,
             spreadRadius: 0,
           ),
@@ -52,10 +60,13 @@ class MortgageItem extends StatelessWidget {
                 title == null
                     ? const SizedBox.shrink()
                     : Text(
-                        title!,
-                        style: Theme.of(context).textTheme.headlineMedium,
-                        textAlign: TextAlign.start,
-                      ),
+                  title!,
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .headlineMedium,
+                  textAlign: TextAlign.start,
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 4),
                   child: Row(
@@ -63,12 +74,18 @@ class MortgageItem extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        '${AppLocaleScope.of(context).loanAmount}:',
-                        style: Theme.of(context).textTheme.bodySmall!.apply(
-                              color: Theme.of(context)
-                                  .extension<ThemeColors>()!
-                                  .label,
-                            ),
+                        '${AppLocaleScope
+                            .of(context)
+                            .loanAmount}:',
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .bodySmall!
+                            .apply(
+                          color: Theme.of(context)
+                              .extension<ThemeColors>()!
+                              .label,
+                        ),
                       ),
                       Expanded(
                         child: Align(
@@ -77,7 +94,10 @@ class MortgageItem extends StatelessWidget {
                             loanAmount == null
                                 ? '____'
                                 : '$loanAmount $currencySymbol',
-                            style: Theme.of(context).textTheme.titleMedium,
+                            style: Theme
+                                .of(context)
+                                .textTheme
+                                .titleMedium,
                           ),
                         ),
                       ),
@@ -91,12 +111,18 @@ class MortgageItem extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        '${AppLocaleScope.of(context).downpayment}:',
-                        style: Theme.of(context).textTheme.bodySmall!.apply(
-                              color: Theme.of(context)
-                                  .extension<ThemeColors>()!
-                                  .label,
-                            ),
+                        '${AppLocaleScope
+                            .of(context)
+                            .downpayment}:',
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .bodySmall!
+                            .apply(
+                          color: Theme.of(context)
+                              .extension<ThemeColors>()!
+                              .label,
+                        ),
                       ),
                       Expanded(
                         child: Align(
@@ -105,7 +131,10 @@ class MortgageItem extends StatelessWidget {
                             downPayment == null
                                 ? '____'
                                 : '$downPayment $currencySymbol',
-                            style: Theme.of(context).textTheme.titleMedium,
+                            style: Theme
+                                .of(context)
+                                .textTheme
+                                .titleMedium,
                           ),
                         ),
                       ),
@@ -121,18 +150,28 @@ class MortgageItem extends StatelessWidget {
                           alignment: Alignment.bottomLeft,
                           child: Text.rich(
                             TextSpan(
-                              text: '${AppLocaleScope.of(context).loanTerm}: ',
-                              style:
-                                  Theme.of(context).textTheme.bodySmall!.apply(
-                                        color: Theme.of(context)
-                                            .extension<ThemeColors>()!
-                                            .label,
-                                      ),
+                              text:
+                              '${AppLocaleScope
+                                  .of(context)
+                                  .loanTerm}: ',
+                              style: Theme
+                                  .of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .apply(
+                                color: Theme.of(context)
+                                    .extension<ThemeColors>()!
+                                    .label,
+                              ),
                               children: <TextSpan>[
                                 TextSpan(
-                                  text: loanTerm == null ? '____' : '$loanTerm',
+                                  text:
+                                  loanTerm == null ? '____' : '$loanTerm',
                                   style:
-                                      Theme.of(context).textTheme.titleMedium,
+                                  Theme
+                                      .of(context)
+                                      .textTheme
+                                      .titleMedium,
                                 ),
                               ],
                             ),
@@ -144,20 +183,28 @@ class MortgageItem extends StatelessWidget {
                           alignment: Alignment.bottomRight,
                           child: Text.rich(
                             TextSpan(
-                              text: '${AppLocaleScope.of(context).rate}: ',
-                              style:
-                                  Theme.of(context).textTheme.bodySmall!.apply(
-                                        color: Theme.of(context)
-                                            .extension<ThemeColors>()!
-                                            .label,
-                                      ),
+                              text: '${AppLocaleScope
+                                  .of(context)
+                                  .rate}: ',
+                              style: Theme
+                                  .of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .apply(
+                                color: Theme.of(context)
+                                    .extension<ThemeColors>()!
+                                    .label,
+                              ),
                               children: <TextSpan>[
                                 TextSpan(
                                   text: rate == null
                                       ? '____'
                                       : '${rate!.toStringAsFixed(2)} %',
                                   style:
-                                      Theme.of(context).textTheme.titleMedium,
+                                  Theme
+                                      .of(context)
+                                      .textTheme
+                                      .titleMedium,
                                 ),
                               ],
                             ),

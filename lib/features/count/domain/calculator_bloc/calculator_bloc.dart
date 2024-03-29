@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_inteface.dart';
@@ -12,6 +13,7 @@ part 'calculator_event.dart';
 
 part 'calculator_state.dart';
 
+@injectable
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   final CountRepository _repository;
 

@@ -1,13 +1,18 @@
 import 'dart:convert';
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_dataclass.dart';
 import 'package:sirius_mortgage/features/favorites/data/shared_prefs_service/keystore.dart';
 import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorites_repository.dart';
 
+@Injectable(as: IFavoritesRepository)
 class FavoritesRepository implements IFavoritesRepository {
+  final SharedPreferences prefs;
+
+  FavoritesRepository(this.prefs);
+
   @override
   Future<List<SummaryInformationInput>> getAllFavorites() async {
-    final prefs = await SharedPreferences.getInstance();
     final favoritesString =
         prefs.getString(KeyStore.favoritesKey) ?? KeyStore.favoritesDefault;
     final List<dynamic> favoritesJson = jsonDecode(favoritesString);
@@ -18,7 +23,6 @@ class FavoritesRepository implements IFavoritesRepository {
 
   @override
   Future<void> addFavorite(SummaryInformationInput favorite) async {
-    final prefs = await SharedPreferences.getInstance();
     final List<SummaryInformationInput> favorites = await getAllFavorites();
     favorites.add(favorite);
     final favoritesString =

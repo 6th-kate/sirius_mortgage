@@ -88,8 +88,10 @@ class CompareResultPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => TablePage(result1.tableInfo,
-                            currencySymbol: result1.currency.shortSymbol),
+                        builder: (context) => TablePage(
+                          result1.tableInfo,
+                          currencySymbol: result1.currency.shortSymbol,
+                        ),
                       ),
                     );
                   },
@@ -115,8 +117,10 @@ class CompareResultPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => TablePage(result2.tableInfo,
-                            currencySymbol: result2.currency.shortSymbol),
+                        builder: (context) => TablePage(
+                          result2.tableInfo,
+                          currencySymbol: result2.currency.shortSymbol,
+                        ),
                       ),
                     );
                   },

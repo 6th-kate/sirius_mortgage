@@ -23,9 +23,9 @@ class FormModel {
     InputDomainModel inputDomainModel,
     this.currency,
   )   : cost = inputDomainModel.input.data.loanAmount.toString(),
-        contribution = inputDomainModel.input.data.loanAmount.toString(),
-        term = inputDomainModel.input.data.loanAmount.toString(),
-        bet = inputDomainModel.input.data.loanAmount.toString(),
+        contribution = inputDomainModel.input.data.initialPayment.toString(),
+        term = inputDomainModel.input.data.loanTermMonth.toString(),
+        bet = inputDomainModel.input.data.interestRate.toString(),
         isAnnuityPaymentType = true;
 
   bool get isFullyFilled =>

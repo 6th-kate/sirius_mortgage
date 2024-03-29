@@ -44,7 +44,7 @@ class MainScreen extends StatelessWidget {
               },
             ),
           ),
-          const Expanded(child: LeadersWidget()),
+          const Expanded(child: FavHisBlocProvider()),
         ],
       ),
     );

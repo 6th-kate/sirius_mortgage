@@ -1,20 +1,35 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sirius_mortgage/features/count/domain/calculator_bloc/calculator_bloc.dart';
 import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorites_repository.dart';
 import 'package:sirius_mortgage/features/favorites/domain/history_domain/history_repository.dart';
 import 'package:sirius_mortgage/features/main/ui/switch/mortgage_list.dart';
 
 import '../../../core/di/di.dart';
+import '../../count/ui/screens/result/result_screen.dart';
 import '../../theme/model/theme_extensions.dart';
 
-class LeadersWidget extends StatefulWidget {
-  const LeadersWidget({super.key});
+class FavHisBlocProvider extends StatelessWidget {
+  const FavHisBlocProvider({super.key});
 
   @override
-  State<LeadersWidget> createState() => _LeadersWidgetState();
+  Widget build(BuildContext context) {
+    return BlocProvider.value(
+      value: getIt<CalculatorBloc>(),
+      child: const FavoritesHistoryWidget(),
+    );
+  }
 }
 
-class _LeadersWidgetState extends State<LeadersWidget> {
+class FavoritesHistoryWidget extends StatefulWidget {
+  const FavoritesHistoryWidget({super.key});
+
+  @override
+  State<FavoritesHistoryWidget> createState() => _FavoritesHistoryWidgetState();
+}
+
+class _FavoritesHistoryWidgetState extends State<FavoritesHistoryWidget> {
   int _groupValue = 0;
   late IFavoritesRepository _repository;
   late IHistoryRepository _repositoryHistory;
@@ -58,16 +73,29 @@ class _LeadersWidgetState extends State<LeadersWidget> {
             ),
           ),
         ),
-        Expanded(
-          child: _groupValue == 0
-              ? MortgageList(
-                  isHistory: true,
-                  getItems: _repositoryHistory.getAllHistory(),
-                )
-              : MortgageList(
-                  isHistory: false,
-                  getItems: _repository.getAllFavorites(),
+        BlocListener<CalculatorBloc, CalculatorState>(
+          bloc: context.read<CalculatorBloc>(),
+          // listenWhen: (prev, next) => pre,
+          listener: (context, state) {
+            if (state is SuccessCalculatorState) {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(state.outputModel),
                 ),
+              );
+            }
+          },
+          child: Expanded(
+            child: _groupValue == 0
+                ? MortgageList(
+                    isHistory: true,
+                    getItems: _repositoryHistory.getAllHistory(),
+                  )
+                : MortgageList(
+                    isHistory: false,
+                    getItems: _repository.getAllFavorites(),
+                  ),
+          ),
         ),
       ],
     );

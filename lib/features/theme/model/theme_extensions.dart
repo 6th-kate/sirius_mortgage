@@ -48,6 +48,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color label;
   final Color tableLabel;
   final Color switchBackground;
+  final Color history;
+  final Color liked;
 
   const ThemeColors({
     required this.chartColorFirst,
@@ -55,6 +57,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     required this.label,
     required this.tableLabel,
     required this.switchBackground,
+    required this.history,
+    required this.liked,
   });
 
   @override
@@ -64,6 +68,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     Color? label,
     Color? tableLabel,
     Color? switchBackground,
+    Color? history,
+    Color? liked,
   }) {
     return ThemeColors(
       chartColorFirst: chartColorFirst ?? this.chartColorFirst,
@@ -71,6 +77,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       label: label ?? this.label,
       tableLabel: tableLabel ?? this.tableLabel,
       switchBackground: switchBackground ?? this.switchBackground,
+      history: history ?? this.history,
+      liked: liked ?? this.liked,
     );
   }
 
@@ -91,6 +99,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       tableLabel: Color.lerp(tableLabel, other.tableLabel, t)!,
       switchBackground:
           Color.lerp(switchBackground, other.switchBackground, t)!,
+      history: Color.lerp(history, other.history, t)!,
+      liked: Color.lerp(liked, other.liked, t)!,
     );
   }
 
@@ -100,6 +110,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
         label: AppColors.label,
         tableLabel: AppColors.form,
         switchBackground: AppColors.switchBackground,
+        history: AppColors.veryLightGreen,
+        liked: AppColors.likedLight,
       );
 
   static get dark => const ThemeColors(
@@ -108,5 +120,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
         label: AppColorsDark.label,
         tableLabel: AppColorsDark.tableLabel,
         switchBackground: AppColorsDark.switchBackground,
+        history: AppColorsDark.historyDark,
+        liked: AppColorsDark.likedDark,
       );
 }

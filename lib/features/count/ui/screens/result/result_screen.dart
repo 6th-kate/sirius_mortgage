@@ -112,12 +112,14 @@ class _AddFavoriteButtonState extends State<AddFavoriteButton> {
       animation: favoriteNotifier,
       builder: (context, child) => IconButton(
         onPressed: () {
-          if (favoriteNotifier.isfavorite || favoriteNotifier.isloading) {
+          if (favoriteNotifier.isFavorite || favoriteNotifier.isLoading) {
             return;
           }
-          favoriteNotifier.addfavorite(widget.input);
+          favoriteNotifier.addFavorite(widget.input);
         },
-        icon: const Icon(Icons.star_border_outlined),
+        icon: favoriteNotifier.isFavorite
+            ? const Icon(Icons.star)
+            : const Icon(Icons.star_border_outlined),
       ),
     );
   }

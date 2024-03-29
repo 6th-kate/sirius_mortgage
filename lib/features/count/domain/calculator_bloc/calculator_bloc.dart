@@ -7,17 +7,19 @@ import 'package:sirius_mortgage/features/count/domain/count_repository.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/input_model.dart';
 import 'package:sirius_mortgage/features/count/domain/domain_models/output_model.dart';
 
+import '../../../favorites/domain/history_domain/history_repository.dart';
 import '../domain_models/form_model.dart';
 
 part 'calculator_event.dart';
-
 part 'calculator_state.dart';
 
 @injectable
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   final CountRepository _repository;
+  final IHistoryRepository _historyRepository;
 
-  CalculatorBloc(this._repository) : super(const IdleCalculatorState()) {
+  CalculatorBloc(this._repository, this._historyRepository)
+      : super(const IdleCalculatorState()) {
     on<CalculatorEvent>(
       (event, emit) => switch (event) {
         StartCalculationEvent() => _startCalculationEvent(event, emit),
@@ -28,6 +30,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   }
 
   void _reloadSuccessCalculation(ReloadCalculationEvent event, Emitter emit) {
+    _historyRepository.addHistory(event.input.input);
     emit(SuccessCalculatorState(event.input, event.output));
   }
 

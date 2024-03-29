@@ -24,8 +24,10 @@ Route onGenerateRoute(BuildContext context, RouteSettings settings) {
       break;
     case routeTable:
       final output = settings.arguments as OutputDomainModel;
-      page = TablePage(output.tableInfo,
-          currencySymbol: output.currency.shortSymbol);
+      page = TablePage(
+        output.tableInfo,
+        currencySymbol: output.currency.shortSymbol,
+      );
       break;
     default:
       throw Exception('Unknown route: ${settings.name}');

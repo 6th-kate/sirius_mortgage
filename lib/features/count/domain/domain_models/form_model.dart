@@ -31,11 +31,30 @@ class FormModel {
   bool get isFullyFilled =>
       cost != null && contribution != null && term != null && bet != null;
 
-  bool get isFullyParsed =>
-      int.tryParse(cost ?? '') != null &&
-      int.tryParse(contribution ?? '') != null &&
-      int.tryParse(term ?? '') != null &&
-      double.tryParse(bet ?? '') != null;
+  bool get isFullyParsed {
+    final costN = int.tryParse(cost ?? '');
+    final contributionN = int.tryParse(contribution ?? '');
+    final termN = int.tryParse(term ?? '');
+    final betN = double.tryParse(bet ?? '');
+
+    if (costN == null ||
+        contributionN == null ||
+        termN == null ||
+        betN == null) {
+      return false;
+    }
+
+    if (costN <= 0 ||
+        contributionN <= 0 ||
+        contributionN >= costN ||
+        termN <= 0 ||
+        betN <= 0 ||
+        betN >= 30) {
+      return false;
+    }
+
+    return true;
+  }
 
   FormModel copyWith({
     String? cost,

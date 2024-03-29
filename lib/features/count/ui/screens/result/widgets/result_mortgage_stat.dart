@@ -6,12 +6,14 @@ class MortgageSimpleStat extends StatelessWidget {
   final double total;
   final double loanAmount;
   final double interestAmount;
+  final String currencySymbol;
 
   const MortgageSimpleStat({
     super.key,
     required this.total,
     required this.loanAmount,
     required this.interestAmount,
+    required this.currencySymbol,
   });
 
   @override
@@ -27,7 +29,7 @@ class MortgageSimpleStat extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium,
             children: <TextSpan>[
               TextSpan(
-                text: total.toStringAsFixed(2),
+                text: '${total.toStringAsFixed(2)} $currencySymbol',
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],
@@ -39,7 +41,7 @@ class MortgageSimpleStat extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium,
             children: <TextSpan>[
               TextSpan(
-                text: loanAmount.toStringAsFixed(2),
+                text: '${loanAmount.toStringAsFixed(2)} $currencySymbol',
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],
@@ -51,7 +53,7 @@ class MortgageSimpleStat extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium,
             children: <TextSpan>[
               TextSpan(
-                text: interestAmount.toStringAsFixed(2),
+                text: '${interestAmount.toStringAsFixed(2)} $currencySymbol',
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],

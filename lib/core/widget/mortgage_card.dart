@@ -9,6 +9,7 @@ class MortgageItem extends StatelessWidget {
   final int? downPayment;
   final int? loanTerm;
   final double? rate;
+  final String? currencySymbol;
   final void Function()? onTap;
 
   const MortgageItem({
@@ -19,6 +20,7 @@ class MortgageItem extends StatelessWidget {
     this.loanTerm,
     this.rate,
     this.onTap,
+    this.currencySymbol,
   });
 
   @override
@@ -70,7 +72,7 @@ class MortgageItem extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            loanAmount == null ? '____' : '$loanAmount',
+                            loanAmount == null ? '____' : '$loanAmount $currencySymbol',
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ),
@@ -96,7 +98,7 @@ class MortgageItem extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            downPayment == null ? '____' : '$downPayment',
+                            downPayment == null ? '____' : '$downPayment $currencySymbol',
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ),

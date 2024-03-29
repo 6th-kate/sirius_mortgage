@@ -49,13 +49,14 @@ class MortgageCompareStat extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                           text:
-                              '${totalFirst.toStringAsFixed(2)} $currencySymbolFirst',
+                              '${totalFirst.toStringAsFixed(2)}$currencySymbolFirst',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
                     ),
                   ),
                 ),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Text.rich(
                     TextSpan(
@@ -64,7 +65,7 @@ class MortgageCompareStat extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                           text:
-                              '${totalSecond.toStringAsFixed(2)} $currencySymbolSecond',
+                              '${totalSecond.toStringAsFixed(2)}$currencySymbolSecond',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
@@ -82,7 +83,7 @@ class MortgageCompareStat extends StatelessWidget {
         //second
         Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               AppLocaleScope.of(context).loanAmountResult,
@@ -98,13 +99,14 @@ class MortgageCompareStat extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                           text:
-                              '${loanAmountFirst.toStringAsFixed(2)} $currencySymbolFirst',
+                              '${loanAmountFirst.toStringAsFixed(2)}$currencySymbolFirst',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
                     ),
                   ),
                 ),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Text.rich(
                     TextSpan(
@@ -113,7 +115,7 @@ class MortgageCompareStat extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                           text:
-                              '${loanAmountSecond.toStringAsFixed(2)} $currencySymbolSecond',
+                              '${loanAmountSecond.toStringAsFixed(2)}$currencySymbolSecond',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
@@ -131,7 +133,7 @@ class MortgageCompareStat extends StatelessWidget {
         //third
         Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               AppLocaleScope.of(context).interestAmountResult,
@@ -147,13 +149,14 @@ class MortgageCompareStat extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                           text:
-                              '${interestAmountFirst.toStringAsFixed(2)} $currencySymbolFirst',
+                              '${interestAmountFirst.toStringAsFixed(2)}$currencySymbolFirst',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
                     ),
                   ),
                 ),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Text.rich(
                     TextSpan(
@@ -162,7 +165,7 @@ class MortgageCompareStat extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                           text:
-                              '${interestAmountSecond.toStringAsFixed(2)} $currencySymbolSecond',
+                              '${interestAmountSecond.toStringAsFixed(2)}$currencySymbolSecond',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],

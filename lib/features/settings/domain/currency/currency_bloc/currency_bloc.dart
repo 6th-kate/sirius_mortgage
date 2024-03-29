@@ -1,33 +1,31 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
-import '../../../utils/defaults.dart';
+import '../../../../../core/di/di.dart';
+import '../../../../../core/di/settings_load_service.dart';
 import '../../../utils/simple_response.dart';
 import '../currency_enum.dart';
 import '../currency_repository.dart';
 
+part 'currency_bloc.freezed.dart';
 part 'currency_event.dart';
-
 part 'currency_state.dart';
 
-part 'currency_bloc.freezed.dart';
-
+@injectable
 class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
   final CurrencyRepository _repository;
 
   CurrencyBloc(this._repository)
       : super(
-          const CurrencyState(
-            currency: CurrencyType.rub,
+          CurrencyState(
+            currency: getIt<SettingLoadService>().currency,
           ),
         ) {
     on<CurrencyEvent>((event, emit) {
       event.map(
         currencyChanged: (CurrencyChanged value) {
           _changeCurrency(value, emit);
-        },
-        needCurrencyLoad: (NeedCurrencyLoad value) {
-          _loadCurrency(value, emit);
         },
         reload: (CurrencyReload value) {
           _reloadCurrency(value, emit);
@@ -67,31 +65,6 @@ class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
             CurrencyEvent.reload(
               SimpleResponse.error(
                 payload: state.currency,
-                message: response.message,
-              ),
-            ),
-          );
-        },
-      );
-    });
-  }
-
-  void _loadCurrency(NeedCurrencyLoad event, Emitter emit) {
-    _repository.getCurrency().then((result) {
-      result.map(
-        ok: (response) {
-          add(
-            CurrencyEvent.reload(
-              SimpleResponse.ok(payload: response.payload),
-            ),
-          );
-        },
-        error: (response) {
-          add(
-            CurrencyEvent.reload(
-              SimpleResponse.error(
-                payload: CurrencyType
-                    .values[SettingDefaults.selectedCurrencyDefault],
                 message: response.message,
               ),
             ),

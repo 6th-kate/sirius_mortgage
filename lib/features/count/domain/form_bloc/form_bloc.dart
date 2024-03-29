@@ -3,16 +3,19 @@ import 'package:flutter/cupertino.dart';
 
 import '../../../settings/domain/currency/currency_enum.dart';
 import '../domain_models/form_model.dart';
+import '../domain_models/input_model.dart';
 
 part 'form_event.dart';
 
 part 'form_state.dart';
 
 class FormBloc extends Bloc<FormEvent, ValidationFormState> {
-  FormBloc(CurrencyType initCurrency)
+  FormBloc({required CurrencyType initCurrency, InputDomainModel? initModel})
       : super(
           ValidationFormState.notValid(
-            FormModel(currency: initCurrency),
+            initModel == null
+                ? FormModel(currency: initCurrency)
+                : FormModel.fromInput(initModel, initCurrency),
             '',
           ),
         ) {

@@ -28,10 +28,11 @@ class CalculatorInputData {
     required this.date,
     required this.initialPayment,
   });
+
   // Convert CalculatorInputData instance to JSON
   Map<String, dynamic> toJson() {
     return {
-      'currency': currency,
+      'currency': currency.index,
       'loanAmount': loanAmount,
       'loanTermMonth': loanTermMonth,
       'interestRate': interestRate,
@@ -43,7 +44,7 @@ class CalculatorInputData {
   // Create CalculatorInputData instance from JSON
   factory CalculatorInputData.fromJson(Map<String, dynamic> json) {
     return CalculatorInputData(
-      currency: json['currency'],
+      currency: CurrencyType.values[json['currency']],
       loanAmount: json['loanAmount'],
       loanTermMonth: json['loanTermMonth'],
       interestRate: json['interestRate'],

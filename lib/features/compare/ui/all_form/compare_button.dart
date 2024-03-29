@@ -37,7 +37,9 @@ class CompareButton extends StatelessWidget {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => CompareResultPage(
-                                  first.value!, second.value!),
+                                first.value!,
+                                second.value!,
+                              ),
                             ),
                           );
                         }

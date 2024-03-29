@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sirius_mortgage/features/favorites/domain/favorites_bloc/favorites_repository.dart';
+import 'package:sirius_mortgage/features/favorites/domain/history_domain/history_repository.dart';
+import 'package:sirius_mortgage/features/main/ui/switch/mortgage_list.dart';
 
-import '../../../core/widget/mortgage_card.dart';
-import '../../calculator/domain/model/calculator_dataclass.dart';
+import '../../../core/di/di.dart';
 import '../../theme/model/theme_extensions.dart';
 
 class LeadersWidget extends StatefulWidget {
@@ -15,7 +16,15 @@ class LeadersWidget extends StatefulWidget {
 
 class _LeadersWidgetState extends State<LeadersWidget> {
   int _groupValue = 0;
-  // final IFavoritesRepository _repository;
+  late IFavoritesRepository _repository;
+  late IHistoryRepository _repositoryHistory;
+
+  @override
+  void initState() {
+    super.initState();
+    _repository = getIt<IFavoritesRepository>();
+    _repositoryHistory = getIt<IHistoryRepository>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,82 +59,20 @@ class _LeadersWidgetState extends State<LeadersWidget> {
           ),
         ),
         Expanded(
-          child: FutureBuilder<List<SummaryInformationInput>>(
-            initialData: const <SummaryInformationInput>[],
-            future: null,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState != ConnectionState.waiting) {
-                return ListView.builder(
-                  itemCount: snapshot.data == null ? 0 : snapshot.data!.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16.0, vertical: 8.0),
-                      child: _groupValue == 0
-                          ? MortgageItem(
-                              backgroundColor: Theme.of(context)
-                                  .extension<ThemeColors>()!
-                                  .history,
-                              key: ValueKey<int>(_groupValue),
-                              title: 'Дом какой то',
-                              loanAmount: 2000000,
-                              downPayment: 200000,
-                              loanTerm: 20,
-                              rate: 7,
-                            )
-                          : MortgageItem(
-                              backgroundColor: Theme.of(context)
-                                  .extension<ThemeColors>()!
-                                  .liked,
-                              key: ValueKey<int>(_groupValue),
-                              title: 'Дом какой то',
-                              loanAmount: 10000,
-                              downPayment: 2543700,
-                              loanTerm: 54,
-                              rate: 3.5,
-                            ),
-                    );
-                  },
-                );
-              } else {
-                return Align(
-                  alignment: Alignment.topCenter,
-                  child: CircularProgressIndicator(
-                    backgroundColor: Theme.of(context).colorScheme.primary,
-                    color: Theme.of(context)
-                        .extension<ThemeColors>()!
-                        .switchBackground,
-                  ),
-                );
-              }
-            },
-          ),
+          child: _groupValue == 0
+              ? MortgageList(
+                  isHistory: true,
+                  getItems: _repositoryHistory.getAllHistory(),
+                )
+              : MortgageList(
+                  isHistory: false,
+                  getItems: _repository.getAllFavorites(),
+                ),
         ),
       ],
     );
   }
 }
-
-// class TrendIndexLeadersListTileWidget extends StatelessWidget {
-//   const TrendIndexLeadersListTileWidget(this.item, {super.key});
-//
-//   final TrendIndexLeadersItem item;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return ListTile(
-//       leading: CircleAvatar(child: Image.asset(item.image)),
-//       title: Text(
-//         item.text,
-//         style: AppTextStyles.subheadlineSemibold14,
-//       ),
-//       trailing: Text(
-//         '${item.percent} %',
-//         style: AppTextStyles.issMoney.apply(color: AppColors.statesSuccess),
-//       ),
-//     );
-//   }
-// }
 
 class TrIndexOptionsWidget extends StatelessWidget {
   const TrIndexOptionsWidget(this.text, {super.key});

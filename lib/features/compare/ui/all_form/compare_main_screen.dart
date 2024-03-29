@@ -54,8 +54,11 @@ class _ComparePageState extends State<ComparePage> {
               ),
               ValueListenableBuilder(
                 valueListenable: varSecond,
-                builder: (BuildContext context, OutputDomainModel? value,
-                    Widget? child) {
+                builder: (
+                  BuildContext context,
+                  OutputDomainModel? value,
+                  Widget? child,
+                ) {
                   return CompareCard(
                     title: AppLocaleScope.of(context).variantSecond,
                     loanAmount: value?.input.data.loanAmount,

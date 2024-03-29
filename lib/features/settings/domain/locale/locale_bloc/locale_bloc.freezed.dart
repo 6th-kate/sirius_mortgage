@@ -19,21 +19,18 @@ mixin _$LocaleEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String languageCode) localeChanged,
-    required TResult Function() needLocaleLoad,
     required TResult Function(SimpleResponse<String> response) reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String languageCode)? localeChanged,
-    TResult? Function()? needLocaleLoad,
     TResult? Function(SimpleResponse<String> response)? reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String languageCode)? localeChanged,
-    TResult Function()? needLocaleLoad,
     TResult Function(SimpleResponse<String> response)? reload,
     required TResult orElse(),
   }) =>
@@ -41,21 +38,18 @@ mixin _$LocaleEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LocaleChanged value) localeChanged,
-    required TResult Function(NeedLocaleLoad value) needLocaleLoad,
     required TResult Function(LocaleReload value) reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LocaleChanged value)? localeChanged,
-    TResult? Function(NeedLocaleLoad value)? needLocaleLoad,
     TResult? Function(LocaleReload value)? reload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocaleChanged value)? localeChanged,
-    TResult Function(NeedLocaleLoad value)? needLocaleLoad,
     TResult Function(LocaleReload value)? reload,
     required TResult orElse(),
   }) =>
@@ -146,7 +140,6 @@ class _$LocaleChangedImpl implements LocaleChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String languageCode) localeChanged,
-    required TResult Function() needLocaleLoad,
     required TResult Function(SimpleResponse<String> response) reload,
   }) {
     return localeChanged(languageCode);
@@ -156,7 +149,6 @@ class _$LocaleChangedImpl implements LocaleChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String languageCode)? localeChanged,
-    TResult? Function()? needLocaleLoad,
     TResult? Function(SimpleResponse<String> response)? reload,
   }) {
     return localeChanged?.call(languageCode);
@@ -166,7 +158,6 @@ class _$LocaleChangedImpl implements LocaleChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String languageCode)? localeChanged,
-    TResult Function()? needLocaleLoad,
     TResult Function(SimpleResponse<String> response)? reload,
     required TResult orElse(),
   }) {
@@ -180,7 +171,6 @@ class _$LocaleChangedImpl implements LocaleChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LocaleChanged value) localeChanged,
-    required TResult Function(NeedLocaleLoad value) needLocaleLoad,
     required TResult Function(LocaleReload value) reload,
   }) {
     return localeChanged(this);
@@ -190,7 +180,6 @@ class _$LocaleChangedImpl implements LocaleChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LocaleChanged value)? localeChanged,
-    TResult? Function(NeedLocaleLoad value)? needLocaleLoad,
     TResult? Function(LocaleReload value)? reload,
   }) {
     return localeChanged?.call(this);
@@ -200,7 +189,6 @@ class _$LocaleChangedImpl implements LocaleChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocaleChanged value)? localeChanged,
-    TResult Function(NeedLocaleLoad value)? needLocaleLoad,
     TResult Function(LocaleReload value)? reload,
     required TResult orElse(),
   }) {
@@ -218,114 +206,6 @@ abstract class LocaleChanged implements LocaleEvent {
   @JsonKey(ignore: true)
   _$$LocaleChangedImplCopyWith<_$LocaleChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$NeedLocaleLoadImplCopyWith<$Res> {
-  factory _$$NeedLocaleLoadImplCopyWith(_$NeedLocaleLoadImpl value,
-          $Res Function(_$NeedLocaleLoadImpl) then) =
-      __$$NeedLocaleLoadImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NeedLocaleLoadImplCopyWithImpl<$Res>
-    extends _$LocaleEventCopyWithImpl<$Res, _$NeedLocaleLoadImpl>
-    implements _$$NeedLocaleLoadImplCopyWith<$Res> {
-  __$$NeedLocaleLoadImplCopyWithImpl(
-      _$NeedLocaleLoadImpl _value, $Res Function(_$NeedLocaleLoadImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$NeedLocaleLoadImpl implements NeedLocaleLoad {
-  _$NeedLocaleLoadImpl();
-
-  @override
-  String toString() {
-    return 'LocaleEvent.needLocaleLoad()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NeedLocaleLoadImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String languageCode) localeChanged,
-    required TResult Function() needLocaleLoad,
-    required TResult Function(SimpleResponse<String> response) reload,
-  }) {
-    return needLocaleLoad();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String languageCode)? localeChanged,
-    TResult? Function()? needLocaleLoad,
-    TResult? Function(SimpleResponse<String> response)? reload,
-  }) {
-    return needLocaleLoad?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String languageCode)? localeChanged,
-    TResult Function()? needLocaleLoad,
-    TResult Function(SimpleResponse<String> response)? reload,
-    required TResult orElse(),
-  }) {
-    if (needLocaleLoad != null) {
-      return needLocaleLoad();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LocaleChanged value) localeChanged,
-    required TResult Function(NeedLocaleLoad value) needLocaleLoad,
-    required TResult Function(LocaleReload value) reload,
-  }) {
-    return needLocaleLoad(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocaleChanged value)? localeChanged,
-    TResult? Function(NeedLocaleLoad value)? needLocaleLoad,
-    TResult? Function(LocaleReload value)? reload,
-  }) {
-    return needLocaleLoad?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocaleChanged value)? localeChanged,
-    TResult Function(NeedLocaleLoad value)? needLocaleLoad,
-    TResult Function(LocaleReload value)? reload,
-    required TResult orElse(),
-  }) {
-    if (needLocaleLoad != null) {
-      return needLocaleLoad(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NeedLocaleLoad implements LocaleEvent {
-  factory NeedLocaleLoad() = _$NeedLocaleLoadImpl;
 }
 
 /// @nodoc
@@ -404,7 +284,6 @@ class _$LocaleReloadImpl implements LocaleReload {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String languageCode) localeChanged,
-    required TResult Function() needLocaleLoad,
     required TResult Function(SimpleResponse<String> response) reload,
   }) {
     return reload(response);
@@ -414,7 +293,6 @@ class _$LocaleReloadImpl implements LocaleReload {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String languageCode)? localeChanged,
-    TResult? Function()? needLocaleLoad,
     TResult? Function(SimpleResponse<String> response)? reload,
   }) {
     return reload?.call(response);
@@ -424,7 +302,6 @@ class _$LocaleReloadImpl implements LocaleReload {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String languageCode)? localeChanged,
-    TResult Function()? needLocaleLoad,
     TResult Function(SimpleResponse<String> response)? reload,
     required TResult orElse(),
   }) {
@@ -438,7 +315,6 @@ class _$LocaleReloadImpl implements LocaleReload {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LocaleChanged value) localeChanged,
-    required TResult Function(NeedLocaleLoad value) needLocaleLoad,
     required TResult Function(LocaleReload value) reload,
   }) {
     return reload(this);
@@ -448,7 +324,6 @@ class _$LocaleReloadImpl implements LocaleReload {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LocaleChanged value)? localeChanged,
-    TResult? Function(NeedLocaleLoad value)? needLocaleLoad,
     TResult? Function(LocaleReload value)? reload,
   }) {
     return reload?.call(this);
@@ -458,7 +333,6 @@ class _$LocaleReloadImpl implements LocaleReload {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocaleChanged value)? localeChanged,
-    TResult Function(NeedLocaleLoad value)? needLocaleLoad,
     TResult Function(LocaleReload value)? reload,
     required TResult orElse(),
   }) {

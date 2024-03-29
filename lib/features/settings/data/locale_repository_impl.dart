@@ -1,9 +1,11 @@
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sirius_mortgage/features/settings/data/shared_prefs_service/keystore.dart';
 
 import '../domain/locale/locale_repository.dart';
 import '../utils/simple_response.dart';
 
+@Injectable(as: LocaleRepository)
 class LocaleRepositoryImpl implements LocaleRepository {
   @override
   Future<SimpleResponse<String>> getLocale() async {

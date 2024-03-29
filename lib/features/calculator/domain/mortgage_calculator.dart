@@ -1,10 +1,12 @@
 import 'dart:math';
+import 'package:injectable/injectable.dart';
 import 'package:sirius_mortgage/features/calculator/domain/model/calculator_inteface.dart';
 import '../utils/utils_calculator.dart';
 import 'model/calculator_dataclass.dart';
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 
+@Injectable(as: ICalculator)
 class MortgageCalculator implements ICalculator {
   const MortgageCalculator();
 

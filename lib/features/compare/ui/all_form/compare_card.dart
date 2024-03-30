@@ -71,7 +71,9 @@ class CompareCard extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            loanAmount == null ? '____' : '$loanAmount',
+                            loanAmount == null
+                                ? '____'
+                                : '$loanAmount ${output.value!.currency.shortSymbol}',
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ),
@@ -97,7 +99,9 @@ class CompareCard extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            downPayment == null ? '____' : '$downPayment',
+                            downPayment == null
+                                ? '____'
+                                : '$downPayment ${output.value!.currency.shortSymbol}',
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ),

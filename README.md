@@ -1,4 +1,4 @@
-#ProCent: Mortgage Calculator
+# ProCent: Mortgage Calculator
 
 ProCent is a convenient application for calculating and comparing mortgage programs. Whether you're buying your first home or considering refinancing your current mortgage loan, ProCent will help you make an informed decision. 
 
